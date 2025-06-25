@@ -1,0 +1,18 @@
+{
+  "aboutUs": {
+    "title": "About Us",
+    "description": "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains, allowing us to deliver comprehensive services that meet our clients' diverse needs. With years of experience and a commitment to excellence, we strive to build lasting partnerships and drive meaningful results."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "language": "Language"
+  }
+}

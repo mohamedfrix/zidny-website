@@ -1,0 +1,18 @@
+{
+  "aboutUs": {
+    "title": "À Propos de Nous",
+    "description": "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines, nous permettant de fournir des services complets qui répondent aux besoins diversifiés de nos clients. Avec des années d'expérience et un engagement envers l'excellence, nous nous efforçons de construire des partenariats durables et de générer des résultats significatifs."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "welcome": "Bienvenue",
+    "learnMore": "En Savoir Plus",
+    "getStarted": "Commencer",
+    "language": "Langue"
+  }
+}
