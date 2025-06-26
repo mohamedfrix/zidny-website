@@ -1,97 +1,39 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import en from '../locales/en.json';
-import fr from '../locales/fr.json';
-import { getBrowserLanguage, isValidLanguage, SUPPORTED_LANGUAGES } from '../utils/language';
-
-export type Language = 'en' | 'fr';
+import { createContext, useContext, useState, ReactNode } from 'react';
+import { Language, SUPPORTED_LANGUAGES } from '../lib/language';
+import { setLanguageCookie } from '../lib/cookies';
+import { translate, getTranslations } from '../lib/translations';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
-  availableLanguages: { code: Language; name: string }[];
+  translations: ReturnType<typeof getTranslations>;
 }
-
-const translations = {
-  en,
-  fr,
-};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const availableLanguages = Object.entries(SUPPORTED_LANGUAGES).map(([code, config]) => ({
-  code: code as Language,
-  name: config.name,
-}));
-
 interface LanguageProviderProps {
   children: ReactNode;
+  initialLanguage: Language;
 }
 
-export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguage] = useState<Language>('en');
-  const [isClient, setIsClient] = useState(false);
+export function LanguageProvider({ children, initialLanguage }: LanguageProviderProps) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
 
-  // Set client-side flag
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Load language from localStorage on mount
-  useEffect(() => {
-    if (!isClient) return;
-    
-    const savedLanguage = localStorage.getItem('preferred-language') as Language;
-    if (savedLanguage && isValidLanguage(savedLanguage)) {
-      setLanguage(savedLanguage);
-    } else {
-      // Try to detect browser language
-      setLanguage(getBrowserLanguage());
+  const setLanguage = (newLanguage: Language) => {
+    if (Object.keys(SUPPORTED_LANGUAGES).includes(newLanguage)) {
+      setLanguageState(newLanguage);
+      setLanguageCookie(newLanguage);
     }
-  }, [isClient]);
-
-  // Save language to localStorage when it changes
-  useEffect(() => {
-    if (!isClient) return;
-    localStorage.setItem('preferred-language', language);
-  }, [language, isClient]);
-
-  // Translation function with nested key support
-  const t = (key: string): string => {
-    const keys = key.split('.');
-    let value: unknown = translations[language];
-    
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        // Fallback to English if key not found
-        value = translations.en;
-        for (const fallbackK of keys) {
-          if (value && typeof value === 'object' && fallbackK in value) {
-            value = (value as Record<string, unknown>)[fallbackK];
-          } else {
-            return `Missing translation: ${key}`;
-          }
-        }
-        break;
-      }
-    }
-    
-    return typeof value === 'string' ? value : `Invalid translation key: ${key}`;
   };
 
-  const value: LanguageContextType = {
-    language,
-    setLanguage,
-    t,
-    availableLanguages,
-  };
+  const t = (key: string) => translate(language, key);
+  const translations = getTranslations(language);
 
   return (
-    <LanguageContext.Provider value={value}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, translations }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -99,7 +41,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
 export function useLanguage(): LanguageContextType {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;

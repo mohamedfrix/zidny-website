@@ -1,3 +1,5 @@
+export type Language = 'en' | 'fr';
+
 export interface Translations {
   aboutUs: {
     title: string;
@@ -17,9 +19,10 @@ export interface Translations {
   };
 }
 
-export type Language = 'en' | 'fr';
+export const SUPPORTED_LANGUAGES: Record<Language, string> = {
+  en: 'English',
+  fr: 'Français',
+};
 
-export interface LanguageConfig {
-  code: Language;
-  name: string;
-}
+export const DEFAULT_LANGUAGE: Language = 'en';
+export const LANGUAGE_COOKIE_NAME = 'preferred-language';

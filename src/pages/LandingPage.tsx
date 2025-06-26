@@ -3,8 +3,7 @@
 import AboutUs from "@/components/landing_page/AboutUs";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
-
-function LandingPage () {
+function LandingPage() {
     return (
         <>
             <div className="fixed top-4 right-4 z-50">
