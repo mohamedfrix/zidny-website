@@ -39,6 +39,9 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  --color-primary-text: linear-gradient(91deg, #2AA4E7 25.27%, #0A60AD 72.89%);
+  --color-tertiary-text: #9FA2A7;
+
 }
 
 @theme inline {
@@ -80,6 +83,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-primary-text: var(--color-primary-text);
+  --color-tertiary: var(--color-tertiary-text);
 
 }
 
@@ -136,6 +142,38 @@
   body {
     @apply bg-background text-foreground;
 
+  }
+
+}
+
+@layer utilities {
+  /* ===== GRADIENT TEXT STYLES ===== */
+  .text-primary-gradient {
+    background: var(--color-primary-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+
+  /* ===== GLASSY EFFECT STYLES ===== */
+  .glass-light {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.7px);
+    -webkit-backdrop-filter: blur(15.7px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
 
 }
