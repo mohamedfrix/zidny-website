@@ -2,6 +2,7 @@
 
 import AboutUs from "@/components/landing_page/AboutUs";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
+import ServicesSection from "@/components/landing_page/Services";
 
 function LandingPage() {
     return (
@@ -10,6 +11,7 @@ function LandingPage() {
                 <LanguageSwitcher />
             </div>
             <AboutUs />
+            <ServicesSection />
         </>
     );
 }

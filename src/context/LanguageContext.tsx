@@ -1,9 +1,9 @@
 'use client';
 
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { Language, SUPPORTED_LANGUAGES } from '../lib/language';
-import { setLanguageCookie } from '../lib/cookies';
-import { translate, getTranslations } from '../lib/translations';
+import { Language, SUPPORTED_LANGUAGES } from '@/lib/language';
+import { setLanguageCookie } from '@/lib/cookies';
+import { translate, getTranslations } from '@/lib/translations';
 
 interface LanguageContextType {
   language: Language;
