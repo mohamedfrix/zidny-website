@@ -42,6 +42,11 @@
   --color-primary-text: linear-gradient(91deg, #2AA4E7 25.27%, #0A60AD 72.89%);
   --color-tertiary-text: #9FA2A7;
 
+  --color-card-1: #0D244E;
+  --color-card-2: #0A60AD;
+  --color-card-3: #E9FCFF;
+  --color-card-4: #FFECD1;
+
 }
 
 @theme inline {
@@ -87,6 +92,10 @@
   --color-primary-text: var(--color-primary-text);
   --color-tertiary: var(--color-tertiary-text);
 
+  --color-card-1: var(--color-card-1);
+  --color-card-2: var(--color-card-2);
+  --color-card-3: var(--color-card-3);
+  --color-card-4: var(--color-card-4);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -174,6 +183,12 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .features-grid-template {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 10fr 8fr 10fr
   }
 
 }

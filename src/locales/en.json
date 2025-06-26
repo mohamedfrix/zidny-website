@@ -9,6 +9,11 @@
     "description" : "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains"
   },
 
+  "features" : {
+    "title" : "Features",
+    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
+  },
+
   "navigation": {
     "home": "Home",
     "about": "About",

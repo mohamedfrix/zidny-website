@@ -3,6 +3,7 @@
 import AboutUs from "@/components/landing_page/AboutUs";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import ServicesSection from "@/components/landing_page/Services";
+import FeaturesSection from "@/components/landing_page/FeaturesSection";
 
 function LandingPage() {
     return (
@@ -12,6 +13,7 @@ function LandingPage() {
             </div>
             <AboutUs />
             <ServicesSection />
+            <FeaturesSection />
         </>
     );
 }

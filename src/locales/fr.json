@@ -8,6 +8,12 @@
     "title" : "Services",
     "description" : "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines"
   },
+
+  "features" : {
+    "title" : "Caractéristiques",
+    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
+  },
+
   "navigation": {
     "home": "Accueil",
     "about": "À Propos",
