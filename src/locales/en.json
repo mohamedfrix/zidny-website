@@ -33,7 +33,32 @@
 
   "features" : {
     "title" : "Features",
-    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
+    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue",
+    "featuresList" : [
+      {
+        "title" : "Speed",
+        "description" : "In a world that moves fast, we move faster—without sacrificing quality. Our agile workflow and lean processes let us deliver high-impact results on time, every time."
+      },
+      {
+        "title" : "Boldness",
+        "description" : "We dare to think differently. Whether it’s strategy, design, or storytelling, we push boundaries and challenge norms to deliver work that stands out and commands attention."
+      },
+      {
+        "title" : "Every pixel, word, and decision is intentional."
+      },
+      {
+        "title" : "Coherence",
+        "description": "We craft experiences that connect your message across all platforms visually, verbally, and strategically."
+      },
+      {
+        "title": "Impact",
+        "description": "We don’t just create to impress, we create to convert. Every campaign, every design, and every strategy is engineered to make a measurable difference for your brand."
+      },
+      {
+        "title": "Emotion",
+        "description" : "We design for feelings, not just visuals. From copy to creative, we infuse emotional resonance that builds deeper, lasting connections between your brand and your audience."
+      }
+    ]
   },
 
   "reviews" : {
