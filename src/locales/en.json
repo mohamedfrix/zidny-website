@@ -111,5 +111,14 @@
     "learnMore": "Learn More",
     "getStarted": "Get Started",
     "language": "Language"
+  },
+  "navbar": {
+    "homescreen" : "Home Screen",
+    "aboutus" : "About Us",
+    "contactus" : "Contact Us",
+    "filmingDepartment" : "Filming & Editing Department",
+    "designDepartment" : "Design Department",
+    "webDepartment" : "Web Department",
+    "mobileDepartment" : "Mobile Department"
   }
 }

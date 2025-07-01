@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { getServerLanguage } from "@/lib/server-cookies";
+import { NavBarProvider } from "@/context/NavBarContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,9 +37,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
       >
-        <LanguageProvider initialLanguage={initialLanguage}>
+        <NavBarProvider>
+          <LanguageProvider initialLanguage={initialLanguage}>
           {children}
         </LanguageProvider>
+        </NavBarProvider>
       </body>
     </html>
   );
