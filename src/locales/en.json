@@ -6,11 +6,38 @@
 
   "services" : {
     "title" : "Services",
-    "description" : "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains"
+    "description" : "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains",
+    "servicesList" : [
+      {
+        "id": 1,
+        "name": "WebDev",
+        "description": "Building responsive and user-friendly."
+      },
+      {
+        "id": 2,
+        "name": "Mobile Dev",
+        "description": "Creating intuitive mobile applications "
+      },
+      {
+        "id": 3,
+        "name": "Design",
+        "description": "Designing engaging user interfaces ."
+      },
+      {
+        "id": 4,
+        "name": "Filming&Editing",
+        "description": "Implementing effective digital strategies ."
+      }
+    ]
   },
 
   "features" : {
     "title" : "Features",
+    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
+  },
+
+  "reviews" : {
+    "title" : "Reviews",
     "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
   },
 

@@ -6,7 +6,29 @@
 
   "services" : {
     "title" : "Services",
-    "description" : "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines"
+    "description" : "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines",
+    "servicesList" : [
+      {
+        "id": 1,
+        "name": "WebDev",
+        "description": "Building responsive and user-friendly."
+      },
+      {
+        "id": 2,
+        "name": "Mobile Dev",
+        "description": "Creating intuitive mobile applications"
+      },
+      {
+        "id": 3,
+        "name": "Design",
+        "description": "Designing engaging user interfaces ."
+      },
+      {
+        "id": 4,
+        "name": "Filming&Editing",
+        "description": "Implementing effective digital strategies ."
+      }
+    ]
   },
 
   "features" : {

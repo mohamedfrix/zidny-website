@@ -3,6 +3,7 @@
 import {useLanguage} from "@/hooks/useLanguage";
 import {AspectRatio} from "@/components/ui/aspect-ratio";
 
+
 function FeaturesSection () {
 
     const { t } = useLanguage();
@@ -16,14 +17,14 @@ function FeaturesSection () {
                         <p className={`max-w-[90%] md:max-w-[70%] lg:max-w-[50%] text-[14px] row-start-2 md:text-[16px] lg:font-medium lg:text-[18px] text-tertiary text-center`}>{t('features.description')}</p>
                     </div>
 
-                    <div className={`w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] xl:max-w-[50%]`}>
+                    <div className={`w-full max-w-[90%] md:max-w-[75%] lg:max-w-[60%] xl:max-w-[70%]`}>
                         <AspectRatio ratio={0.9} className={`w-full`}>
-                            <div className={`w-full h-full features-grid-template gap-x-1 gap-y-1 grid`}>
+                            <div className={`w-full h-full features-grid-template gap-x-2 gap-y-2 grid`}>
                                 <div className={`w-full h-full row-start-1 row-span-2 col-start-1 col-span-2 bg-card-1 rounded-lg`}></div>
                                 <div className={`w-full h-full row-start-1 row-span-1 col-start-3 col-span-4 bg-card-4 rounded-lg`}></div>
                                 <div className={`w-full h-full row-start-2 row-span-1 col-start-3 col-span-2 bg-card-4 rounded-lg`}></div>
                                 <div className={`w-full h-full row-start-2 row-span-1 col-start-5 col-span-2 bg-card-2 rounded-lg`}></div>
-                                <div className={`w-full h-full row-start-3 row-span-3 col-start-1 col-span-3 bg-card-4 rounded-lg`}></div>
+                                <div className={`w-full h-full row-start-3 row-span-1 col-start-1 col-span-3 bg-card-4 rounded-lg`}></div>
                                 <div className={`w-full h-full row-start-3 row-span-1 col-start-4 col-span-3 bg-card-3 rounded-lg`}></div>
                             </div>
                         </AspectRatio>
