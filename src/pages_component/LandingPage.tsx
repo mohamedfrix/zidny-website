@@ -6,6 +6,7 @@ import ServicesSection from "@/components/landing_page/Services";
 import FeaturesSection from "@/components/landing_page/FeaturesSection";
 import ReviewsSection from "@/components/landing_page/ReviewsSection";
 import FAndQ from "@/components/landing_page/FAndQ";
+import HeroSection from "@/components/landing_page/HeoSection";
 
 function LandingPage() {
     return (
@@ -13,6 +14,7 @@ function LandingPage() {
             <div className="fixed top-4 right-4 z-50">
                 <LanguageSwitcher />
             </div>
+            <HeroSection />
             <AboutUs />
             <ServicesSection />
             <FeaturesSection />

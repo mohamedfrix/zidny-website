@@ -4,6 +4,13 @@
     "description": "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains, allowing us to deliver comprehensive services that meet our clients' diverse needs. With years of experience and a commitment to excellence, we strive to build lasting partnerships and drive meaningful results."
   },
 
+  "heroSection": {
+    "title1" : "ZIDNY, more",
+    "title2" : "than ever",
+    "description" : "Scelerisque et at pretium vulputate mi volutpat mattis interdum. Massa malesuada "
+
+  },
+
   "services" : {
     "title" : "Services",
     "description" : "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains",
