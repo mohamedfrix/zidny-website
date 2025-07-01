@@ -36,6 +36,33 @@
     "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
   },
 
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "description": "Trouvez des réponses aux questions les plus courantes sur nos services et processus.",
+    "questions": [
+      {
+        "question": "Quels services offrez-vous?",
+        "answer": "Nous offrons une gamme complète de services incluant le développement web, le développement d'applications mobiles, la conception UI/UX, et les stratégies de marketing digital. Notre équipe se spécialise dans la création de solutions personnalisées adaptées à vos besoins commerciaux."
+      },
+      {
+        "question": "Combien de temps prend un projet typique?",
+        "answer": "Les délais de projet varient selon la complexité et la portée. Un site web simple pourrait prendre 2-4 semaines, tandis qu'une application web complexe pourrait prendre 2-6 mois. Nous fournissons des échéanciers détaillés lors de notre consultation initiale."
+      },
+      {
+        "question": "Fournissez-vous un support continu après la finalisation du projet?",
+        "answer": "Oui, nous offrons divers packages de support incluant la maintenance, les mises à jour, l'hébergement et le support technique. Nous croyons en la construction de partenariats à long terme avec nos clients pour assurer leur succès continu."
+      },
+      {
+        "question": "Quel est votre processus de développement?",
+        "answer": "Notre processus inclut la découverte et planification, la conception et prototypage, le développement et test, le déploiement, et le support continu. Nous maintenons une communication claire tout au long de chaque phase et fournissons des mises à jour régulières sur les progrès."
+      },
+      {
+        "question": "Comment gérez-vous la tarification des projets?",
+        "answer": "Nous offrons à la fois des projets à prix fixe et des tarifs horaires selon la portée du projet. Après avoir compris vos exigences, nous fournissons une proposition détaillée avec une tarification transparente et sans coûts cachés."
+      }
+    ]
+  },
+
   "navigation": {
     "home": "Accueil",
     "about": "À Propos",

@@ -5,6 +5,7 @@ import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import ServicesSection from "@/components/landing_page/Services";
 import FeaturesSection from "@/components/landing_page/FeaturesSection";
 import ReviewsSection from "@/components/landing_page/ReviewsSection";
+import FAndQ from "@/components/landing_page/FAndQ";
 
 function LandingPage() {
     return (
@@ -16,6 +17,7 @@ function LandingPage() {
             <ServicesSection />
             <FeaturesSection />
             <ReviewsSection />
+            <FAndQ />
         </>
     );
 }
