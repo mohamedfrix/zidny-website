@@ -5,6 +5,7 @@ import ServicesSection from "@/components/landing_page/Services";
 import FeaturesSection from "@/components/landing_page/FeaturesSection";
 import ReviewsSection from "@/components/landing_page/ReviewsSection";
 import FAndQ from "@/components/landing_page/FAndQ";
+
 import HeroSection from "@/components/landing_page/HeoSection";
 import NavBar from "@/components/layout/NavBar";
 import { useNavBar } from "@/hooks/useNavBar";
@@ -18,6 +19,9 @@ import gmail_icon from "@/assets/images/gmail.svg";
 import instagram_icon from "@/assets/images/instagram.svg";
 import linkedIn_icon from "@/assets/images/linkedIn.svg";
 import tiktok_icon from "@/assets/images/tiktok.svg";
+
+import Footer from "@/components/layout/Footer";
+
 
 function LandingPage() {
 
@@ -64,6 +68,9 @@ function LandingPage() {
                     <FeaturesSection />
                     <ReviewsSection />
                     <FAndQ />
+                    <Footer />
+
+                    
                 </div>
                 <div className={`w-full row-start-1 col-start-1 h-[100vh] bg-[#07467D] z-0 grid row-start-1 col-start-1 justify-items-end items-center px-2 md:px-8 `}>
                     <div className={`flex flex-col gap-y-10 max-w-[40%] lg:mr-18 xl:mr-22`}>
@@ -91,6 +98,7 @@ function LandingPage() {
                     
                 </div>
             </div>
+
         </>
     );
 }

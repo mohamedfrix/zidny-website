@@ -120,5 +120,16 @@
     "designDepartment" : "Design Department",
     "webDepartment" : "Web Department",
     "mobileDepartment" : "Mobile Department"
+  },
+  "footer": {
+    "title" :"With Zidny the smallest details matter also ",
+    "description" : "With Zidny you can build everything your brand needs to grow , from your start until your succes",
+    "slogan" : "Your project . Our mission . Nzidek ?",
+    "instagram" : "Follow us for updates !",
+    "linkedin" : "Let's connect and collaborate",
+    "email" : "Reach out for collaborations",
+    "tiktok" : "Even Grandma's going viral",
+    "start" : "Start Now"
+
   }
 }
