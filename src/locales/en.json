@@ -1,19 +1,19 @@
 {
   "aboutUs": {
     "title": "About Us",
-    "description": "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains, allowing us to deliver comprehensive services that meet our clients' diverse needs. With years of experience and a commitment to excellence, we strive to build lasting partnerships and drive meaningful results."
+    "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse. Nos projets ne sont pas seulement esthétiques : ils racontent, ils provoquent, ils engagent. On allie stratégie et émotion pour créer du vrai impact. Zidny, c’est ce qui se passe quand les bonnes idées rencontrent les bonnes personnes."
   },
 
   "heroSection": {
     "title1" : "ZIDNY, more",
     "title2" : "than ever",
-    "description" : "Scelerisque et at pretium vulputate mi volutpat mattis interdum. Massa malesuada "
+    "description" : "What do you feel is exactly what we wanted."
 
   },
 
   "services" : {
     "title" : "Services",
-    "description" : "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains",
+    "description" : "Nos services couvrent l’ensemble du cycle de vie digital, de l’idée à l’expérience finale. Que vous ayez besoin d’un service précis ou d’un écosystème complet, on s’adapte avec précision.",
     "servicesList" : [
       {
         "id": 1,
@@ -92,10 +92,6 @@
       {
         "question": "What is your development process?",
         "answer": "Our process includes discovery and planning, design and prototyping, development and testing, deployment, and ongoing support. We maintain clear communication throughout each phase and provide regular updates on progress."
-      },
-      {
-        "question": "How do you handle project pricing?",
-        "answer": "We offer both fixed-price projects and hourly rates depending on the project scope. After understanding your requirements, we provide a detailed proposal with transparent pricing and no hidden costs."
       }
     ]
   },

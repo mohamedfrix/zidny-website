@@ -36,10 +36,6 @@ export default function FAndQ() {
         {
             question: t('faq.questions.3.question') || "What is your development process?",
             answer: t('faq.questions.3.answer') || "Our process includes discovery and planning, design and prototyping, development and testing, deployment, and ongoing support."
-        },
-        {
-            question: t('faq.questions.4.question') || "How do you handle project pricing?",
-            answer: t('faq.questions.4.answer') || "We offer both fixed-price projects and hourly rates depending on the project scope."
         }
     ];
 

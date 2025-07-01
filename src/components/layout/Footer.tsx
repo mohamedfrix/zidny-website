@@ -1,10 +1,10 @@
 import { useLanguage } from "@/hooks/useLanguage";
 import footer_bg_1 from "@/assets/images/footer_bg_1.svg";
 import footer_bg_2 from "@/assets/images/footer_bg_2.svg";
-import tiktok_icon from "@/assets/images/tiktok.svg";
-import instagram_icon from "@/assets/images/instagram.svg";
+import tiktok_icon from "@/assets/images/tiktok_colored.svg";
+import instagram_icon from "@/assets/images/instagram_colored.svg";
 import linkedin_icon from "@/assets/images/linkedin.svg";
-import gmail_icon from "@/assets/images/gmail.svg";
+import gmail_icon from "@/assets/images/gmail_colored.svg";
 import logo from "@/assets/images/logo.svg";
 
 import Image from "next/image";

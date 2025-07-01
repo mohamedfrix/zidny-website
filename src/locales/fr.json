@@ -1,64 +1,97 @@
 {
   "aboutUs": {
-    "title": "À Propos de Nous",
-    "description": "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines, nous permettant de fournir des services complets qui répondent aux besoins diversifiés de nos clients. Avec des années d'expérience et un engagement envers l'excellence, nous nous efforçons de construire des partenariats durables et de générer des résultats significatifs."
+    "title": "About Us",
+    "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse. Nos projets ne sont pas seulement esthétiques : ils racontent, ils provoquent, ils engagent. On allie stratégie et émotion pour créer du vrai impact. Zidny, c’est ce qui se passe quand les bonnes idées rencontrent les bonnes personnes."
+  },
+
+  "heroSection": {
+    "title1" : "ZIDNY, une",
+    "title2" : "signature digitale",
+    "description" : "Ce que vous ressentez, c’est exactement ce qu’on voulait."
+
   },
 
   "services" : {
     "title" : "Services",
-    "description" : "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines",
+    "description" : "Nos services couvrent l’ensemble du cycle de vie digital, de l’idée à l’expérience finale. Que vous ayez besoin d’un service précis ou d’un écosystème complet, on s’adapte avec précision.",
     "servicesList" : [
       {
         "id": 1,
         "name": "WebDev",
-        "description": "Building responsive and user-friendly."
+        "description": "Sites web, maintenance, solides et efficaces."
       },
       {
         "id": 2,
         "name": "Mobile Dev",
-        "description": "Creating intuitive mobile applications"
+        "description": "Apps pros, sur-mesure, prêtes à scaler."
       },
       {
         "id": 3,
         "name": "Design",
-        "description": "Designing engaging user interfaces ."
+        "description": "UI/UX, branding, réseaux  sociaux..."
       },
       {
         "id": 4,
         "name": "Filming&Editing",
-        "description": "Implementing effective digital strategies ."
+        "description": "Tournage, montage, motion... Des visuels qui frappent."
       }
     ]
   },
 
   "features" : {
-    "title" : "Caractéristiques",
+    "title" : "Features",
+    "description" : "Chez Zidny, nos valeurs ne sont pas de simples mots. Elles sont visibles dans chaque détail, chaque livrable, chaque échange.",
+    "featuresList" : [
+      {
+        "title" : "Vitesse",
+        "description" : "Dans un monde qui va vite, nous allons encore plus vite sans jamais sacrifier la qualité. Notre méthode agile et nos processus allégés nous permettent de livrer des résultats percutants, dans les délais, à chaque fois."
+      },
+      {
+        "title" : "Audace",
+        "description" : "Nous osons penser autrement. Que ce soit en stratégie, en design ou en storytelling, nous repoussons les limites et bousculons les normes pour livrer un travail qui se démarque et capte l’attention."
+      },
+      {
+        "title" : "Chaque pixel, chaque mot, chaque décision est intentionnelle."
+      },
+      {
+        "title" : "Cohérence",
+        "description": "Nous créons des expériences qui unifient votre message sur toutes les plateformes, visuellement, verbalement et stratégiquement."
+      },
+      {
+        "title": "Impact",
+        "description": "Nous ne créons pas juste pour impressionner, mais pour convertir. Chaque campagne, chaque design, chaque stratégie est pensée pour générer un impact mesurable pour votre marque."
+      },
+      {
+        "title": "Émotion",
+        "description" : "Nous concevons pour toucher, pas seulement pour être vus. Du texte au visuel, nous insufflons une résonance émotionnelle qui crée des liens durables entre votre marque et votre audience."
+      }
+    ]
+  },
+
+  "reviews" : {
+    "title" : "Reviews",
     "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
   },
 
   "faq": {
-    "title": "Questions Fréquemment Posées",
-    "description": "Trouvez des réponses aux questions les plus courantes sur nos services et processus.",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to the most common questions about our services and processes.",
     "questions": [
       {
-        "question": "Quels services offrez-vous?",
-        "answer": "Nous offrons une gamme complète de services incluant le développement web, le développement d'applications mobiles, la conception UI/UX, et les stratégies de marketing digital. Notre équipe se spécialise dans la création de solutions personnalisées adaptées à vos besoins commerciaux."
+        "question": "Puis-je commander un seul service ?  ",
+        "answer": "Bien sûr. Que ce soit un site, un logo ou une vidéo, chaque service peut fonctionner seul ou avec les autres."
       },
       {
-        "question": "Combien de temps prend un projet typique?",
-        "answer": "Les délais de projet varient selon la complexité et la portée. Un site web simple pourrait prendre 2-4 semaines, tandis qu'une application web complexe pourrait prendre 2-6 mois. Nous fournissons des échéanciers détaillés lors de notre consultation initiale."
+        "question": "Combien ça coûte ?",
+        "answer": "Chaque projet est unique. On s’adapte à vos besoins, vos objectifs et votre budget, en toute transparence."
       },
       {
-        "question": "Fournissez-vous un support continu après la finalisation du projet?",
-        "answer": "Oui, nous offrons divers packages de support incluant la maintenance, les mises à jour, l'hébergement et le support technique. Nous croyons en la construction de partenariats à long terme avec nos clients pour assurer leur succès continu."
+        "question": "Combien de temps dure un projet ?  ",
+        "answer": "Ça dépend, mais on vise toujours une livraison rapide sans sacrifier la qualité"
       },
       {
-        "question": "Quel est votre processus de développement?",
-        "answer": "Notre processus inclut la découverte et planification, la conception et prototypage, le développement et test, le déploiement, et le support continu. Nous maintenons une communication claire tout au long de chaque phase et fournissons des mises à jour régulières sur les progrès."
-      },
-      {
-        "question": "Comment gérez-vous la tarification des projets?",
-        "answer": "Nous offrons à la fois des projets à prix fixe et des tarifs horaires selon la portée du projet. Après avoir compris vos exigences, nous fournissons une proposition détaillée avec une tarification transparente et sans coûts cachés."
+        "question": "Je ne sais pas par où commencer, vous pouvez m’aider ?",
+        "answer": "Évidemment. Même avec une idée floue, on vous aide à la structurer et à la concrétiser. Contactez nous!"
       }
     ]
   },
@@ -70,10 +103,19 @@
     "contact": "Contact"
   },
   "common": {
-    "welcome": "Bienvenue",
-    "learnMore": "En Savoir Plus",
-    "getStarted": "Commencer",
-    "language": "Langue"
+    "welcome": "Welcome",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "language": "Language"
+  },
+  "navbar": {
+    "homescreen" : "Page d'accueil",
+    "aboutus" : "A Propos de Nous",
+    "contactus" : "Contactez Nous",
+    "filmingDepartment" : "Département de Tournage & Montage",
+    "designDepartment" : "Département de Design",
+    "webDepartment" : "Département Web",
+    "mobileDepartment" : "Département Mobile"
   },
   "footer": {
     "title" :"Avec Zidny, même les plus petits détails comptent ",
@@ -84,7 +126,5 @@
     "email": "Contactez-nous pour collaborer",
     "tiktok": "Même Mamie devient virale",
     "start" : "Commencez maintenant !"
-
-
   }
 }

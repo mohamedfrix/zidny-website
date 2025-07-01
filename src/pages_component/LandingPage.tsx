@@ -66,7 +66,7 @@ function LandingPage() {
                     <AboutUs />
                     <ServicesSection />
                     <FeaturesSection />
-                    <ReviewsSection />
+                    {/* <ReviewsSection /> */}
                     <FAndQ />
                     <Footer />
 
