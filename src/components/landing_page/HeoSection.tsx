@@ -1,5 +1,5 @@
 import { useLanguage } from "@/hooks/useLanguage";
-import VideoBackground from "@/components/ui/video-background";
+// import VideoBackground from "@/components/ui/video-background";
 
 export default function HeroSection() {
 
