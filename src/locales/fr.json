@@ -74,5 +74,17 @@
     "learnMore": "En Savoir Plus",
     "getStarted": "Commencer",
     "language": "Langue"
+  },
+  "footer": {
+    "title" :"Avec Zidny, même les plus petits détails comptent ",
+    "description" : "Avec Zidny, vous pouvez créer tout ce dont votre marque a besoin pour grandir , depuis votre lancement jusqu'a votre succes",
+    "slogan": "Votre projet. Notre mission. Nzidek ?",
+    "instagram": "Suivez-nous pour rester à jour !",
+    "linkedin": "Connectons-nous et collaborons",
+    "email": "Contactez-nous pour collaborer",
+    "tiktok": "Même Mamie devient virale",
+    "start" : "Commencez maintenant !"
+
+
   }
 }

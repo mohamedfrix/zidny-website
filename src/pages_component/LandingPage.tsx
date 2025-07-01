@@ -6,6 +6,7 @@ import ServicesSection from "@/components/landing_page/Services";
 import FeaturesSection from "@/components/landing_page/FeaturesSection";
 import ReviewsSection from "@/components/landing_page/ReviewsSection";
 import FAndQ from "@/components/landing_page/FAndQ";
+import Footer from "@/components/layout/Footer";
 
 function LandingPage() {
     return (
@@ -18,6 +19,7 @@ function LandingPage() {
             <FeaturesSection />
             <ReviewsSection />
             <FAndQ />
+            <Footer/>
         </>
     );
 }
