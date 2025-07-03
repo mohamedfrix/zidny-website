@@ -30,19 +30,19 @@ function LandingPage() {
     const navigator = useRouter();
 
     const navigateGmail = () => {
-        navigator.push("mailto:example@gmail.com");
+        navigator.push("mailto:contact@zidnyagency.com");
     }
 
     const navigateLinkedIn = () => {
-        navigator.push("https://www.linkedin.com/in/your-profile");
+        navigator.push("https://www.linkedin.com/in/zidny-agency/");
     }
 
     const navigateInstagram = () => {
-        navigator.push("https://www.instagram.com/your-profile");
+        navigator.push("https://www.instagram.com/zidny.agency/");
     }
 
     const navigateTikTok = () => {
-        navigator.push("https://www.tiktok.com/@your-profile");
+        navigator.push("https://www.tiktok.com/@zidny.agency");
     }
 
     return (
