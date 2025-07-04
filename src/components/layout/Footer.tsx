@@ -2,9 +2,10 @@ import React from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import footer_bg_1 from "@/assets/images/footer_bg_1.svg";
 import footer_bg_2 from "@/assets/images/footer_bg_2.svg";
+import gradient from "@/assets/images/gradient.png"
 import tiktok_icon from "@/assets/images/tiktok_colored.svg";
 import instagram_icon from "@/assets/images/instagram_colored.svg";
-import linkedin_icon from "@/assets/images/linkedin.svg";
+import linkedin_icon from "@/assets/images/linked.svg";
 import gmail_icon from "@/assets/images/gmail_colored.svg";
 import logo from "@/assets/images/logo.svg";
 
@@ -13,6 +14,25 @@ import Link from "next/link";
 
 const Footer = React.forwardRef<HTMLElement>((props, ref) => {
   const { t } = useLanguage();
+
+
+  const navigateGmail = () => {
+    window.location.href = "mailto:contact@zidnyagency.com";
+  };
+
+  const navigateLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/zidny-agency/", "_blank");
+  };
+
+  const navigateInstagram = () => {
+    window.open("https://www.instagram.com/zidny.agency/", "_blank");
+  };
+
+  const navigateTikTok = () => {
+    window.open("https://www.tiktok.com/@zidny.agency", "_blank");
+  };
+
+
 
   return (
     <section ref={ref} className="relative text-center overflow-hidden" style={{
@@ -33,6 +53,13 @@ const Footer = React.forwardRef<HTMLElement>((props, ref) => {
         />
       </div>
 
+      <div className="absolute z-20 sm:flex justify-center items-center text-center right-0 top-1/3 sm:top-1/2 -translate-y-1/2 w-1/3 sm:w-1/4">
+        <Image src={gradient} alt="" className="w-full h-auto" />
+      </div>
+      <div className="absolute z-9 sm:flex text-center left-0 sm:left-[-120px] sm:top-1/2 top-1/3 w-1/3 ">
+        <Image src={gradient} alt="" className="w-full h-auto" />
+      </div>
+
       {/* Contenu */}
       <div className="relative z-10 flex flex-col items-center px-4 pt-8 pb-3">
         {/* Titre et CTA */}
@@ -41,8 +68,8 @@ const Footer = React.forwardRef<HTMLElement>((props, ref) => {
             {t("footer.title")}
           </h1>
           <p className="text-white text-sm sm:text-base">{t("footer.description")}</p>
-          <Link href="/devis">
-            <button className="border border-white text-white rounded-3xl py-2 px-6 sm:px-8 hover:bg-[#0C224B] transition">
+          <Link href="/Devis">
+            <button className="border border-white text-white rounded-3xl py-2 px-6 sm:px-8 cursor-pointer hover:bg-[#0C224B] transition">
               {t("footer.start")}
             </button>
           </Link>
@@ -77,20 +104,24 @@ const Footer = React.forwardRef<HTMLElement>((props, ref) => {
             <div className="flex flex-col items-center md:items-start gap-3">
               {[{
                 icon: instagram_icon,
+                navigate: navigateInstagram,
                 text: t("footer.instagram")
               }, {
                 icon: linkedin_icon,
+                navigate: navigateLinkedIn,                
                 text: t("footer.linkedin")
               }, {
                 icon: gmail_icon,
+                navigate: navigateGmail,
                 text: t("footer.email")
               }, {
                 icon: tiktok_icon,
+                navigate: navigateTikTok,
                 text: t("footer.tiktok")
               }].map((item, index) => (
-                <Link key={index} href="/" className="w-full max-w-xs">
+                <Link key={index} href="/" onClick={item.navigate}  className="w-full max-w-xs ">
                   <div className="flex items-center gap-3 border border-gray-300 rounded-3xl py-2 px-4 hover:text-[#808080]">
-                    <Image src={item.icon} alt="" className="w-5 h-5" />
+                    <Image  src={item.icon} alt="" className="w-5 h-5" />
                     <p className="text-neutral-gray-2 text-sm sm:text-base">{item.text}</p>
                   </div>
                 </Link>

@@ -7,7 +7,8 @@
   "heroSection": {
     "title1" : "ZIDNY, more",
     "title2" : "than ever",
-    "description" : "What do you feel is exactly what we wanted."
+    "description" : "What do you feel is exactly what we wanted.",
+    "button" : "Start your journey now ! "
 
   },
 
@@ -51,7 +52,8 @@
         "description" : "We dare to think differently. Whether it’s strategy, design, or storytelling, we push boundaries and challenge norms to deliver work that stands out and commands attention."
       },
       {
-        "title" : "Every pixel, word, and decision is intentional."
+        "title" : "Every pixel, word, and decision is intentional.",
+        "description" : ""
       },
       {
         "title" : "Coherence",
@@ -126,6 +128,190 @@
     "email" : "Reach out for collaborations",
     "tiktok" : "Even Grandma's going viral",
     "start" : "Start Now"
+  },
 
+  "Design": {
+    "title": "What we do in design",
+    "description": "We turn ideas into living identities. Whether you’re launching a startup or refreshing a legacy brand, our designers craft visuals that feel right and work hard. From the first sketch to the final asset, every pixel is shaped to spark recognition and earn trust.",
+    "button" : "Shape my brand",
+     "subservices" : {
+        "title" : "Sub-Services",
+        "description" : "Design at Zidny covers every touchpoint: iconic logos, intuitive interfaces, and scroll‑stopping social posts. Explore three focused offers, each built to give your brand immediate visual firepower",
+         "service1" : { 
+             "title" : "Identity Design",
+             "description" : "We create logos, color systems, typographic voices, and full brand guidelines that stay consistent everywhere you appear. Expect a look that’s distinctive today and scalable tomorrow.",
+             "point1" : "Naming & logo suite",
+             "point2" : "Color / type toolkit",
+             "point3" : "Brand guidelines PDF"
+                      },
+         "service2" : { 
+             "title" : "UI& Digital Assets",
+             "description" : "Interfaces become effortless when UX and aesthetics click. We map flows, wireframe, then polish every button so users feel at home and on track. Websites, dashboards, e‑commerce everything clicks.",
+             "point1" : "Wireframes & prototypes",
+             "point2" : "High‑fidelity mock‑ups",
+             "point3" : "Design‑to‑dev handoff"                   
+                      },
+         "service3" : { 
+             "title" : "Social & Content Design",
+             "description" : "Your feed deserves cohesion and spark. We deliver ready‑to‑post visuals, templates, and motion snippets that keep followers hungry for more while staying perfectly on‑brand.",
+             "point1" : "Static & motion posts",
+             "point2" : "Story / Reel kits",
+             "point3" : "Monthly asset packs"                   
+                      }
+
+                      },
+  "Steps" : {
+      "step1" : {
+            "title" : "1. Brief & Discovery",
+            "description" : "You tell us who you are and where you want to go. Through a simple form and discovery meeting, we identify your brand goals, values, and visuals. Whether you already have a vision or start from scratch, we collect all the ingredients to build a unique and powerful identity"
+      } ,
+      "step2" : {
+            "title" : "2. Creation & Feedback",
+            "description" : "We start designing: moodboards, drafts, logos, and style directions. You’re involved at every step. We present, you react, we refine. Nothing gets pushed blindly — your feedback is essential. We aim for designs that are not just beautiful, but that feel like you."
+      } ,
+      "step3" : {
+            "title" : "3. Delivery & Launch",
+            "description" : "Once validated, we package everything you need: logos, color palettes, typography, brand guides, social templates... all ready to use. Whether it’s to launch your brand or boost an existing one, you walk away with assets that make you proud and visible."
+      } 
   }
+
+              },
+  "Web": {
+    "title": "What we build in web",
+    "description": "From showcase sites to data‑heavy platforms, we build web experiences that load fast, scale smoothly, and look sharp on every screen. Our devs speak code and conversion, ensuring each line drives performance and revenue.",
+    "button" : "Launch my site",
+     "subservices" : {
+        "title" : "Sub-Services",
+        "description" : "Choose the web solution that fits your stage: marketing website ot custom application. Every option includes clean code, strong security, and measurable results",
+         "service1" : { 
+             "title" : "Responsive Websites",
+             "description" : "Tailor-made showcase sites that are modern, sleek, and impactful. Clean design, smooth navigation, and an experience built to convert—on desktop and mobile.",
+             "point1" : "100% custom design",
+             "point2" : "Responsive & mobile-friendly",
+             "point3" : "Hosting & deployment included"
+                      },
+         "service2" : { 
+             "title" : "Specialized Web Applications",
+             "description" : "Got a specific need? We build elegant interfaces with clear business logic and interactions designed for your users",
+             "point1" : "Sleek and fluid front-end",
+             "point2" : "Structured and efficient back-end",
+             "point3" : "Clean deployment"                   
+                      },
+         "service3" : { 
+             "title" : "Technical Handoff Support",
+             "description" : "We don’t disappear after the final click. From tweaks to finishing touches, we make sure everything’s spotless before handover.",
+             "point1" : "Last-minute fixes",
+             "point2" : "Post-delivery adjustments",
+             "point3" : "Temporary support on request"                   
+                      }
+
+                      },
+  "Steps" : {
+      "step1" : {
+            "title" : "1. Diagnostis & Planification",
+            "description" : "We start with a needs assessment: What are your goals, your users, your content, and your technical expectations? We define the site’s purpose and functionality — then create a roadmap, clear timeline, and realistic scope, ensuring everything is aligned from the start."
+      } ,
+      "step2" : {
+            "title" : "2. Design & Developpement",
+            "description" : "Design and dev teams collaborate to bring your vision to life. You’ll see mockups, validate the design, then we move to code. Every element is built for speed, SEO, and responsiveness. Regular previews keep you involved and reassured throughout."
+      } ,
+      "step3" : {
+            "title" : "3. Launch & Support",
+            "description" : "We launch your site with care: bug tests, backups, and final polish. Once live, we don’t disappear. You get a quick guide and access credentials. Your site is live, lean, and 100% yours"
+      } 
+  }
+
+              },
+ "mobile": {
+    "title": "What we create in mobile",
+    "description": "Your users live on their phones; your product should too. Native or cross‑platform, we code apps that feel smooth, look premium, and scale effortlessly with your roadmap.",
+    "button" : "Build your app",
+     "subservices" : {
+        "title" : "Sub-Services",
+        "description" : "From MVPs to enterprise tools, our mobile team handles strategy, design, coding, and store launches—covering every step from concept to continuous improvement.",
+         "service1" : { 
+             "title" : "Enterprise Mobile Solutions",
+             "description" : "High-performance, secure apps for your teams or clients. Smooth integration with your internal tools and guaranteed reliability.",
+             "point1" : "API integrations",
+             "point2" : "Admin dashboards",
+             "point3" : "Reinforced security"
+                      },
+         "service2" : { 
+             "title" : "Consumer Mobile Apps",
+             "description" : "iOS & Android apps that delight your users: smooth flows, engaging visuals, and a solid backend. Fast prototyping, smart iteration.",
+             "point1" : "iOS & Android development",
+             "point2" : "MVP sprint delivery",
+             "point3" : "User-centered UX"                   
+                      },
+         "service3" : { 
+             "title" : "Performance & Monitoring",
+             "description" : "Once launched, we stay alert. A stable app, regular updates, and readiness for every new OS version.",
+             "point1" : "Real-time monitoring",
+             "point2" : "Feature rollouts",
+             "point3" : "Store tracking & updates"                   
+                      }
+
+                      },
+"Steps" : {
+      "step1" : {
+            "title" : "1. Scoping & Specification",
+            "description" : "We dig into your idea: Who is it for? What does it solve? Which features are musthave? We co-define your MVP or full app specs. You don’t need to speak tech — just tell us what your users need, and we’ll translate it into a buildable plan."
+      } ,
+      "step2" : {
+            "title" : "2. Sprint & Testing",
+            "description" : "We develop in weekly sprints and keep you updated. You get access to early builds (prototypes, APKs, TestFlight...) to test and give feedback. We focus on usability, performance, and elegance. No wasted time, no vague promises, just functional progress."
+      } ,
+      "step3" : {
+            "title" : "3. Deployment & Evolution",
+            "description" : "Once approved, your app is published on stores (Google Play, App Store). We help with setup, ASO (app store optimization), and onboarding. After launch, we offer updates, fixes, and upgrades based on usage data. Your app evolves with you"
+      } 
+  }
+
+              },
+ "filmmaking": {
+    "title": "What we capture in filmmaking",
+    "description": "Stories stick when they move. Our filmmakers blend narrative, design, and motion to craft videos that inform, inspire, and convert whether on a website, social feed, or cinema screen.",
+    "button" : "Roll the cameras ",
+    "subservices" : {
+        "title" : "Sub-Services",
+        "description" : "Script to screen: we cover concept, shoot, edit, and delivery. Pick the format that fitsbrand film, social snippet, or motion graphic and we’ll handle every frame.",
+         "service1" : { 
+             "title" : "Brand Story Films",
+             "description" : "Cinematic pieces that capture your essence and emotion in 60–120 seconds.Perfect for launches, investor decks, or homepage heroes.",
+             "point1" : "Concept & scripting",
+             "point2" : "4K shoot crew",
+             "point3" : "Color & sound mix"
+                      },
+         "service2" : { 
+             "title" : "Marketing & Social Videos",
+             "description" : "Short, punchy clips optimized for feeds and ads. We hook viewers fast and guidethem to action.",
+             "point1" : "Vertical & square edits",
+             "point2" : "Motion captions",
+             "point3" : "Multi‑format delivery"                   
+                      },
+         "service3" : { 
+             "title" : "Motion Graphics & Animation",
+             "description" : "Data, ideas, or interfaces come alive through dynamic 2D/3D animation. Great for explainers and product demos.",
+             "point1" : "Storyboarding",
+             "point2" : "Illustration & rigging",
+             "point3" : "Voice‑over sync"                   
+                      }
+                      },
+  "Steps" : {
+      "step1" : {
+            "title" : "1. Concept & Preparation",
+            "description" : "We start with your story. What’s the goal? Who’s watching? We write scripts, plan scenes, scout locations, and build storyboards. You validate the tone, message, and key visuals before we film. Preproduction is the secret to a clean shoot."
+      } ,
+      "step2" : {
+            "title" : "2. Shooting & Editing",
+            "description" : "Camera, lights, action! Our crew films according to the approved plan. Then, we edit: sound, music, color grading, motion design... You receive drafts to validate. We fine-tune until every second feels right, dynamic, emotional, and aligned with your brand."
+      } ,
+      "step3" : {
+            "title" : "3. Delivery & Distribution",
+            "description" : "Once done, you receive the final videos in all necessary formats (Reels, YouTube, TikTok, widescreen…). We help you publish with confidence, and offer tips for better reach. Whether for launch or long-term campaigns, you’re fully equipped to make an impact."
+      } 
+  }
+}
+
+
 }
