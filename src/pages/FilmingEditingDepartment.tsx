@@ -1,8 +1,5 @@
 'use client';
 
-import AboutUs from "@/components/landing_page/AboutUs";
-import ServicesSection from "@/components/landing_page/Services";
-import FeaturesSection from "@/components/landing_page/FeaturesSection";
 // import ReviewsSection from "@/components/landing_page/ReviewsSection";
 import FAndQ from "@/components/landing_page/FAndQ";
 
@@ -17,13 +14,17 @@ import { useRouter } from "next/navigation";
 
 import gmail_icon from "@/assets/images/gmail.svg";
 import instagram_icon from "@/assets/images/instagram.svg";
-import linkedIn_icon from "@/assets/images/linkedIn.svg";
+import linkedIn_icon from "@/assets/images/linkedin.svg";
 import tiktok_icon from "@/assets/images/tiktok.svg";
 
 import Footer from "@/components/layout/Footer";
+import { useEffect, useRef, useState } from "react";
+import { Description } from "@/components/design_department/Description";
+import SubServices from "@/components/design_department/SubServices";
+import Steps from "@/components/design_department/Steps";
 
 
-function LandingPage() {
+function FilmingEditingDepartment() {
 
     const { open, toggleNavBar } = useNavBar();
     const { t } = useLanguage();
@@ -45,34 +46,59 @@ function LandingPage() {
         navigator.push("https://www.tiktok.com/@your-profile");
     }
 
+    const [xDimension, setXDimension] = useState(0);
+    console.log(xDimension)
+
+    useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleResize = () => {
+        setXDimension(window.innerWidth <= 768 ? 10 : 10);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // initialize once
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+}, [open]);
+
+
+    const footerRef = useRef<HTMLElement>(null);
+
+
     return (
         <>
             <div className={`w-full grid grid-rows-1 grid-cols-1 h-[100vh] overflow-hidden`}>
-                <motion.div className={`w-[60px] h-[60px] bg-[#2AA4E7] rounded-full flex justify-center items-center row-start-1 col-start-1 justify-self-center self-center z-50 translate-x-[20px] lg:-translate-x-[10px]`}
+                <motion.div className={`w-[60px] h-[60px] bg-[#2AA4E7] rounded-full flex justify-center items-center row-start-1 col-start-1 justify-self-center self-center z-50 -translate-x-7 lg:translate-x-[75px]`}
                     onClick={toggleNavBar}
                     initial={false}
                     animate={{
                         opacity: !open ? 0 : 1,
-                        display: !open ? "none" : "flex"
+                        display: !open ? "none" : "flex",
+                        x: !open ? 10 : 0
                     }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ 
+                        duration: !open ? .1 : .6,
+                        delay: !open ? 0 : .55
+                    }}
                 >
                     <Image src={add_icon} alt="Add Icon" className={`w-[35px] h-[35px]`} />
                 </motion.div>
 
-                <div className={`row-start-1 col-start-1 self-center bg-background z-10 transition-all duration-1000 overflow-y-auto ${open ? 'w-[80%] lg:w-[70%] h-[80%] -translate-x-[30%]' : 'w-full h-full'}`}>
-                    <NavBar />
+                <div className={`row-start-1 col-start-1 self-center bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
                     <HeroSection />
-                    <AboutUs />
-                    <ServicesSection />
-                    <FeaturesSection />
+                    <Description />
+                    <SubServices />
+                    <Steps />
                     {/* <ReviewsSection /> */}
-                    <FAndQ />
-                    <Footer />
+                    <FAndQ footerRef={footerRef}/>
+                    <Footer ref={footerRef} />
 
                     
                 </div>
-                <div className={`w-full row-start-1 col-start-1 h-[100vh] bg-[#07467D] z-0 grid row-start-1 col-start-1 justify-items-end items-center px-2 md:px-8 `}>
+                <div className={`w-full h-[100vh] bg-[#07467D] z-0 grid row-start-1 col-start-1 justify-items-end items-center px-2 md:px-8 `}>
                     <div className={`flex flex-col gap-y-10 max-w-[40%] lg:mr-18 xl:mr-22`}>
                         <div className={`flex flex-col lg:flex-row gap-x-6 md:gap-x-10 lg:gap-x-14 gap-y-34 w-full `}>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
@@ -103,4 +129,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default FilmingEditingDepartment;

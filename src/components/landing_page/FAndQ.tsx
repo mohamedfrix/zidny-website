@@ -16,8 +16,32 @@ interface FAQItem {
     answer: string;
 }
 
-export default function FAndQ() {
+interface FAndQProps {
+  footerRef: React.RefObject<HTMLElement | null>;
+}
+
+export default function FAndQ({ footerRef }: FAndQProps) {
     const { t } = useLanguage();
+    console.log('hello\n\n')
+    const handleAccordionChange = () => {
+  if (!footerRef.current) return;
+    console.log('world\t')
+  // Alternative reliable selector approach
+  let totalHeight = 0;
+  
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    const trigger = item.querySelector('[data-state]');
+    if (trigger?.getAttribute('data-state') === 'open') {
+      const content = item.querySelector('.accordion-content');
+      if (content) {
+        totalHeight += content.scrollHeight + 16; // Add margin
+      }
+    }
+  });
+
+  footerRef.current.style.transform = `translateY(${10}px)`;
+  console.log('Footer transform applied:', totalHeight);
+};
 
     // FAQ questions - you can move this to translations later if needed
     const faqQuestions: FAQItem[] = [
@@ -62,7 +86,9 @@ export default function FAndQ() {
                                 value={`item-${index}`}
                                 className="border-b-2 border-[#2AA4E7] last:border-b-0 py-2"
                             >
-                                <AccordionTrigger className="text-left hover:no-underline py-6 px-0 [&[data-state=open]]:text-[#2AA4E7] [&[data-state=closed]]:text-neutral-gray-2 text-lg font-semibold [&>svg]:hidden group">
+                                <AccordionTrigger className="faq-question text-left hover:no-underline py-6 px-0 [&[data-state=open]]:text-[#2AA4E7] [&[data-state=closed]]:text-neutral-gray-2 text-lg font-semibold [&>svg]:hidden group"
+                                    onClick={() => handleAccordionChange()}
+                                >
                                     <div className="flex items-center justify-between w-full">
                                         <span>{item.question}</span>
                                         <div className="flex-shrink-0 ml-4">

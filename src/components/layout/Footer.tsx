@@ -1,3 +1,4 @@
+import React from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import footer_bg_1 from "@/assets/images/footer_bg_1.svg";
 import footer_bg_2 from "@/assets/images/footer_bg_2.svg";
@@ -10,11 +11,14 @@ import logo from "@/assets/images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+const Footer = React.forwardRef<HTMLElement>((props, ref) => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative  text-center overflow-hidden">
+    <section ref={ref} className="relative text-center overflow-hidden" style={{
+      transition: 'transform 0.3s ease-out',
+      willChange: 'transform' // Improves animation performance
+    }}>
       {/* Arrière-plan superposé */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -99,4 +103,8 @@ export default function Footer() {
       </div>
     </section>
   );
-}
+});
+
+Footer.displayName = 'Footer';
+
+export default Footer;
