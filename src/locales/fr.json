@@ -53,7 +53,8 @@
         "description" : "Nous osons penser autrement. Que ce soit en stratégie, en design ou en storytelling, nous repoussons les limites et bousculons les normes pour livrer un travail qui se démarque et capte l’attention."
       },
       {
-        "title" : "Chaque pixel, chaque mot, chaque décision est intentionnelle."
+        "title" : "Chaque pixel, chaque mot, chaque décision est intentionnelle.",
+        "description" : ""
       },
       {
         "title" : "Cohérence",
@@ -102,7 +103,7 @@
     "home": "Accueil",
     "about": "À Propos",
     "services": "Services",
-    "contact": "demander un devis"
+    "contact": "Contact"
   },
   "common": {
     "welcome": "Welcome",
@@ -117,7 +118,9 @@
     "filmingDepartment" : "Département de Tournage & Montage",
     "designDepartment" : "Département de Design",
     "webDepartment" : "Département Web",
-    "mobileDepartment" : "Département Mobile"
+    "mobileDepartment" : "Département Mobile",
+    "Devis" : "Demander un devis ?"
+
   },
   "footer": {
     "title" :"Avec Zidny, même les plus petits détails comptent ",
@@ -128,6 +131,9 @@
     "email": "Contactez-nous pour collaborer",
     "tiktok": "Même Mamie devient virale",
     "start" : "Commencez maintenant !"
+  },
+  "process" : {
+    "title" : "Comment ça se passe chez Zidny"
   },
 
 

@@ -91,22 +91,21 @@ function WebDepartment() {
 
                 <div className={`row-start-1 col-start-1 self-center bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
                     <HeroSection />
-                    <Description />
-                    <SubServices />
-                    <Steps />
+                    <Description step="Web" />
+                    <SubServices service="Web" />
+                    <Steps step="Web"/>
                     {/* <ReviewsSection /> */}
                     <FAndQ footerRef={footerRef}/>
                     <Footer ref={footerRef} />
 
                     
                 </div>
-                <div className={`w-full h-[100vh] bg-[#07467D] z-0 grid row-start-1 col-start-1 justify-items-end items-center px-2 md:px-8 `}>
-                    <div className={`flex flex-col gap-y-10 max-w-[40%] lg:mr-18 xl:mr-22`}>
+               <div className={`w-full h-[100vh] bg-[#07467D] z-0 grid row-start-1 col-start-1 justify-items-end items-center px-2 md:px-8 `}>
+                    <div className={`flex flex-col gap-y-10 max-w-[30%] lg:mr-14 xl:mr-22`}>
                         <div className={`flex flex-col lg:flex-row gap-x-6 md:gap-x-10 lg:gap-x-14 gap-y-34 w-full `}>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
                                 <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.homescreen")}</p></Link>
-                                <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.aboutus")}</p></Link>
-                                <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.contactus")}</p></Link>
+                                <Link href={"/Devis"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.Devis")}</p></Link>
                             </div>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
                                 <Link href="/filming-editing"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.filmingDepartment")}</p></Link>

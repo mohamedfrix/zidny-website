@@ -117,7 +117,8 @@
     "filmingDepartment" : "Filming & Editing Department",
     "designDepartment" : "Design Department",
     "webDepartment" : "Web Department",
-    "mobileDepartment" : "Mobile Department"
+    "mobileDepartment" : "Mobile Department",
+    "Devis" : "Ask for a quote"
   },
   "footer": {
     "title" :"With Zidny the smallest details matter also ",
@@ -128,6 +129,9 @@
     "email" : "Reach out for collaborations",
     "tiktok" : "Even Grandma's going viral",
     "start" : "Start Now"
+  },
+  "process" : {
+    "title" : "Your Journey with Zidny"
   },
 
   "Design": {

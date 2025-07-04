@@ -202,16 +202,17 @@ function DevisPage() {
                             <div className="absolute inset-0  bg-opacity-20"></div>
                             
                             {/* Logo Z positionné sur le background */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="relative sm:bottom-[0] w-40 h-40 sm:w-48 sm:h-48 md:w-full md:h-[400px] opacity-90  transition-opacity duration-300">
+                           <div className="absolute sm:mt-5 inset-0 flex items-start justify-start">
+                                <div className="relative w-20 h-40 sm:w-48 sm:h-48 md:w-full md:h-[100px] opacity-90 transition-opacity duration-300">
                                     <Image 
-                                        src={logo} 
-                                        alt="Zidny Agency Logo" 
-                                        fill  
-                                        className="object-contain "
+                                    src={logo} 
+                                    alt="Zidny Agency Logo" 
+                                    fill  
+                                    className="object-contain"
                                     />
                                 </div>
-                            </div>
+                                </div>
+
                         </div>
                     </div>
                 </div>

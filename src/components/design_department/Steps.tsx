@@ -1,38 +1,60 @@
 "use client";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import first_person from '@/assets/images/first_person.svg'
-
+import second_person from '@/assets/images/second_person.svg'
+import third_person from '@/assets/images/third_person.svg'
+import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 
 export interface ProcessTemplate {
-    id: number ;
-    title : string ; 
-    subtitle : string;
-    desc : string;
-    icon : string;
-    color : string ;
+    id: number;
+    title: string;
+    subtitle: string;
+    desc: string;
+    icon: string;
+    color: string;
+}
 
-  }
-
-   const steps: { id: number }[] = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 }
-  ];
-
-
-export default function Process( ) {
-  const sectionRef = useRef(null);
+export default function Process({ step }: { step: string }){ 
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [activeProcess, setActiveProcess] = useState(0);
+  const { t } = useLanguage();
   
-  // Hook pour suivre le scroll
+  // Utilisez les clés de traduction au lieu du JSON statique
+  const steps = [
+    {
+      id: 1,
+      key: t(`${step}.Steps.step1`),
+      title: t(`${step}.Steps.step1.title`),
+      description: t(`${step}.Steps.step1.description`),
+      image : first_person
+    },
+    {
+      id: 2,
+      key: t(`${step}.Steps.step2`),
+      title: t(`${step}.Steps.step2.title`),
+      description: t(`${step}.Steps.step2.description`),
+      image : second_person
+    },
+    {
+      id: 3,
+      key: t(`${step}.Steps.step3`),
+      title: t(`${step}.Steps.step3.title`),
+      description: t(`${step}.Steps.step3.description`),
+      image : third_person
+    }
+  ];
+  
+  // Hook pour suivre le scroll avec des offsets plus précis
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start 0.5", "end 0.5"]
   });
 
-
+  // Transform pour une progression plus fluide
+  const progress = useTransform(scrollYProgress, [0, 1], [0, steps.length - 1]);
 
   // Animation variants
   const sidebarVariants = {
@@ -70,35 +92,58 @@ export default function Process( ) {
 
   // Effet de scroll automatique pour changer le processus actif
   useEffect(() => {
-    const handleScroll = () => {
-      const progress = scrollYProgress.get();
-      const newActiveIndex = Math.floor(progress * steps.length);
-      setActiveProcess(Math.min(newActiveIndex, steps.length - 1));
-    };
+    const unsubscribe = progress.onChange((latest) => {
+      // Arrondir à l'entier le plus proche et s'assurer que c'est dans les limites
+      const newActiveIndex = Math.round(Math.max(0, Math.min(steps.length - 1, latest)));
+      setActiveProcess(newActiveIndex);
+    });
 
-    const unsubscribe = scrollYProgress.onChange(handleScroll);
     return () => unsubscribe();
-  }, [scrollYProgress]);
+  }, [progress]);
+
+  // Alternative avec Intersection Observer pour plus de précision
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-step') || '0');
+            setActiveProcess(index);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: '-20% 0px -20% 0px'
+      }
+    );
+
+    // Observer chaque step
+    const stepElements = document.querySelectorAll('[data-step]');
+    stepElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.section 
       ref={sectionRef}
-      className="min-h-screen px-4 pt-28 items-center justify-center"
+      className="min-h-[200vh] sm:min-h-[250vh] lg:min-h-[300vh] px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-28 items-center justify-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      {/* Titre principal */}
-      <div className="text-primary-gradient font-bold text-[48px] md:text-[64px] lg:text-[72px] text-center max-w-2xl lg:pb-40 lg:translate-x-1/2">
-                  Comment ça se passe chez Zidny ?
-                </div>
+      {/* Titre principal avec traduction */}
+      <div className="text-primary-gradient font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto pb-8 sm:pb-12 lg:pb-20">
+        {t('process.title')}
+      </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
           
-          {/* Sidebar gauche avec navigation */}
+          {/* Sidebar gauche avec navigation - cachée sur mobile */}
           <motion.div 
-            className="lg:col-span-3"
+            className="hidden lg:block lg:col-span-3"
             variants={sidebarVariants}
           >
             <div className="sticky top-24">
@@ -107,7 +152,9 @@ export default function Process( ) {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-lg font-semibold text-gray-800 mb-6">Process Steps</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-6">
+                  {t('process.title')}
+                </h3>
                 
                 <div className="space-y-4">
                   {steps.map((item, index) => (
@@ -137,8 +184,7 @@ export default function Process( ) {
                         }`} />
                         
                         <div className="ml-6">
-                          <div className="font-medium text-sm">                          1. Brief & Découverte 
-</div>
+                          <div className="font-medium text-sm">{item.title}</div>
                         </div>
                       </motion.button>
                     </motion.div>
@@ -148,7 +194,6 @@ export default function Process( ) {
                 {/* Progress bar */}
                 <motion.div className="mt-6 pt-4 border-t border-gray-200">
                   <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
-                    <span>Progress</span>
                     <span>{Math.round(((activeProcess + 1) / steps.length) * 100)}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -164,41 +209,84 @@ export default function Process( ) {
             </div>
           </motion.div>
 
-          {/* Contenu principal à droite */}
+         
+
+          {/* Contenu principal */}
           <motion.div 
-            className="lg:col-span-9"
+            className="col-span-1 lg:col-span-9"
             variants={contentVariants}
           >
-            <div className="space-y-8">
-               {
-                  steps.map((item) => (
-                    <div key={item.id} className='grid grid-rows-2 items-center justify-center lg:flex lg:flex-row lg:gap-40 place-items-center lg:place-items-start'>
-                      <div className="flex flex-col gap-2 lg:gap-5">
-                        <p className={`font-semibold text-[18px] sm:text-[52px] leading-16 font-outfit text-primary-gradient max-w-80`}>
-                          1. Brief & Découverte 
-                        </p>
-                        <p className={`text-[#9FA2A7] lg:mt-4 font-medium text-[11px] sm:text-[14px] font-outfit transition-opacity max-w-[23rem] tracking-wide`}>
-                          Vous nous dites qui vous êtes et où vous voulez aller. Grâce à un formulaire simple 
-                          et une réunion de découverte, on identifie vos objectifs, vos valeurs, et vos repères visuels.
-                        </p>
-                        <p className={`text-[#9FA2A7] font-medium text-[11px] sm:text-[14px] font-outfit transition-opacity max-w-[21rem] tracking-wide`}>
-                          Que vous ayez déjà une vision ou que vous partiez de zéro, on collecte tous les ingrédients pour créer 
-                          une identité forte et unique.
-                        </p>
-                      </div>
-                      <Image
-                      src={first_person}
-                      alt='first-step'
-                      className='lg:-translate-y-15 w-[60%] lg:w-[47%]'
-                      />
-                    </div>
-                  ))
-                }
+            <div className="space-y-16 sm:space-y-20 lg:space-y-32">
+              {steps.map((item, index) => (
+                <motion.div 
+                  key={item.id}
+                  data-step={index}
+                  className="flex flex-col lg:flex-row items-center justify-center lg:gap-20 xl:gap-40 space-y-8 lg:space-y-0 min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh]"
+                  animate={{
+                    scale: activeProcess === index ? 1 : 0.95,
+                    opacity: 1
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Contenu texte */}
+                  <div className="flex flex-col gap-3 sm:gap-4 lg:gap-5 text-center lg:text-left order-2 lg:order-1">
+                    <motion.p 
+                      className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-outfit text-primary-gradient max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+                      animate={{
+                        y: activeProcess === index ? 0 : 20,
+                        opacity: 1
+                      }}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                      {item.title}
+                    </motion.p>
+                    <motion.p 
+                      className="text-[#9FA2A7] font-medium text-sm sm:text-base lg:text-lg font-outfit transition-opacity max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl tracking-wide px-4 sm:px-0"
+                      animate={{
+                        y: activeProcess === index ? 0 : 20,
+                        opacity: 1
+                      }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      {item.description}
+                    </motion.p>
+                  </div>
+
+                  {/* Image */}
+                  <motion.div
+                    className="flex-shrink-0 order-1 lg:order-2"
+                    animate={{
+                      scale: activeProcess === index ? 1 : 0.9,
+                      opacity: 1
+                    }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={`step-${item.id}`}
+                      className='w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto'
+                      priority={index === 0}
+                    />
+                  </motion.div>
+                </motion.div>
+              ))}
+              
+              {/* Bouton CTA */}
+              <div className="flex justify-center lg:justify-start">
+                <Link href={'/Devis'}>
+                  <motion.button 
+                    className="bg-[#0A60AD] cursor-pointer hover:bg-blue-700 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 md:px-10 lg:px-12 rounded-4xl duration-200 text-sm sm:text-base font-outfit shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t(`${step}.button`)}
+                  </motion.button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>
       </div> 
-
     </motion.section>
   );
 }
