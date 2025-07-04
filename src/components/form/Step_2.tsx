@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StepsProps, formDataDesign, formDataWeb, formDataMobile, formDataFilmmaking } from '@/pages_component/DevisPage';
 import form_icon_2 from '@/assets/images/form_icon_2.svg'
 import Image from 'next/image'
 
 export default function Step_2({ data, setData, nextStep, previousStep }: StepsProps) {
 
-
+        const [projectDescription, setProjectDescription] = useState(data.projectDescription || "");
+        const [customDesignType, setCustomDesignType] = useState("");
+        
 ////////////////////////////////////Design down//////////////////////////////////////////////////////////////////////    
      const renderDesignStep = () => {
         const designData = data as formDataDesign;
-        const [projectDescription, setProjectDescription] = useState(data.projectDescription || "");
-        const [customDesignType, setCustomDesignType] = useState("");
+        
         
         const designTypes = [
             'Logo',
@@ -73,7 +74,6 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
         const handleNext = () => {
             if ((designData.designType && designData.designType.length > 0) && designData.projectDescription) {
                 nextStep();
-                console.log("mise a jour", designData);
             }
         };
 
@@ -239,12 +239,12 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
             </div>
         );
     };
+    
 ///////////////////////////////////////Design Up/////////////Web Down//////////////////////////////////////////////
  const renderWebStep = () => {
 
         const webData = data as formDataWeb;
-        const [projectDescription, setProjectDescription] = useState(data.projectDescription || "");
-        const [customDesignType, setCustomDesignType] = useState("");
+        
         
         const designTypes = [
             'e-commerce',
@@ -306,7 +306,6 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
         const handleNext = () => {
             if ((webData.websiteType && webData.websiteType.length > 0) && webData.projectDescription) {
                 nextStep();
-                console.log("mise a jour", webData);
             }
         };
 
@@ -502,15 +501,7 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
   const renderMobileStep = () => {
 
         const mobileData = data as formDataMobile;
-        const [projectDescription, setProjectDescription] = useState(data.projectDescription || "");
-        const [customDesignType, setCustomDesignType] = useState("");
         
-        const designTypes = [
-            'e-commerce',
-            'Site vitrine',
-            'Blog',
-            'Platforme',
-        ];
 
       
 
@@ -544,7 +535,6 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
         const handleNext = () => {
             if (mobileData.applicationPlatform  && mobileData.projectDescription) {
                 nextStep();
-                console.log("mise a jour", mobileData);
             }
         };
 
@@ -838,8 +828,7 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
   const renderFilmmakingStep = () => {
 
         const filmmakingData = data as formDataFilmmaking;
-        const [projectDescription, setProjectDescription] = useState(data.projectDescription || "");
-        const [customDesignType, setCustomDesignType] = useState("");
+       
         
         const designTypes = [
             'Advertising video / commercial',
@@ -901,7 +890,6 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
         const handleNext = () => {
             if (( filmmakingData.videoType &&  filmmakingData.videoType.length > 0) && filmmakingData.projectDescription) {
                 nextStep();
-                console.log("mise a jour", filmmakingData);
             }
         };
 
@@ -994,7 +982,7 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
 
                 <div className='mt-5 flex flex-col items-start '>
                     <label htmlFor="projectDescription" className="text-neutral-gray-2 text-[16px] font-outfit font-semibold mb-2">
-                            Sur quelle platforme vous voulez qu'elle soit publiée
+                            Sur quelle platforme vous voulez qu&apos;elle soit publiée
                     </label>
                     <div className='space-y-2 w-full '>
                         <div
@@ -1110,7 +1098,7 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
                     <div className="w-full mt-10">
                         <div>
                             <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Erreur</h1>
-                            <p className='text-[#C2C4C7] font-outfit'>Aucun type de projet sélectionné. Veuillez revenir à l'étape précédente.</p>
+                            <p className='text-[#C2C4C7] font-outfit'>Aucun type de projet sélectionné. Veuillez revenir à l&apos;étape précédente.</p>
                         </div>
                         <button
                             onClick={previousStep}

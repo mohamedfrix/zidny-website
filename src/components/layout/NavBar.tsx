@@ -6,8 +6,10 @@ import Image from "next/image";
 import { LanguageSwitcher } from "../ui/language-switcher";
 import { useNavBar } from "@/hooks/useNavBar";
 
+
 export default function NavBar() {
     const { toggleNavBar } = useNavBar();
+   
 
     return (
         <>

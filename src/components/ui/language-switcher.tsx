@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
 import { Language, SUPPORTED_LANGUAGES } from '@/lib/language';
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 
 

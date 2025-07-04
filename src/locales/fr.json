@@ -7,7 +7,9 @@
   "heroSection": {
     "title1" : "ZIDNY, une",
     "title2" : "signature digitale",
-    "description" : "Ce que vous ressentez, c’est exactement ce qu’on voulait."
+    "description" : "Ce que vous ressentez, c’est exactement ce qu’on voulait.",
+    "button" : " Commencez votre aventure dès maintenant ! "
+
 
   },
 
@@ -126,5 +128,188 @@
     "email": "Contactez-nous pour collaborer",
     "tiktok": "Même Mamie devient virale",
     "start" : "Commencez maintenant !"
+  },
+
+
+  "Design": {
+    "title": "Notre approche du design",
+    "description": "Nous transformons vos idées en identités vivantes et mémorables. Que vous lanciez une startup ou que vous modernisiez une marque existante, nos designers façonnent des visuels percutants et cohérents. Du premier croquis au livrable final, chaque détail est pensé pour marquer les esprits et instaurer la confiance.",
+    "button": "Donnez vie à ma marque",
+    "subservices": {
+      "title": "Nos sous-services",
+      "description": "Notre pôle design couvre chaque point de contact : logos iconiques, interfaces intuitives, publications sociales qui captent l’attention. Découvrez trois offres pensées pour donner à votre marque une force visuelle immédiate.",
+      "service1": {
+        "title": "Identité visuelle",
+        "description": "Nous concevons logos, chartes graphiques, typographies et guides de marque complets pour assurer une cohérence sur tous vos supports. Un univers unique, solide aujourd’hui et évolutif demain.",
+        "point1": "Création de nom & logo",
+        "point2": "Palette couleurs & typographie",
+        "point3": "Guide de marque PDF"
+      },
+      "service2": {
+        "title": "UI & Supports digitaux",
+        "description": "Des interfaces fluides, un design soigné et une expérience utilisateur optimisée. Nous concevons vos sites, tableaux de bord ou e‑commerce pour qu’ils soient ergonomiques et performants.",
+        "point1": "Wireframes & prototypes",
+        "point2": "Maquettes haute-fidélité",
+        "point3": "Handoff pour développement"
+      },
+      "service3": {
+        "title": "Contenu & réseaux sociaux",
+        "description": "Donnez à votre feed une cohérence visuelle et du dynamisme. Nous livrons des visuels prêts à publier, des templates et des animations qui captivent et fidélisent votre audience.",
+        "point1": "Posts statiques & animés",
+        "point2": "Kits stories & reels",
+        "point3": "Pack d’assets mensuels"
+      }
+    },
+    "Steps": {
+      "step1": {
+        "title": "1. Brief & Découverte",
+        "description": "Vous nous expliquez qui vous êtes et où vous voulez aller. Grâce à un formulaire et un entretien, nous définissons vos objectifs, vos valeurs et vos attentes visuelles. Vision claire ou page blanche, on rassemble tout pour créer une identité forte."
+      },
+      "step2": {
+        "title": "2. Création & Aller-retours",
+        "description": "On passe à la création : moodboards, croquis, propositions de logos. Vous validez chaque étape, vos retours nous guident. Résultat : un design qui vous ressemble, impactant et cohérent."
+      },
+      "step3": {
+        "title": "3. Livraison & Lancement",
+        "description": "Tout est prêt pour diffusion : logos, palettes, typos, guides, templates… Prêt à lancer votre marque ou booster son impact, avec des supports qui inspirent confiance et crédibilité."
+      }
+    }
+  },
+
+  "Web": {
+    "title": "Nos solutions web",
+    "description": "Du site vitrine à la plateforme sur mesure, nous créons des expériences web rapides, scalables et percutantes sur tous les écrans. Nos développeurs allient code propre et performance pour booster vos conversions et vos revenus.",
+    "button": "Lancer mon site",
+    "subservices": {
+      "title": "Nos sous-services",
+      "description": "Choisissez la solution qui correspond à votre projet : site marketing ou application sur mesure. Chaque offre inclut un code propre, une sécurité robuste et des résultats mesurables.",
+      "service1": {
+        "title": "Sites responsives",
+        "description": "Des sites vitrines sur mesure, modernes et efficaces. Un design épuré, une navigation fluide et une expérience optimisée pour convertir, sur ordinateur comme sur mobile.",
+        "point1": "Design 100% personnalisé",
+        "point2": "Responsive & mobile first",
+        "point3": "Hébergement & mise en ligne"
+      },
+      "service2": {
+        "title": "Applications web spécialisées",
+        "description": "Vous avez un besoin spécifique ? Nous développons des interfaces élégantes avec une logique métier claire et des interactions adaptées à vos utilisateurs.",
+        "point1": "Front-end fluide & intuitif",
+        "point2": "Back-end structuré & optimisé",
+        "point3": "Déploiement maîtrisé"
+      },
+      "service3": {
+        "title": "Accompagnement technique",
+        "description": "Nous restons à vos côtés après livraison. Petits ajustements ou finitions, nous veillons à ce que tout soit impeccable avant la remise finale.",
+        "point1": "Corrections de dernière minute",
+        "point2": "Optimisations post-livraison",
+        "point3": "Support temporaire sur demande"
+      }
+    },
+    "Steps": {
+      "step1": {
+        "title": "1. Diagnostic & Planification",
+        "description": "On analyse vos besoins : objectifs, utilisateurs, contenus, contraintes techniques. On définit la finalité du site, ses fonctionnalités et on établit une feuille de route claire pour aligner chaque étape."
+      },
+      "step2": {
+        "title": "2. Design & Développement",
+        "description": "Designers et développeurs collaborent pour concrétiser votre vision. Vous validez les maquettes avant le développement. Chaque ligne de code est optimisée pour la rapidité, le SEO et la réactivité."
+      },
+      "step3": {
+        "title": "3. Mise en ligne & Support",
+        "description": "On lance votre site en toute sérénité : tests, sauvegardes, vérifications. Vous recevez un guide d’utilisation et vos accès. Votre site est opérationnel, fluide et à votre image."
+      }
+    }
+  },
+
+  "mobile": {
+    "title": "Nos applis mobiles",
+    "description": "Vos utilisateurs vivent sur leur smartphone : soyez dans leur poche. Native ou hybride, nous développons des applications fluides, élégantes et évolutives.",
+    "button": "Développer mon app",
+    "subservices": {
+      "title": "Nos sous-services",
+      "description": "Du prototype MVP à la solution entreprise, notre équipe mobile gère tout : stratégie, design, développement et déploiement sur stores.",
+      "service1": {
+        "title": "Solutions mobiles entreprise",
+        "description": "Des applications robustes et sécurisées pour vos équipes ou vos clients. Intégration fluide à vos outils internes et fiabilité garantie.",
+        "point1": "APIs & intégrations",
+        "point2": "Tableaux de bord admin",
+        "point3": "Sécurité renforcée"
+      },
+      "service2": {
+        "title": "Applications grand public",
+        "description": "Apps iOS & Android pensées pour vos utilisateurs : parcours fluides, visuels engageants et backend solide. Prototypage rapide, itérations intelligentes.",
+        "point1": "Développement iOS & Android",
+        "point2": "MVP livré en sprint",
+        "point3": "UX centré utilisateur"
+      },
+      "service3": {
+        "title": "Performance & suivi",
+        "description": "Une fois l’app en ligne, on veille : stabilité, mises à jour, compatibilité avec chaque nouvelle version d’OS.",
+        "point1": "Suivi en temps réel",
+        "point2": "Nouvelles fonctionnalités",
+        "point3": "Mises à jour & tracking stores"
+      }
+    },
+    "Steps": {
+      "step1": {
+        "title": "1. Cadrage & Spécifications",
+        "description": "On creuse votre idée : pour qui ? pourquoi ? quelles fonctionnalités clés ? On co-construit le MVP ou le cahier des charges complet, sans jargon technique inutile."
+      },
+      "step2": {
+        "title": "2. Développement agile & Tests",
+        "description": "Développement en sprints hebdomadaires avec accès aux builds pour tester et donner votre feedback. On se concentre sur l’ergonomie, la performance et l’élégance."
+      },
+      "step3": {
+        "title": "3. Déploiement & Évolutions",
+        "description": "Une fois validée, l’application est publiée sur les stores. On s’occupe de l’ASO et de l’onboarding. Ensuite, on propose mises à jour et améliorations en continu."
+      }
+    }
+  },
+
+  "filmmaking": {
+    "title": "Nos créations vidéo",
+    "description": "Une bonne histoire se retient quand elle bouge. Nos réalisateurs allient narration, design et motion pour créer des vidéos qui informent, inspirent et convertissent, sur votre site, vos réseaux ou grand écran.",
+    "button": "Lancer le tournage",
+    "subservices": {
+      "title": "Nos sous-services",
+      "description": "Du scénario au montage, nous gérons tout : concept, tournage, post-prod, livraison. Choisissez le format qu’il vous faut, on s’occupe de chaque plan.",
+      "service1": {
+        "title": "Films de marque",
+        "description": "Des vidéos cinématographiques qui capturent votre ADN et vos émotions en 60 à 120 secondes. Idéales pour un lancement, un pitch investisseur ou votre page d’accueil.",
+        "point1": "Concept & script",
+        "point2": "Tournage en 4K",
+        "point3": "Mix son & étalonnage"
+      },
+      "service2": {
+        "title": "Clips marketing & réseaux",
+        "description": "Des vidéos courtes et impactantes, optimisées pour capter l’attention et déclencher l’action.",
+        "point1": "Formats verticaux & carrés",
+        "point2": "Sous-titres animés",
+        "point3": "Livraison multi-format"
+      },
+      "service3": {
+        "title": "Motion Design & Animation",
+        "description": "Des données ou idées qui prennent vie grâce à l’animation 2D/3D. Parfait pour des explainer videos ou démos produit.",
+        "point1": "Storyboard",
+        "point2": "Illustration & animation",
+        "point3": "Voix off synchronisée"
+      }
+    },
+    "Steps": {
+      "step1": {
+        "title": "1. Concept & Préparation",
+        "description": "On part de votre histoire : objectif, audience, message. On écrit le script, planifie les scènes, choisit les lieux et réalise le storyboard. Vous validez chaque étape avant tournage."
+      },
+      "step2": {
+        "title": "2. Tournage & Montage",
+        "description": "Caméras, lumière, action ! Notre équipe tourne selon le plan validé, puis on monte : son, musique, étalonnage, motion design… Vous recevez des versions pour ajuster jusqu’à obtenir un rendu parfait."
+      },
+      "step3": {
+        "title": "3. Livraison & Diffusion",
+        "description": "Vous récupérez vos vidéos prêtes à diffuser (Reels, YouTube, TikTok…). On vous accompagne pour maximiser la portée. Que ce soit pour un lancement ou une campagne longue durée, vous êtes prêt à marquer les esprits."
+      }
+    }
   }
 }
+
+

@@ -1,10 +1,115 @@
 import React, { useState } from 'react';
-import { StepsProps } from '@/pages_component/DevisPage';
+import { formDataDesign, formDataFilmmaking, formDataMobile, formDataWeb, StepsProps } from '@/pages_component/DevisPage';
 import form_icon_1 from '@/assets/images/form_icon_1.svg'
 import Image from 'next/image'
 
-export default function Step_5({ data, setData, nextStep }: StepsProps) {
-   
+
+export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
+
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        
+        try {
+            // Préparer les données de base
+            const baseData = {
+                access_key: "e3619547-b112-4be4-9418-1839d1045548",
+                name: data.clientName,
+                phone: data.clientPhone,
+                email: data.clientEmail,
+                experience: data.clientAgencyExperience,
+                Duration: data.estimationDuration,
+                Price: data.estimationPrice,
+                Description: data.projectDescription,
+                projectType: data.projectType,
+                projectName: data.projectName
+            };
+
+            // Ajouter les données spécifiques selon le type de projet
+            let specificData = {};
+            
+            switch (data.projectType) {
+                case 'design':
+                    const designData = data as formDataDesign;
+                    specificData = {
+                        designType: designData.designType?.join(', ') || '',
+                        haveVisualId: designData.haveVisualId,
+                        style: designData.style?.join(', ') || '',
+                        haveInspiration: designData.haveInspiration,
+                        inspirationLink: designData.inspirationLink || ''
+                    };
+                    break;
+                    
+                case 'web':
+                    const webData = data as formDataWeb;
+                    specificData = {
+                        websiteType: webData.websiteType?.join(', ') || '',
+                        designExpectation: webData.designExpectation || '',
+                        functionalities: webData.functionalities?.join(', ') || ''
+                    };
+                    break;
+                    
+                case 'mobile':
+                    const mobileData = data as formDataMobile;
+                    specificData = {
+                        applicationPlatform: mobileData.applicationPlatform || '',
+                        applicationHosting: mobileData.applicationHosting,
+                        designExpectation: mobileData.designExpectation || '',
+                        functionalities: mobileData.functionalities?.join(', ') || ''
+                    };
+                    break;
+                    
+                case 'filmmaking':
+                    const filmmakingData = data as formDataFilmmaking;
+                    // Ajouter les propriétés spécifiques au filmmaking si elles existent
+                    specificData = {
+                        videoType: filmmakingData.videoType?.join(', ') || '',
+                        publicationPlatform: filmmakingData.publicationPlatform || '',
+                        haveScript: filmmakingData.haveScript,
+                        videoDuration: filmmakingData.videoDuration || ''
+                    };
+                    break;
+                    
+                ;
+            }
+
+            // Combiner toutes les données
+            const finalData = {
+                ...baseData,
+                ...specificData
+            };
+
+            console.log('Données à envoyer:', finalData);
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(finalData),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                // Afficher le composant de remerciement au lieu de l'alert
+                if (showThankYou) {
+                    showThankYou();
+                }
+                
+                // Optionnel : rediriger après un délai
+                // setTimeout(() => {
+                //     router.push('/');
+                // }, 3000);
+            } else {
+                console.error('Erreur lors de l\'envoi:', result);
+                alert('Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer.');
+            }
+        } catch (error) {
+            console.error('Erreur réseau:', error);
+            alert('Une erreur réseau s\'est produite. Veuillez vérifier votre connexion et réessayer.');
+        }
+    }
+
     const [fullName, setFullName] = useState(data.clientName || "");
     const [email, setEmail] = useState(data.clientEmail || "");
     const [phoneNumber, setPhoneNumber] = useState(data.clientPhone || "");
@@ -46,14 +151,6 @@ export default function Step_5({ data, setData, nextStep }: StepsProps) {
 
     const isValidPhone = (phone: string) => {
         return /^[0-9+\-\s()]{8,}$/.test(phone);
-    };
-   
-    const handleNext = () => {
-        if (data.clientName && data.clientEmail && data.clientPhone && data.clientAgencyExperience &&
-            isValidEmail(data.clientEmail) && isValidPhone(data.clientPhone)) {
-            nextStep();
-            console.log("Les données", data)
-        }
     };
 
     const isFormValid = data.clientName && data.clientEmail && data.clientPhone && data.clientAgencyExperience &&
@@ -176,7 +273,7 @@ export default function Step_5({ data, setData, nextStep }: StepsProps) {
                             )}
                         </div>
                         <div className="ml-3">
-                            <h3 className="font-semibold">Oui , et c'était une bonne expérience</h3>
+                            <h3 className="font-semibold">Oui , et c&apos;était une bonne expérience</h3>
                         </div>
                     </div>
                 </div>
@@ -202,7 +299,7 @@ export default function Step_5({ data, setData, nextStep }: StepsProps) {
                             )}
                         </div>
                         <div className="ml-3">
-                            <h3 className="font-semibold">Oui , mais ce n'était pas aussi bon</h3>
+                            <h3 className="font-semibold">Oui , mais ce n&apos;était pas aussi bon</h3>
                         </div>
                     </div>
                 </div>
@@ -235,15 +332,15 @@ export default function Step_5({ data, setData, nextStep }: StepsProps) {
             </div>
 
             <button
-                onClick={handleNext}
+                onClick={handleSubmit}
                 disabled={!isFormValid} 
                 className={`w-full mt-8 py-3 px-6 rounded-3xl font-semibold transition-all duration-200 ${
                     isFormValid
-                        ? 'bg-[#0A60AD] text-white cursor-pointer'
+                        ? 'bg-[#0A60AD] text-white cursor-pointer hover:bg-[#084d8f]'
                         : 'bg-gray-200 text-neutral-gray-2 cursor-not-allowed'
                 }`}
             >
-                Continuer
+                Envoyer ma demande
             </button>
         </div>
     );

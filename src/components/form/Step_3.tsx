@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StepsProps, formDataDesign, formDataWeb, formDataMobile, formDataFilmmaking } from '@/pages_component/DevisPage';
 import form_icon_2 from '@/assets/images/form_icon_2.svg'
 import Image from 'next/image'
 
 export default function Step_3({ data, setData, nextStep, previousStep }: StepsProps) {
+    
+    const designData = data as formDataDesign;
+    const [inspirationLink, setInspirationLink] = useState(designData.inspirationLink || "");
 
-////////////////////////////////////Design down//////////////////////////////////////////////////////////////////////    
+///////////////////////////////////Design down//////////////////////////////////////////////////////////////////////    
     const renderDesignStep = () => {
-        const designData = data as formDataDesign;
-        const [inspirationLink, setInspirationLink] = useState(designData.inspirationLink || "");
         
         const styleTypes = [
             'Trendy',
@@ -205,9 +206,10 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
     };
 
 ///////////////////////////////////////Design Up/////////////Web Down//////////////////////////////////////////////
-    const renderWebStep = () => {
         const webData = data as formDataWeb;
         const [customFunctionality, setCustomFunctionality] = useState("");
+    const renderWebStep = () => {
+        
         
         const functionalityTypes = [
             'Système de connexion/inscription',
@@ -341,9 +343,9 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
     };
 
 ////////////////////////////////////////Web Up/////////////////////////Mobile Down///////////////////////////////////////
-    const renderMobileStep = () => {
         const mobileData = data as formDataMobile;
-        const [customFunctionality, setCustomFunctionality] = useState("");
+    const renderMobileStep = () => {
+        
         
         const functionalityTypes = [
             'Système de connexion/inscription',
@@ -640,7 +642,7 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
                     <div className="w-full mt-10">
                         <div>
                             <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Erreur</h1>
-                            <p className='text-[#C2C4C7] font-outfit'>Aucun type de projet sélectionné. Veuillez revenir à l'étape précédente.</p>
+                            <p className='text-[#C2C4C7] font-outfit'>Aucun type de projet sélectionné. Veuillez revenir à l&apos;étape précédente.</p>
                         </div>
                         <button
                             onClick={previousStep}

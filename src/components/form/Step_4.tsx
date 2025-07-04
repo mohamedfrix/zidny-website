@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepsProps, formDataDesign, formDataWeb, formDataMobile, formDataFilmmaking } from '@/pages_component/DevisPage';
+import { StepsProps  } from '@/pages_component/DevisPage';
 
 export default function Step_4({ data, setData, nextStep, previousStep }: StepsProps) {
     
@@ -100,7 +100,7 @@ export default function Step_4({ data, setData, nextStep, previousStep }: StepsP
             <div className="w-full mt-10">
                 <div>
                     <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Erreur</h1>
-                    <p className='text-[#C2C4C7] font-outfit'>Aucun type de projet sélectionné. Veuillez revenir à l'étape précédente.</p>
+                    <p className='text-[#C2C4C7] font-outfit'>Aucun type de projet sélectionné. Veuillez revenir à l&apos;étape précédente.</p>
                 </div>
                 <button
                     onClick={previousStep}

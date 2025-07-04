@@ -1,4 +1,5 @@
 import { useLanguage } from "@/hooks/useLanguage";
+import Link from "next/link";
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -21,10 +22,7 @@ export default function HeroSection() {
           muted
           playsInline
           className="hidden sm:block w-full h-full object-cover"
-          onError={(e) => {
-            console.error('Desktop video failed to load:', e);
-            e.target.style.display = 'none';
-          }}
+          
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
           Votre navigateur ne supporte pas la vidéo HTML5.
@@ -37,10 +35,7 @@ export default function HeroSection() {
           muted
           playsInline
           className="block sm:hidden w-full h-full object-cover"
-          onError={(e) => {
-            console.error('Mobile video failed to load:', e);
-            e.target.style.display = 'none';
-          }}
+          
         >
           <source src="/videos/hero_mobile.mp4" type="video/mp4" />
           Votre navigateur ne supporte pas la vidéo HTML5.
@@ -51,19 +46,24 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mt-20 justify-between leading-tight sm:justify-center h-full max-w-[100%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[40%] px-8 lg:px-12 xl:px-16">
-        <div className="flex flex-col gap-y-1 sm:gap-y-0">
-          <p className="text-[#0A60AD] md:text-white font-black font-outfit text-[42px] sm:text-[52px] lg:text-[72px]">
+      <div className="relative z-10 flex  justify-center h-3/4  px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col justify-center text-center gap-y-1 sm:gap-y-0 max-w-[100%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[80%] mt-20 sm:mt-0">
+          <p className="text-[#2AA4E7] md:text-white font-black font-outfit text-[42px] sm:text-[52px] lg:text-[80px]">
             {t("heroSection.title1")}
-            </p>
+          </p>
 
-          <p className="text-[#0A60AD] md:text-white   font-black font-outfit text-[42px] sm:text-[52px] lg:text-[72px] -translate-y-[15px] sm:-translate-y-[20px]">
+          <p className="text-[#2AA4E7] md:text-white font-black font-outfit text-[42px] sm:text-[52px] lg:text-[80px] -translate-y-[15px] sm:-translate-y-[20px]">
             {t("heroSection.title2")}
           </p>
-          <p className="text-[#0A60AD] md:text-white   font-medium font-outfit text-[20px] sm:text-[18px] lg:text-[20px]">
+          <p className="text-[#2AA4E7] md:text-white font-medium font-outfit text-[20px] sm:text-[18px] lg:text-[20px]">
             {t("heroSection.description")}
           </p>
-        </div>
+            <Link href="/Devis">
+            <button className="mt-5 border bg-[#0A60AD]  text-white rounded-4xl py-3 px-5 sm:px-8 text-lg cursor-pointer hover:bg-[#0C224B] transition">
+              {t("heroSection.button")}
+            </button>
+          </Link>      
+            </div>
       </div>
     </div>
   );
