@@ -1,8 +1,5 @@
 'use client';
 
-import AboutUs from "@/components/landing_page/AboutUs";
-import ServicesSection from "@/components/landing_page/Services";
-import FeaturesSection from "@/components/landing_page/FeaturesSection";
 // import ReviewsSection from "@/components/landing_page/ReviewsSection";
 import FAndQ from "@/components/landing_page/FAndQ";
 
@@ -22,29 +19,32 @@ import tiktok_icon from "@/assets/images/tiktok.svg";
 
 import Footer from "@/components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
+import { Description } from "@/components/design_department/Description";
+import SubServices from "@/components/design_department/SubServices";
+import Steps from "@/components/design_department/Steps";
 import Link from "next/link";
 
 
-function LandingPage() {
+function WebDepartment() {
 
     const { open, toggleNavBar } = useNavBar();
     const { t } = useLanguage();
     const navigator = useRouter();
 
     const navigateGmail = () => {
-        navigator.push("mailto:contact@zidnyagency.com");
+        navigator.push("mailto:example@gmail.com");
     }
 
     const navigateLinkedIn = () => {
-        navigator.push("https://www.linkedin.com/in/zidny-agency/");
+        navigator.push("https://www.linkedin.com/in/your-profile");
     }
 
     const navigateInstagram = () => {
-        navigator.push("https://www.instagram.com/zidny.agency/");
+        navigator.push("https://www.instagram.com/your-profile");
     }
 
     const navigateTikTok = () => {
-        navigator.push("https://www.tiktok.com/@zidny.agency");
+        navigator.push("https://www.tiktok.com/@your-profile");
     }
 
     const [xDimension, setXDimension] = useState(0);
@@ -65,6 +65,7 @@ function LandingPage() {
 
     return () => window.removeEventListener("resize", handleResize);
 }, [open]);
+
 
     const footerRef = useRef<HTMLElement>(null);
 
@@ -90,11 +91,11 @@ function LandingPage() {
 
                 <div className={`row-start-1 col-start-1 self-center bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
                     <HeroSection />
-                    <AboutUs />
-                    <ServicesSection />
-                    <FeaturesSection />
+                    <Description />
+                    <SubServices />
+                    <Steps />
                     {/* <ReviewsSection /> */}
-                    <FAndQ footerRef={footerRef} />
+                    <FAndQ footerRef={footerRef}/>
                     <Footer ref={footerRef} />
 
                     
@@ -130,4 +131,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default WebDepartment;

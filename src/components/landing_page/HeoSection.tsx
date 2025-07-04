@@ -13,6 +13,7 @@ export default function HeroSection() {
         <div className="absolute top-[30%] left-[60%] w-[120px] h-[120px] bg-white/5 rounded-full blur-xl animate-pulse" />
       </div>
 
+
       {/* Video background */}
       <div className="absolute inset-0 w-full h-full">
         {/* Desktop video */}

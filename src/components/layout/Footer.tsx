@@ -1,3 +1,4 @@
+import React from "react";
 import { useLanguage } from "@/hooks/useLanguage";
 import footer_bg_1 from "@/assets/images/footer_bg_1.svg";
 import footer_bg_2 from "@/assets/images/footer_bg_2.svg";
@@ -11,8 +12,7 @@ import logo from "@/assets/images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-
-export default function Footer() {
+const Footer = React.forwardRef<HTMLElement>((props, ref) => {
   const { t } = useLanguage();
 
 
@@ -35,7 +35,10 @@ export default function Footer() {
 
 
   return (
-    <section className="relative  text-center overflow-hidden">
+    <section ref={ref} className="relative text-center overflow-hidden" style={{
+      transition: 'transform 0.3s ease-out',
+      willChange: 'transform' // Improves animation performance
+    }}>
       {/* Arrière-plan superposé */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -90,10 +93,10 @@ export default function Footer() {
               </div>
               <div className="flex flex-col items-center md:items-start gap-2">
                 <p className="text-[#808080] text-sm sm:text-base">Services</p>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Web</p></Link>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Mobile</p></Link>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Design</p></Link>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Filming & Editing</p></Link>
+                <Link href="/web"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Web</p></Link>
+                <Link href="/mobile"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Mobile</p></Link>
+                <Link href="/design"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Design</p></Link>
+                <Link href="/filming-editing"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Filming & Editing</p></Link>
               </div>
             </div>
 
@@ -131,4 +134,8 @@ export default function Footer() {
       </div>
     </section>
   );
-}
+});
+
+Footer.displayName = 'Footer';
+
+export default Footer;
