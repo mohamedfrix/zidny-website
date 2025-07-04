@@ -22,6 +22,7 @@ import tiktok_icon from "@/assets/images/tiktok.svg";
 
 import Footer from "@/components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 
 function LandingPage() {
@@ -102,15 +103,15 @@ function LandingPage() {
                     <div className={`flex flex-col gap-y-10 max-w-[40%] lg:mr-18 xl:mr-22`}>
                         <div className={`flex flex-col lg:flex-row gap-x-6 md:gap-x-10 lg:gap-x-14 gap-y-34 w-full `}>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.homescreen")}</p>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.aboutus")}</p>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.contactus")}</p>
+                                <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.homescreen")}</p></Link>
+                                <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.aboutus")}</p></Link>
+                                <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.contactus")}</p></Link>
                             </div>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.filmingDepartment")}</p>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.designDepartment")}</p>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.webDepartment")}</p>
-                                <p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.mobileDepartment")}</p>
+                                <Link href="/filming-editing"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.filmingDepartment")}</p></Link>
+                                <Link href="/design"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.designDepartment")}</p></Link>
+                                <Link href="/web"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.webDepartment")}</p></Link>
+                                <Link href="/mobile"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.mobileDepartment")}</p></Link>
                             </div>
                         </div>
 

@@ -66,10 +66,10 @@ const Footer = React.forwardRef<HTMLElement>((props, ref) => {
               </div>
               <div className="flex flex-col items-center md:items-start gap-2">
                 <p className="text-[#808080] text-sm sm:text-base">Services</p>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Web</p></Link>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Mobile</p></Link>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Design</p></Link>
-                <Link href="/"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Filming & Editing</p></Link>
+                <Link href="/web"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Web</p></Link>
+                <Link href="/mobile"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Mobile</p></Link>
+                <Link href="/design"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Design</p></Link>
+                <Link href="/filming-editing"><p className="hover:text-[#808080] text-neutral-gray-2 text-sm sm:text-base">Filming & Editing</p></Link>
               </div>
             </div>
 

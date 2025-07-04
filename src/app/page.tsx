@@ -1,10 +1,10 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import LandingPage from "@/pages/LandingPage";
-import DesignDepartment from "@/pages/DesignDepartment";
-import WebDepartment from "@/pages/WebDepartment";
-import MobileDepartment from '@/pages/MobileDepartment';
-import FilmingEditingDepartment from '@/pages/FilmingEditingDepartment';
+import DesignDepartment from "@/app/design/page";
+import WebDepartment from "@/app/web/page";
+import MobileDepartment from '@/app/mobile/page';
+import FilmingEditingDepartment from '@/app/filming-editing/page';
 
 export default function Home() {
   const pathname = usePathname();
@@ -19,7 +19,7 @@ export default function Home() {
         return <WebDepartment />;
       case '/mobile':
         return <MobileDepartment />
-      case '/filming_editing':
+      case '/filming-editing':
         return <FilmingEditingDepartment />
       default:
         return <LandingPage />;

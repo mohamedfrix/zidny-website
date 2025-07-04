@@ -31,7 +31,7 @@ const SubServices = () => {
             interfaces intuitives et publications sociales qui attirent l'œil.`}
           </div>
 
-          <div className="w-[100%] grid grid-rows-3 lg:flex mt-6 items-center justify-center gap-6 lg:gap-4">
+          <div className="w-[100%] lg:w-[70%] grid grid-rows-3 lg:flex mt-6 items-center justify-center gap-6 lg:gap-4">
             {sub_services.map((item, index) => (
               <div
                 key={item.id}
