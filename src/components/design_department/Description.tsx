@@ -5,7 +5,7 @@ import description from "@/assets/images/description.svg";
 
 export const Description = () => {
   return (
-    <div className="pt-28 lg:pl-32 lg:py-32 overflow-hidden">
+    <div className="pt-28 lg:pl-32 lg:py-32 overflow-y-hidden">
         <div className="w-full h-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
                 <div className="space-y-8">
