@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import AboutUs from "@/components/landing_page/AboutUs";
 import ServicesSection from "@/components/landing_page/Services";
@@ -48,23 +48,25 @@ function LandingPage() {
     }
 
     const [xDimension, setXDimension] = useState(0);
-        console.log(xDimension)
 
-
+    console.log(xDimension)
     useEffect(() => {
-    if (typeof window === "undefined") return;
+        if (typeof window === "undefined") return;
 
-    const handleResize = () => {
-        setXDimension(window.innerWidth <= 768 ? 10 : 10);
-    };
+        const handleResize = () => {
+            setXDimension(window.innerWidth <= 768 ? 10 : 10);
+            
+            // If you need to use xDimension here, you can access it properly
+            // console.log('Current xDimension:', xDimension);
+        };
 
-    window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
-    // initialize once
-    handleResize();
+        // initialize once
+        handleResize();
 
-    return () => window.removeEventListener("resize", handleResize);
-}, [open]);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [open]); // Removed xDimension from dependencies since it's not used in the effect
 
     const footerRef = useRef<HTMLElement>(null);
 

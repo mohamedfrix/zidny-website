@@ -5,8 +5,8 @@
   },
 
   "heroSection": {
-    "title1" : "ZIDNY, more",
-    "title2" : "than ever",
+    "title1" : "ZIDNY, the",
+    "title2" : "digital signature",
     "description" : "What do you feel is exactly what we wanted.",
     "button" : "Start your journey now ! "
 
@@ -14,27 +14,34 @@
 
   "services" : {
     "title" : "Services",
-    "description" : "Nos services couvrent l’ensemble du cycle de vie digital, de l’idée à l’expérience finale. Que vous ayez besoin d’un service précis ou d’un écosystème complet, on s’adapte avec précision.",
+    "description" : "Our services cover the entire digital lifecycle, from the first idea to the final experience. Whether you need one specific service or a full ecosystem, we adapt with focus and purpose.",
     "servicesList" : [
       {
         "id": 1,
         "name": "WebDev",
-        "description": "Building responsive and user-friendly."
+        "description": "Websites, maintenance, solid and effective.",
+        "Link" : "/web"
       },
       {
         "id": 2,
         "name": "Mobile Dev",
-        "description": "Creating intuitive mobile applications "
+        "description": "Pro, custom apps, built to scale.",
+        "Link" : "/mobile"
+
       },
       {
         "id": 3,
         "name": "Design",
-        "description": "Designing engaging user interfaces ."
+        "description": "UI/UX, branding, social media posts .",
+        "Link" : "/design"
+
       },
       {
         "id": 4,
         "name": "Filming&Editing",
-        "description": "Implementing effective digital strategies ."
+        "description": "Shooting, editing, motion... Visuals that hit hard .",
+        "Link" : "/filming-editing"
+
       }
     ]
   },

@@ -48,7 +48,7 @@ function FilmingEditingDepartment() {
     }
 
     const [xDimension, setXDimension] = useState(0);
-    console.log(xDimension)
+    console.log(xDimension);
 
     useEffect(() => {
     if (typeof window === "undefined") return;

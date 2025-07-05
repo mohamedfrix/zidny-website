@@ -99,7 +99,7 @@ export default function Process({ step }: { step: string }){
     });
 
     return () => unsubscribe();
-  }, [progress]);
+  }, [progress,steps.length]);
 
   // Alternative avec Intersection Observer pour plus de précision
   useEffect(() => {
@@ -128,17 +128,17 @@ export default function Process({ step }: { step: string }){
   return (
     <motion.section 
       ref={sectionRef}
-      className="min-h-[200vh] sm:min-h-[250vh] lg:min-h-[300vh] px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-28 items-center justify-center"
+      className="min-h-[200vh] sm:min-h-[250vh] lg:min-h-[300vh] px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-28 items-center justify-center overflow-x-hidden lg:overflow-x-visible"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
       {/* Titre principal avec traduction */}
-      <div className="text-primary-gradient font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto pb-8 sm:pb-12 lg:pb-20">
+      <div className="text-primary-gradient font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto pb-8 sm:pb-12 lg:pb-20 break-words">
         {t('process.title')}
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
           
           {/* Sidebar gauche avec navigation - cachée sur mobile */}
@@ -152,7 +152,7 @@ export default function Process({ step }: { step: string }){
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-lg font-semibold text-gray-800 mb-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-6 break-words">
                   {t('process.title')}
                 </h3>
                 
@@ -184,7 +184,7 @@ export default function Process({ step }: { step: string }){
                         }`} />
                         
                         <div className="ml-6">
-                          <div className="font-medium text-sm">{item.title}</div>
+                          <div className="font-medium text-sm break-words">{item.title}</div>
                         </div>
                       </motion.button>
                     </motion.div>
@@ -209,19 +209,19 @@ export default function Process({ step }: { step: string }){
             </div>
           </motion.div>
 
-         
-
           {/* Contenu principal */}
           <motion.div 
-            className="col-span-1 lg:col-span-9"
+            className="col-span-1 lg:col-span-9 w-full"
             variants={contentVariants}
           >
-            <div className="space-y-16 sm:space-y-20 lg:space-y-32">
+            <div className="space-y-16 sm:space-y-20 lg:space-y-32 w-full">
               {steps.map((item, index) => (
                 <motion.div 
                   key={item.id}
                   data-step={index}
-                  className="flex flex-col lg:flex-row items-center justify-center lg:gap-20 xl:gap-40 space-y-8 lg:space-y-0 min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh]"
+                  className={`flex flex-col lg:flex-row items-center justify-center lg:gap-8 xl:gap-12 space-y-8 lg:space-y-0 min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] w-full ${
+                    index % 2 === 0 ? '' : 'flex-col-reverse lg:flex-row-reverse'
+                  }`}
                   animate={{
                     scale: activeProcess === index ? 1 : 0.95,
                     opacity: 1
@@ -229,9 +229,9 @@ export default function Process({ step }: { step: string }){
                   transition={{ duration: 0.5 }}
                 >
                   {/* Contenu texte */}
-                  <div className="flex flex-col gap-3 sm:gap-4 lg:gap-5 text-center lg:text-left order-2 lg:order-1">
+                  <div className="flex flex-col gap-3 sm:gap-4 lg:gap-5 text-center lg:text-left order-2 lg:order-1 w-full lg:w-1/2 px-4 sm:px-6 lg:px-0">
                     <motion.p 
-                      className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-outfit text-primary-gradient max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+                      className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-outfit text-primary-gradient w-full break-words"
                       animate={{
                         y: activeProcess === index ? 0 : 20,
                         opacity: 1
@@ -241,7 +241,7 @@ export default function Process({ step }: { step: string }){
                       {item.title}
                     </motion.p>
                     <motion.p 
-                      className="text-[#9FA2A7] font-medium text-sm sm:text-base lg:text-lg font-outfit transition-opacity max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl tracking-wide px-4 sm:px-0"
+                      className="text-[#9FA2A7] font-medium text-sm sm:text-base lg:text-lg font-outfit transition-opacity w-full tracking-wide break-words"
                       animate={{
                         y: activeProcess === index ? 0 : 20,
                         opacity: 1
@@ -254,7 +254,7 @@ export default function Process({ step }: { step: string }){
 
                   {/* Image */}
                   <motion.div
-                    className="flex-shrink-0 order-1 lg:order-2"
+                    className="flex-shrink-0 order-1 lg:order-2 w-full lg:w-1/2 flex justify-center"
                     animate={{
                       scale: activeProcess === index ? 1 : 0.9,
                       opacity: 1
@@ -264,7 +264,7 @@ export default function Process({ step }: { step: string }){
                     <Image
                       src={item.image}
                       alt={`step-${item.id}`}
-                      className='w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto'
+                      className='w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto max-w-full'
                       priority={index === 0}
                     />
                   </motion.div>
@@ -272,10 +272,10 @@ export default function Process({ step }: { step: string }){
               ))}
               
               {/* Bouton CTA */}
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start w-full px-4 sm:px-6 lg:px-0">
                 <Link href={'/Devis'}>
                   <motion.button 
-                    className="bg-[#0A60AD] cursor-pointer hover:bg-blue-700 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 md:px-10 lg:px-12 rounded-4xl duration-200 text-sm sm:text-base font-outfit shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
+                    className="bg-[#0A60AD] cursor-pointer hover:bg-blue-700 text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 md:px-10 lg:px-12 rounded-4xl duration-200 text-sm sm:text-base font-outfit shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all whitespace-nowrap"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

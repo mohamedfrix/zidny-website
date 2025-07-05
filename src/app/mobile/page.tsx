@@ -48,7 +48,7 @@ function MobileDepartment() {
     }
 
     const [xDimension, setXDimension] = useState(0);
-        console.log(xDimension)
+     console.log(xDimension)
 
 
     useEffect(() => {
@@ -56,6 +56,7 @@ function MobileDepartment() {
 
     const handleResize = () => {
         setXDimension(window.innerWidth <= 768 ? 10 : 10);
+
     };
 
     window.addEventListener("resize", handleResize);

@@ -47,8 +47,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex  justify-center h-3/4  px-8 lg:px-12 xl:px-16">
-        <div className="flex flex-col justify-center text-center gap-y-1 sm:gap-y-0 max-w-[100%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[80%] mt-20 sm:mt-0">
+      <div className="relative z-10 flex  justify-center sm:h-3/4  px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col justify-center text-center  sm:gap-y-0 max-w-[100%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[80%] mt-14 sm:mt-0">
           <p className="text-[#2AA4E7] md:text-white font-black font-outfit text-[42px] sm:text-[52px] lg:text-[80px]">
             {t("heroSection.title1")}
           </p>

@@ -20,22 +20,30 @@
       {
         "id": 1,
         "name": "WebDev",
-        "description": "Sites web, maintenance, solides et efficaces."
+        "description": "Sites web, maintenance, solides et efficaces.",
+        "Link" : "/web"
+
       },
       {
         "id": 2,
         "name": "Mobile Dev",
-        "description": "Apps pros, sur-mesure, prêtes à scaler."
+        "description": "Apps pros, sur-mesure, prêtes à scaler.",
+        "Link" : "/mobile"
+
       },
       {
         "id": 3,
         "name": "Design",
-        "description": "UI/UX, branding, réseaux  sociaux..."
+        "description": "UI/UX, branding, réseaux  sociaux...",
+        "Link" : "/design"
+
       },
       {
         "id": 4,
         "name": "Filming&Editing",
-        "description": "Tournage, montage, motion... Des visuels qui frappent."
+        "description": "Tournage, montage, motion... Des visuels qui frappent.",
+        "Link" : "/filming-editing"
+
       }
     ]
   },
@@ -123,7 +131,7 @@
 
   },
   "footer": {
-    "title" :"Avec Zidny, même les plus petits détails comptent ",
+    "title" :"Avec Zidny, on digitalise même ta grand-mère ",
     "description" : "Avec Zidny, vous pouvez créer tout ce dont votre marque a besoin pour grandir , depuis votre lancement jusqu'a votre succes",
     "slogan": "Votre projet. Notre mission. Nzidek ?",
     "instagram": "Suivez-nous pour rester à jour !",

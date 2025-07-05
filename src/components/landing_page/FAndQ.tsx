@@ -1,7 +1,6 @@
+"use client";
 
-'use client';
-
-import React from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { useLanguage } from "@/hooks/useLanguage";
 import { Plus, Minus } from 'lucide-react';
 import {
@@ -20,28 +19,62 @@ interface FAndQProps {
   footerRef: React.RefObject<HTMLElement | null>;
 }
 
+// Fonction debounce pour optimiser les performances - with proper typing
+const debounce = <T extends unknown[]>(
+  func: (...args: T) => void, 
+  wait: number
+): ((...args: T) => void) => {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: T) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 export default function FAndQ({ footerRef }: FAndQProps) {
     const { t } = useLanguage();
-    console.log('hello\n\n')
-    const handleAccordionChange = () => {
-  if (!footerRef.current) return;
-    console.log('world\t')
-  // Alternative reliable selector approach
-  let totalHeight = 0;
-  
-  document.querySelectorAll('.accordion-item').forEach(item => {
-    const trigger = item.querySelector('[data-state]');
-    if (trigger?.getAttribute('data-state') === 'open') {
-      const content = item.querySelector('.accordion-content');
-      if (content) {
-        totalHeight += content.scrollHeight + 16; // Add margin
-      }
-    }
-  });
+    const [openItems, setOpenItems] = useState<Set<string>>(new Set());
+    const accordionRef = useRef<HTMLDivElement>(null);
+    
+    // Fonction optimisée pour calculer la hauteur
+    const calculateFooterOffset = useCallback(() => {
+        if (!footerRef.current || !accordionRef.current) return;
+        
+        requestAnimationFrame(() => {
+            let totalHeight = 0;
+            
+            // Utiliser une approche plus efficace
+            const openAccordionItems = accordionRef.current?.querySelectorAll('[data-state="open"]');
+            
+            openAccordionItems?.forEach(trigger => {
+                const accordionItem = trigger.closest('.accordion-item');
+                const content = accordionItem?.querySelector('.accordion-content');
+                if (content) {
+                    totalHeight += content.scrollHeight + 16; // Add margin
+                }
+            });
 
-  footerRef.current.style.transform = `translateY(${10}px)`;
-  console.log('Footer transform applied:', totalHeight);
-};
+            if (footerRef.current) {
+                footerRef.current.style.transform = `translateY(${Math.max(totalHeight, 10)}px)`;
+            }
+        });
+    }, [footerRef]);
+
+    // Debouncer la fonction pour éviter les calculs répétitifs
+    const debouncedCalculateFooterOffset = useCallback(
+        debounce(calculateFooterOffset, 150),
+        [calculateFooterOffset]
+    );
+
+    // Gérer les changements d'état de l'accordion
+    const handleAccordionChange = useCallback((values: string[]) => {
+        setOpenItems(new Set(values));
+        debouncedCalculateFooterOffset();
+    }, [debouncedCalculateFooterOffset]);
 
     // FAQ questions - you can move this to translations later if needed
     const faqQuestions: FAQItem[] = [
@@ -63,7 +96,6 @@ export default function FAndQ({ footerRef }: FAndQProps) {
         }
     ];
 
-
     return (
         <div className="w-full mt-20 px-5 py-20">
             <div className="w-full flex flex-col items-center gap-y-6 lg:gap-y-12">
@@ -79,29 +111,48 @@ export default function FAndQ({ footerRef }: FAndQProps) {
 
                 {/* FAQ Accordion */}
                 <div className="w-full max-w-4xl px-4">
-                    <Accordion type="multiple" className="w-full">
-                        {faqQuestions.map((item, index) => (
-                            <AccordionItem 
-                                key={index} 
-                                value={`item-${index}`}
-                                className="border-b-2 border-[#2AA4E7] last:border-b-0 py-2"
-                            >
-                                <AccordionTrigger className="faq-question text-left hover:no-underline py-6 px-0 [&[data-state=open]]:text-[#2AA4E7] [&[data-state=closed]]:text-neutral-gray-2 text-lg font-semibold [&>svg]:hidden group"
-                                    onClick={() => handleAccordionChange()}
+                    <Accordion 
+                        type="multiple" 
+                        className="w-full"
+                        ref={accordionRef}
+                        onValueChange={handleAccordionChange}
+                    >
+                        {faqQuestions.map((item, index) => {
+                            const itemValue = `item-${index}`;
+                            const isOpen = openItems.has(itemValue);
+                            
+                            return (
+                                <AccordionItem 
+                                    key={index} 
+                                    value={itemValue}
+                                    className="accordion-item border-b-2 border-[#2AA4E7] last:border-b-0 py-2"
                                 >
-                                    <div className="flex items-center justify-between w-full">
-                                        <span>{item.question}</span>
-                                        <div className="flex-shrink-0 ml-4">
-                                            <Plus className="w-6 h-6 text-[#2AA4E7] group-data-[state=open]:hidden" />
-                                            <Minus className="w-6 h-6 text-[#2AA4E7] hidden group-data-[state=open]:block" />
+                                    <AccordionTrigger className="faq-question text-left hover:no-underline py-6 px-0 text-lg font-semibold [&>svg]:hidden group transition-colors duration-200 ease-in-out"
+                                        style={{ 
+                                            color: isOpen ? '#2AA4E7' : 'var(--neutral-gray-2, #6B7280)',
+                                            willChange: 'color'
+                                        }}
+                                    >
+                                        <div className="flex items-center justify-between w-full">
+                                            <span>{item.question}</span>
+                                            <div className="flex-shrink-0 ml-4 transition-transform duration-200 ease-in-out" style={{ willChange: 'transform' }}>
+                                                {isOpen ? (
+                                                    <Minus className="w-6 h-6 text-[#2AA4E7]" />
+                                                ) : (
+                                                    <Plus className="w-6 h-6 text-[#2AA4E7]" />
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="pb-6 pt-2 px-0 text-base leading-relaxed text-gray-600">
-                                    {item.answer}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
+                                    </AccordionTrigger>
+                                    <AccordionContent 
+                                        className="accordion-content pb-6 pt-2 px-0 text-base leading-relaxed text-gray-600 transition-all duration-300 ease-in-out"
+                                        style={{ willChange: 'height' }}
+                                    >
+                                        {item.answer}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            );
+                        })}
                     </Accordion>
                 </div>
             </div>

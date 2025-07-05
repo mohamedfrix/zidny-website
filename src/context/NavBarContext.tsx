@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext } from "react";
 
 interface NavBarContextType {
     open: boolean;
@@ -20,9 +20,7 @@ export function NavBarProvider({ children }: NavBarProviderProps) {
         setOpen((prev) => !prev);
     };
 
-    useEffect(() => {
-        console.log("NavBar is now", open ? "open" : "closed");
-    }, [open])
+  
 
     return (
         <NavBarContext.Provider value={{ open, toggleNavBar }}>

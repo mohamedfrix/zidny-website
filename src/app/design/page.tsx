@@ -49,11 +49,14 @@ function DesignDepartment() {
 
     const [xDimension, setXDimension] = useState(0);
     console.log(xDimension)
+
     useEffect(() => {
     if (typeof window === "undefined") return;
 
+
     const handleResize = () => {
         setXDimension(window.innerWidth <= 768 ? 10 : 10);
+        
     };
 
     window.addEventListener("resize", handleResize);

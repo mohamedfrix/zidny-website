@@ -11,6 +11,7 @@ import services_01 from "@/assets/images/services_01.svg";
 import services_02 from "@/assets/images/services_02.svg";
 import services_04 from "@/assets/images/services_04.svg";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 const services : {id : number}[] = [
     {
@@ -89,7 +90,8 @@ function ServicesSection () {
                         {
                             services.map((service, index) => (
                                 <AspectRatio key={index} ratio={ratio} className="w-full maw-w-[700px] overflow-hidden">
-                                    <div className={`relative w-full h-full rounded-2xl ${index == 3 ? "bg-[#2AA4E7]" : ""}`}>
+                                    <div className={`relative w-full h-full rounded-2xl  ${index == 3 ? "bg-[#2AA4E7]" : ""}`}>
+                                        <Link href={t(`services.servicesList.${index}.Link`)} >
                                         <Image 
                                             src={servicesImages[index]} 
                                             alt="Background" 
@@ -97,24 +99,25 @@ function ServicesSection () {
                                             className="object-cover rounded-2xl"
                                         />
                                         
-                                        <div className="relative z-20 w-full h-full py-4 px-4 sm:px-8 sm:py-10 flex flex-col justify-between">
-                                            <div className="flex flex-col gap-2">
-                                                <p className="text-white font-bold text-[18px] sm:text-[32px] font-outfit">
-                                                    {t(`services.servicesList.${index}.name`)}
-                                                </p>
-                                                <p className="text-white font-medium text-[11px] sm:text-[16px] font-outfit">
-                                                    {t(`services.servicesList.${index}.description`)}
-                                                </p>
-                                            </div>
-                                            
-                                            <div className="w-full justify-self-end self-end row-start-1 col-start-1 z-0">
-                                                <Image 
-                                                    src={images[index]} 
-                                                    alt="Service Image" 
-                                                    className="object-contain translate-x-[50px] translate-y-[50px]"
-                                                />
-                                            </div>
+                                       <div className="relative z-20 w-full h-full pt-4 sm:pb-4 px-4 sm:px-8 sm:py-10 flex flex-col justify-between">
+                                        <div className="flex flex-col gap-2">
+                                            <p className="text-white font-bold text-[18px] sm:text-[32px] font-outfit">
+                                                {t(`services.servicesList.${index}.name`)}
+                                            </p>
+                                            <p className="text-white font-medium text-[11px] sm:text-[16px] font-outfit">
+                                                {t(`services.servicesList.${index}.description`)}
+                                            </p>
                                         </div>
+                                        
+                                        <div className="w-full row-start-1 col-start-1 z-0 flex justify-center items-center sm:block">
+                                            <Image 
+                                                src={images[index]} 
+                                                alt="Service Image" 
+                                                className="object-contain sm:translate-x-[40px]  sm:translate-y-[50px]"
+                                            />
+                                        </div>
+                                    </div>
+                                        </Link>
                                     </div>
                                 </AspectRatio>
                             ))
