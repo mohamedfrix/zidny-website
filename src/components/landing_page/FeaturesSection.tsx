@@ -30,7 +30,7 @@ function FeaturesSection () {
                     <div className={`w-full max-w-[90%] md:hidden flex flex-col gap-4`}>
                         <div className={`w-full h-[220px] bg-card-1 rounded-[16px] overflow-hidden relative `}>
                             <Image src={feature_1} alt="Feature Image" className={`w-full h-full object-cover`} />
-                            <div className={`absolute inset-0 flex flex-col   px-4 py-4 gap-y-1 bg-black/20`}>
+                            <div className={`absolute inset-0 flex flex-col   px-4 py-1  bg-black/20`}>
                                 <p className={`text-white text-2xl font-bold  font-outfit md:justify-center md:text-center`}>{t('features.featuresList.0.title')}</p>
                                 <p className={`text-white text-[12px] font-outfit md:text-center leading-tight w-32 font-semibold`}>{t('features.featuresList.0.description')}</p>
                             </div>
@@ -65,15 +65,15 @@ function FeaturesSection () {
 
                         <div className={`w-full h-[200px] bg-card-4 rounded-[16px] overflow-hidden relative`}>
                             <Image src={feature_5} alt="Feature Image" className={`w-full h-full object-cover`} />
-                            <div className={`absolute inset-0 flex flex-col justify-start px-4 py-6 gap-y-1 bg-gradient-to-b from-white/80 to-transparent`}>
+                            <div className={`absolute inset-0 flex flex-col justify-start px-4  gap-y-1 bg-gradient-to-b from-white/80 to-transparent`}>
                                 <p className={`text-[#0C224B] text-2xl font-bold font-outfit`}>{t('features.featuresList.4.title')}</p>
-                                <p className={`text-neutral-gray-2 font-bold  text-[14px] w-60 sm:text-[12px] font-outfit leading-tight`}>{t('features.featuresList.4.description')}</p>
+                                <p className={`text-neutral-gray-2 font-bold  text-[13px] w-60 sm:text-[12px] font-outfit leading-tight`}>{t('features.featuresList.4.description')}</p>
                             </div>
                         </div>
 
                         <div className={`w-full h-[200px] bg-card-3 rounded-[16px] overflow-hidden relative`}>
                             <Image src={feature_6} alt="Feature Image" className={`w-full h-full object-cover`} />
-                            <div className={`absolute inset-0 flex flex-col justify-between md:justify-end px-4 py-6 gap-y-1 bg-gradient-to-t from-white/80 to-transparent`}>
+                            <div className={`absolute inset-0 flex flex-col justify-between md:justify-end px-4 mt-16 gap-y-1 bg-gradient-to-t from-white/80 to-transparent`}>
                             <div className="md:hidden"></div>
                             <div >
                                 <p className={`text-[#0C224B]  text-2xl font-bold font-outfit `}>{t('features.featuresList.5.title')}</p>

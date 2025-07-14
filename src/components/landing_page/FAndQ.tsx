@@ -16,65 +16,27 @@ interface FAQItem {
 }
 
 interface FAndQProps {
-  footerRef: React.RefObject<HTMLElement | null>;
+  footerRef?: React.RefObject<HTMLElement | null>;
 }
-
-// Fonction debounce pour optimiser les performances - with proper typing
-const debounce = <T extends unknown[]>(
-  func: (...args: T) => void, 
-  wait: number
-): ((...args: T) => void) => {
-  let timeout: NodeJS.Timeout;
-  return function executedFunction(...args: T) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
 
 export default function FAndQ({ footerRef }: FAndQProps) {
     const { t } = useLanguage();
     const [openItems, setOpenItems] = useState<Set<string>>(new Set());
     const accordionRef = useRef<HTMLDivElement>(null);
-    
-    // Fonction optimisée pour calculer la hauteur
-    const calculateFooterOffset = useCallback(() => {
-        if (!footerRef.current || !accordionRef.current) return;
-        
-        requestAnimationFrame(() => {
-            let totalHeight = 0;
-            
-            // Utiliser une approche plus efficace
-            const openAccordionItems = accordionRef.current?.querySelectorAll('[data-state="open"]');
-            
-            openAccordionItems?.forEach(trigger => {
-                const accordionItem = trigger.closest('.accordion-item');
-                const content = accordionItem?.querySelector('.accordion-content');
-                if (content) {
-                    totalHeight += content.scrollHeight + 16; // Add margin
-                }
-            });
 
-            if (footerRef.current) {
-                footerRef.current.style.transform = `translateY(${Math.max(totalHeight, 10)}px)`;
-            }
-        });
+    // Éviter l'erreur de variable non utilisée
+    React.useEffect(() => {
+        // footerRef est disponible si nécessaire pour une utilisation future
+        if (footerRef?.current) {
+            // Logique future si nécessaire
+        }
     }, [footerRef]);
-
-    // Debouncer la fonction pour éviter les calculs répétitifs
-    const debouncedCalculateFooterOffset = useCallback(
-        debounce(calculateFooterOffset, 150),
-        [calculateFooterOffset]
-    );
 
     // Gérer les changements d'état de l'accordion
     const handleAccordionChange = useCallback((values: string[]) => {
         setOpenItems(new Set(values));
-        debouncedCalculateFooterOffset();
-    }, [debouncedCalculateFooterOffset]);
+        // Removed the footer offset calculation that was causing the white space
+    }, []);
 
     // FAQ questions - you can move this to translations later if needed
     const faqQuestions: FAQItem[] = [

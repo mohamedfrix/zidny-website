@@ -13,6 +13,7 @@ import services_04 from "@/assets/images/services_04.svg";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
+
 const services : {id : number}[] = [
     {
         id: 1,
@@ -48,45 +49,49 @@ function ServicesSection () {
     const { t } = useLanguage();
 
     // State for responsive card width
-        const [ratio, setRatio] = useState(0.8); // Default for desktop
-    
-        // Function to calculate card width based on screen size
-        const calculateCardWidth = () => {
-            const width = window.innerWidth;
-            if (width < 450) {
-                return 0.8;
-            }else {
-                return 1;
-            }
-        };
-    
-        // Effect to set initial card width and listen for window resize
-        useEffect(() => {
-            // Set initial card width
+    const [ratio, setRatio] = useState(0.8); // Default for desktop
+
+    // Function to calculate card width based on screen size
+    const calculateCardWidth = () => {
+        const width = window.innerWidth;
+        if (width < 450) {
+            return 0.8;
+        }else {
+            return 1;
+        }
+    };
+
+    // Effect to set initial card width and listen for window resize
+    useEffect(() => {
+        // Set initial card width
+        setRatio(calculateCardWidth());
+
+        // Add resize event listener
+        const handleResize = () => {
             setRatio(calculateCardWidth());
-    
-            // Add resize event listener
-            const handleResize = () => {
-                setRatio(calculateCardWidth());
-            };
-    
-            window.addEventListener('resize', handleResize);
-    
-            // Cleanup event listener on component unmount
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-        }, []);
-    
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <>
+                    
             <div className={`w-full flex justify-center`} style={{ backgroundImage: `url(${images[1]})` }}>
-                <div className={`w-full md:max-w-[700px] lg:max-w-[900px] grid grid-rows-[auto_auto_auto] grid-cols-1 justify-items-center gap-y-3 py-12 px-4`}>
+                <div className={`w-full md:max-w-[700px] lg:max-w-[900px] grid grid-rows-[auto_auto_auto_auto] grid-cols-1 justify-items-center gap-y-3 py-12 px-4`}>
                     <p className={`text-primary-gradient row-start-1 font-bold text-[48px] md:text-[64px] lg:text-[72px] text-center`}>{t('services.title')}</p>
                     <p className={`text-[14px] row-start-2 md:text-[16px] lg:font-medium lg:text-[18px] text-tertiary text-center max-w-[95%]`}>{t('services.description')}</p>
-
-                    <div className={`w-full lg:max-w-[700px] row-start-3 grid grid-rows-2 grid-cols-2 gap-x-2 gap-y-2 mt-3`}>
+                    
+                    {/* Composant Spline avec conteneur dimensionné */}
+                    
+                    
+                    {/* Grille des services maintenant en row-start-4 */}
+                    <div className={`w-full lg:max-w-[700px] row-start-4 grid grid-rows-2 grid-cols-2 gap-x-2 gap-y-2 mt-3`}>
                         {
                             services.map((service, index) => (
                                 <AspectRatio key={index} ratio={ratio} className="w-full maw-w-[700px] overflow-hidden">

@@ -1,6 +1,6 @@
 {
   "aboutUs": {
-    "title": "About Us",
+    "title": "A propos de nous",
     "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse. Nos projets ne sont pas seulement esthétiques : ils racontent, ils provoquent, ils engagent. On allie stratégie et émotion pour créer du vrai impact. Zidny, c’est ce qui se passe quand les bonnes idées rencontrent les bonnes personnes."
   },
 
@@ -49,7 +49,7 @@
   },
 
   "features" : {
-    "title" : "Features",
+    "title" : "Nos atouts",
     "description" : "Chez Zidny, nos valeurs ne sont pas de simples mots. Elles sont visibles dans chaque détail, chaque livrable, chaque échange.",
     "featuresList" : [
       {
@@ -85,8 +85,8 @@
   },
 
   "faq": {
-    "title": "Frequently Asked Questions",
-    "description": "Find answers to the most common questions about our services and processes.",
+    "title": "Les questions les plus posées",
+    "description": "Toutes les réponses aux questions fréquentes sur nos services et notre manière de travailler.",
     "questions": [
       {
         "question": "Puis-je commander un seul service ?  ",

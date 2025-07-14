@@ -23,11 +23,13 @@ export default function NavBar() {
                 
                 {/* Contenu par-dessus */}
                 <div className="relative z-10 w-full flex justify-between items-center">
-                    <Image 
+                                        <Image 
+                    
                         src={logo} 
                         alt="Logo" 
                         className="w-[120px] sm:w-[160px] lg:w-[200px]" 
                     />
+                    
                     <div className="flex items-center gap-x-6 sm:gap-x-12 lg:gap-x-20">
                         <LanguageSwitcher />
                         <Image 

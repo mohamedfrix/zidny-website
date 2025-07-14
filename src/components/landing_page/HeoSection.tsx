@@ -1,6 +1,5 @@
 import { useLanguage } from "@/hooks/useLanguage";
 import Link from "next/link";
-
 export default function HeroSection() {
   const { t } = useLanguage();
 

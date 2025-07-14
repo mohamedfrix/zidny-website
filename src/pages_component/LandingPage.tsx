@@ -33,18 +33,29 @@ function LandingPage() {
 
     const navigateGmail = () => {
         navigator.push("mailto:contact@zidnyagency.com");
+        toggleNavBar(); // Ferme le menu
     }
 
     const navigateLinkedIn = () => {
         navigator.push("https://www.linkedin.com/in/zidny-agency/");
+        toggleNavBar(); // Ferme le menu
     }
 
     const navigateInstagram = () => {
         navigator.push("https://www.instagram.com/zidny.agency/");
+        toggleNavBar(); // Ferme le menu
     }
 
     const navigateTikTok = () => {
         navigator.push("https://www.tiktok.com/@zidny.agency");
+        toggleNavBar(); // Ferme le menu
+    }
+
+    // Fonction pour gérer les clics sur les liens de navigation
+    const handleLinkClick = () => {
+        if (open) {
+            toggleNavBar(); // Ferme le menu si il est ouvert
+        }
     }
 
     const [xDimension, setXDimension] = useState(0);
@@ -105,14 +116,14 @@ function LandingPage() {
                     <div className={`flex flex-col gap-y-10 max-w-[30%] lg:mr-14 xl:mr-22`}>
                         <div className={`flex flex-col lg:flex-row gap-x-6 md:gap-x-10 lg:gap-x-14 gap-y-34 w-full `}>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
-                                <Link href={"/"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.homescreen")}</p></Link>
-                                <Link href={"/Devis"}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.Devis")}</p></Link>
+                                <Link href={"/"} onClick={handleLinkClick}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.homescreen")}</p></Link>
+                                <Link href={"/Devis"} onClick={handleLinkClick}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.Devis")}</p></Link>
                             </div>
                             <div className={`flex flex-col gap-y-4 md:gap-y-6`}>
-                                <Link href="/filming-editing"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.filmingDepartment")}</p></Link>
-                                <Link href="/design"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.designDepartment")}</p></Link>
-                                <Link href="/web"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.webDepartment")}</p></Link>
-                                <Link href="/mobile"><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.mobileDepartment")}</p></Link>
+                                <Link href="/filming-editing" onClick={handleLinkClick}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.filmingDepartment")}</p></Link>
+                                <Link href="/design" onClick={handleLinkClick}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.designDepartment")}</p></Link>
+                                <Link href="/web" onClick={handleLinkClick}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.webDepartment")}</p></Link>
+                                <Link href="/mobile" onClick={handleLinkClick}><p className={`text-white hover:text-[#2AA4E7] cursor-pointer font-semibold text-[14px] md:text-[18px] lg:text-[22px] font-outfit`}>{t("navbar.mobileDepartment")}</p></Link>
                             </div>
                         </div>
 
