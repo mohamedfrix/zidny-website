@@ -1,9 +1,17 @@
-# *
+# Robots.txt pour Zidny Agency
+# Autorise tous les robots sur toutes les pages
+
+# Règles pour tous les robots
 User-agent: *
 Allow: /
 
-# Host
-Host: http://localhost:3000
+# Bloquer l'accès aux fichiers sensibles (optionnel)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
-# Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
+# Indiquer l'emplacement du sitemap
+Sitemap: https://www.zidnyagency.com/sitemap.xml
+
+# Indiquer le domaine principal
+Host: https://www.zidnyagency.com
