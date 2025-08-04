@@ -6,7 +6,6 @@ import { getServerLanguage } from "@/lib/server-cookies";
 import { NavBarProvider } from "@/context/NavBarContext";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from "next/script";
-import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,9 +48,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "@/assets/images/logo_Z.svg",
-    shortcut: "@/assets/images/logo_Z.svg",
-    apple: "@/assets/images/logo_Z.svg",
+    icon: "/images/logo_Z.svg",
+    shortcut: "/images/logo_Z.svg",
+    apple: "/images/logo_Z.svg",
   },
   robots: {
     index: true,
@@ -97,7 +96,7 @@ export default async function RootLayout({
         
         {/* Meta Pixel NoScript */}
         <noscript>
-          <Image
+          <img
             height="1"
             width="1"
             style={{ display: 'none' }}

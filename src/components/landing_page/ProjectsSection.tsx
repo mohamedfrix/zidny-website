@@ -144,13 +144,13 @@ function ProjectsSection() {
     return (
         <>
             <div className={`w-full min-h-[70vh] mt-20 lg:mt-20 justify-center`}>
-                <div className={`w-full flex flex-col items-center gap-y-10`}>
+                <div className={`w-full flex flex-col items-center gap-0 md:gap-y-10`}>
                     <div className={`w-full h-min grid grid-rows-[auto_auto_auto] grid-cols-1 gap-y-2 justify-items-center`}>
                         <p className={`text-primary-gradient row-start-1 font-bold text-[48px] md:text-[64px] lg:text-[72px] text-center`}>Projects Section</p>
                         <p className={`max-w-[90%] md:max-w-[70%] lg:max-w-[50%] text-[14px] row-start-2 md:text-[16px] lg:font-medium lg:text-[18px] text-tertiary text-center`}></p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-[35%_65%] lg:grid-cols-[30%_70%] sm:gap-8 md:gap-20 px-4 md:px-8 lg:px-0 items-start">
+                    <div className="grid grid-cols-1 md:grid-cols-[35%_65%] lg:grid-cols-[30%_70%] gap-2 sm:gap-8 md:gap-20 px-4 md:px-8 lg:px-0 items-start">
                         <div className="flex items-center justify-center md:justify-start min-h-[120px] md:min-h-[100px]">
                             <p className="text-primary-gradient text-3xl lg:text-4xl max-w-xl font-semibold text-center md:text-left leading-tight">
                                 {getCurrentProjectName()}
