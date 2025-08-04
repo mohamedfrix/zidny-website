@@ -23,6 +23,7 @@ import tiktok_icon from "@/assets/images/tiktok.svg";
 import Footer from "@/components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import ProjectsSection from "@/components/landing_page/ProjectsSection";
 
 
 function LandingPage() {
@@ -105,6 +106,7 @@ function LandingPage() {
                     <HeroSection />
                     <AboutUs />
                     <ServicesSection />
+                    <ProjectsSection/>
                     <FeaturesSection />
                     {/* <ReviewsSection /> */}
                     <FAndQ footerRef={footerRef} />

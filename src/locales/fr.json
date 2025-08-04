@@ -323,7 +323,16 @@
         "description": "Vous récupérez vos vidéos prêtes à diffuser (Reels, YouTube, TikTok…). On vous accompagne pour maximiser la portée. Que ce soit pour un lancement ou une campagne longue durée, vous êtes prêt à marquer les esprits."
       }
     }
-  }
+  },
+
+  "Projects": [
+    {
+      "description": "Nous avons aidé Elheyba, un bureau d’architecture moderne, à fluidifier la prise en charge de ses clients et à transformer ses opérations quotidiennes en un flux digital plus intelligent. Les clients peuvent désormais demander des devis via un formulaire détaillé et guidé, qui collecte dès le départ les bonnes informations. Côté architectes, un tableau de bord en temps réel leur permet de gérer les demandes entrantes, suivre l’avancement des projets et présenter leur portfolio, le tout au même endroit.C’est le genre d’outil que toute équipe d’architecture aimerait avoir"
+    },
+    {
+      "description": "Nous avons créé une plateforme digitale pour l’incubateur d’Algérie Télécom, qui sert à la fois de portail de candidature et d’espace d’accompagnement virtuel.Elle permet aux étudiants et porteurs de projets de postuler facilement à des programmes d’incubation, des stages et des opportunités de PFE, tout en offrant à l’équipe un système structuré pour gérer, évaluer et accompagner les candidats.La plateforme agit comme une extension intelligente, rapide et toujours accessible de l’incubateur lui-même."
+    }
+  ]
 }
 
 

@@ -1,9 +1,12 @@
 'use client'
 
 import Image from "next/image";
-import Project1 from "@/assets/images/Projects/Project1.svg"
+import Project2 from "@/assets/images/Projects/Project2.jpg"
+import Project3 from "@/assets/images/Projects/Project3.jpg"
+
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from "@/hooks/useLanguage";
 
 function useWindowSize() {
     const [size, setSize] = useState({ width: 0, height: 0 });
@@ -39,26 +42,22 @@ function ProjectsSection() {
 
     // Images pour la navigation
     const originalImages = [
-        {
-            nom: "Architecture Project",
-            src: Project1,
-            alt: "Project 1",
-            title: "Project Preview",
-            description: "Architecture Project est un projet tres interessant Scelerisque et at pretium vulputate mi volutpat mattis interdum. Massa malesuada non arcu venenatis. Elit mauris euismod etiam et rutrum senectus cursus consequat. Magna in orci amet iculis luctus. Mi neque eget nascetur commodo ut malesuada n"
-        },
+       
         {
             nom: "IncubAT",
-            src: Project1,
+            src: Project3,
             alt: "Project 2",
             title: "Project Preview",
-            description: "IncubAT est un projet tres interessant Scelerisque et at pretium vulputate mi volutpat mattis interdum. Massa malesuada non arcu venenatis. Elit mauris euismod etiam et rutrum senectus cursus consequat. Magna in orci amet iculis luctus. Mi neque eget nascetur commodo ut malesuada n"
+            description: 'Projects.1.description',
+            lien : "https://drive.google.com/file/d/1gcdL8mrMuwEEqywP4AWvkf3SmLOEXder/view?usp=drive_link"
         },
         {
-            nom: "Sauvini",
-            src: Project1,
+            nom: "Bureau El Heyba",
+            src: Project2,
             alt: "Project 3",
             title: "Project Preview",
-            description: "Sauvini Project est un projet tres interessant Scelerisque et at pretium vulputate mi volutpat mattis interdum. Massa malesuada non arcu venenatis. Elit mauris euismod etiam et rutrum senectus cursus consequat. Magna in orci amet iculis luctus. Mi neque eget nascetur commodo ut malesuada n"
+            description: 'Projects.0.description',
+            lien : "https://drive.google.com/file/d/13HP_vhu5PHmcWVkA8Hj6jPAL_GdMwW5s/view?usp=drive_link"
         }
     ];
 
@@ -122,6 +121,7 @@ function ProjectsSection() {
             return originalImages[currentIndex - 1].description;
         }
     };
+    const { t } = useLanguage();
 
     const getCurrentProjectName = () => {
         if (currentIndex === 0) {
@@ -132,7 +132,15 @@ function ProjectsSection() {
             return originalImages[currentIndex - 1].nom;
         }
     };
-
+    const getCurrentProjectLink = () => {
+        if (currentIndex === 0) {
+            return originalImages[originalImages.length - 1].lien;
+        } else if (currentIndex === images.length - 1) {
+            return originalImages[0].lien;
+        } else {
+            return originalImages[currentIndex - 1].lien;
+        }
+    };
     return (
         <>
             <div className={`w-full min-h-[70vh] mt-20 lg:mt-20 justify-center`}>
@@ -142,12 +150,16 @@ function ProjectsSection() {
                         <p className={`max-w-[90%] md:max-w-[70%] lg:max-w-[50%] text-[14px] row-start-2 md:text-[16px] lg:font-medium lg:text-[18px] text-tertiary text-center`}></p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-[35%_65%] lg:grid-cols-[30%_70%] gap-3 sm:gap-8 md:gap-16 lg:gap-28 px-4 md:px-8 lg:px-0">
-                        <div>
-                            <p className="text-primary-gradient text-3xl lg:text-4xl max-w-xl font-semibold text-center md:text-left">{getCurrentProjectName()}</p>
+                    <div className="grid grid-cols-1 md:grid-cols-[35%_65%] lg:grid-cols-[30%_70%] sm:gap-8 md:gap-20 px-4 md:px-8 lg:px-0 items-start">
+                        <div className="flex items-center justify-center md:justify-start min-h-[120px] md:min-h-[100px]">
+                            <p className="text-primary-gradient text-3xl lg:text-4xl max-w-xl font-semibold text-center md:text-left leading-tight">
+                                {getCurrentProjectName()}
+                            </p>
                         </div>
-                        <div>
-                            <p className="text-tertiary max-w-2xl text-sm md:text-base lg:text-[15px] text-center md:text-left leading-relaxed">{getCurrentProjectDescription()}</p>
+                        <div className="flex items-center justify-center md:justify-start min-h-[120px] md:min-h-[100px]">
+                            <p className="text-tertiary max-w-2xl text-sm md:text-base lg:text-[15px] text-center md:text-left leading-relaxed">
+                                {t(getCurrentProjectDescription())}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -169,8 +181,10 @@ function ProjectsSection() {
                             const cardHeight = isActive ? 380 : 320;
                             
                             return (
+                                <a key={index} href={getCurrentProjectLink()} target="_blank" >
                                 <div 
-                                    key={index}
+                                
+                                    
                                     className={`relative rounded-2xl border overflow-hidden flex-shrink-0 transition-all duration-700 cursor-pointer ${
                                         isActive 
                                             ? 'opacity-100 ' 
@@ -203,6 +217,7 @@ function ProjectsSection() {
                                         </div>
                                     </div>
                                 </div>
+                                </a>
                             );
                         })}
                     </div>

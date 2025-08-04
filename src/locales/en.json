@@ -321,7 +321,17 @@
             "description" : "Once done, you receive the final videos in all necessary formats (Reels, YouTube, TikTok, widescreen…). We help you publish with confidence, and offer tips for better reach. Whether for launch or long-term campaigns, you’re fully equipped to make an impact."
       } 
   }
-}
+},
+
+  "Projects": [
+    {
+      "description": "We helped Elheyba a modern architecture bureau, streamline their client intake and turn daily operations into a smarter digital flow.Clients can now request quotes through a detailed, guided form that captures the right information from the start. On the other side, architects get a real-time dashboard to manage incoming requests, keep an eye on project progress, and showcase their portfolio all in one place. It is the kind of tool every architecture team wishes they had."
+    },
+    {
+      "description": "We created a digital platform for Algérie Télécom's incubator that serves as both an application portal and a virtual support space. It allows students and project holders to easily apply for incubation, internships, and PFE opportunities, while offering the team a structured system to manage, evaluate, and guide applicants. The platform acts as an extension of the incubator itself smarter, faster, and always accessible."
+    }
+  ]
+
 
 
 }
