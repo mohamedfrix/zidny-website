@@ -49,7 +49,7 @@ function ProjectsSection() {
             alt: "Project 2",
             title: "Project Preview",
             description: 'Projects.1.description',
-            lien : "https://drive.google.com/file/d/1gcdL8mrMuwEEqywP4AWvkf3SmLOEXder/view?usp=drive_link"
+            lien : "https://www.behance.net/gallery/232003713/IncubAT"
         },
         {
             nom: "Bureau El Heyba",
@@ -57,7 +57,7 @@ function ProjectsSection() {
             alt: "Project 3",
             title: "Project Preview",
             description: 'Projects.0.description',
-            lien : "https://drive.google.com/file/d/13HP_vhu5PHmcWVkA8Hj6jPAL_GdMwW5s/view?usp=drive_link"
+            lien : "https://www.behance.net/gallery/232003999/Elheyba-architecture"
         }
     ];
 
