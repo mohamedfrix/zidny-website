@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { formDataDesign, formDataFilmmaking, formDataMobile, formDataWeb, StepsProps } from '@/pages_component/DevisPage';
 import form_icon_1 from '@/assets/images/form_icon_1.svg'
 import Image from 'next/image'
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 
 export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
@@ -157,10 +158,10 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
                        isValidEmail(data.clientEmail) && isValidPhone(data.clientPhone);
 
     return (
-        <div className="w-full mt-10">
+        <div className="w-full mt-5">
             {/* Header */}
             <div>
-                <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Vos informations de contact</h1>
+                <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Vos informations </h1>
                 <p className='text-[#C2C4C7] font-outfit'>Nous avons besoin de ces informations pour vous contacter concernant votre projet</p>
             </div>
 
@@ -330,11 +331,16 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
                     </div>
                 </div>
             </div>
+            <div className='mt-5'>
+                <p className=' text-neutral-gray-2 text-sm flex items-center text-maingrey'><IoMdCheckmarkCircleOutline/>Réponse rapide</p>
+                <p className=' text-neutral-gray-2 text-sm flex items-center'><IoMdCheckmarkCircleOutline/>Devis totalement gratuit</p>
+                <p className=' text-neutral-gray-2 text-sm flex items-center'><IoMdCheckmarkCircleOutline/>100% confidentiel</p>
 
+            </div>
             <button
                 onClick={handleSubmit}
                 disabled={!isFormValid} 
-                className={`w-full mt-8 py-3 px-6 rounded-3xl font-semibold transition-all duration-200 ${
+                className={`w-full mt-1 py-3 px-6 rounded-3xl font-semibold transition-all duration-200 ${
                     isFormValid
                         ? 'bg-[#0A60AD] text-white cursor-pointer hover:bg-[#084d8f]'
                         : 'bg-gray-200 text-neutral-gray-2 cursor-not-allowed'
@@ -342,6 +348,7 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
             >
                 Envoyer ma demande
             </button>
+
         </div>
     );
 }
