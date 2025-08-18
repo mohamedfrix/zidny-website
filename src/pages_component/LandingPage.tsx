@@ -24,7 +24,6 @@ import Footer from "@/components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ProjectsSection from "@/components/landing_page/ProjectsSection";
-import Mobile_Service from "@/components/services/Mobile_Service";
 
 
 function LandingPage() {
@@ -106,7 +105,6 @@ function LandingPage() {
                 <div className={`row-start-1 col-start-1 self-center bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
                     <HeroSection />
                     <AboutUs />
-                    <Mobile_Service />
                     <ServicesSection />
                     <ProjectsSection/>
                     <FeaturesSection />
