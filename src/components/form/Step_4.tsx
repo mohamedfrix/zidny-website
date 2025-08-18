@@ -89,6 +89,13 @@ export default function Step_4({ data, setData, nextStep, previousStep }: StepsP
 
     const handleNext = () => {
         if (data.estimationPrice && data.estimationDuration) {
+              try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step4Visited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
             nextStep();
             console.log("mise a jour", data);
         }

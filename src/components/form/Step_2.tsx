@@ -73,6 +73,13 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if ((designData.designType && designData.designType.length > 0) && designData.projectDescription) {
+                 try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step2DesignVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
             }
         };
@@ -305,6 +312,13 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if ((webData.websiteType && webData.websiteType.length > 0) && webData.projectDescription) {
+                 try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'step2WebVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
             }
         };
@@ -534,6 +548,13 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if (mobileData.applicationPlatform  && mobileData.projectDescription) {
+                 try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step2MobileVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
             }
         };
@@ -889,6 +910,13 @@ export default function Step_2({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if (( filmmakingData.videoType &&  filmmakingData.videoType.length > 0) && filmmakingData.projectDescription) {
+                 try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step2filmmakingVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
             }
         };

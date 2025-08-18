@@ -14,7 +14,7 @@ export default function NavBar() {
     return (
         <>
 
-            <div className="w-full min-h-[50px] px-4 py-4 sm:px-12 flex justify-between items-center sticky top-0 z-50">
+            <div className="w-full min-h-[50px] px-4 py-4 sm:px-12 flex justify-between items-center  top-0 z-50">
                 {/* Couche de fond avec blur - méthode 1 */}
                 <div className="absolute inset-0 bg-gray-200/50 backdrop-blur-md sm:backdrop-blur-lg"></div>
                 

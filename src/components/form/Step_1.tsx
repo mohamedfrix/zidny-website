@@ -25,6 +25,13 @@ export default function Step_1({ data, setData, nextStep }: StepsProps) {
    
     const handleNext = () => {
         if (data.projectType ) {
+              try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step1Visited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
             nextStep();
             console.log("Les données", data)
         }

@@ -7,7 +7,9 @@ interface StepperProps {
 
 const Progress: React.FC<StepperProps> = ({ steps, currentStep }) => {
   return (
-    <div className="flex items-center w-full">
+    <div className="flex items-center justify-center w-full ">
+    <div className={`flex items-center 
+       ${steps.length > 2 ? "w-full" : "justify-center w-2/3"}`}>
       {steps.map((step, index) => {
         const isActive = index + 1 === currentStep;
 
@@ -31,6 +33,7 @@ const Progress: React.FC<StepperProps> = ({ steps, currentStep }) => {
           </React.Fragment>
         );
       })}
+    </div>
     </div>
   );
 };

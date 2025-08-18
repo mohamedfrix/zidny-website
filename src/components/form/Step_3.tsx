@@ -60,6 +60,13 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
                 if (designData.haveInspiration && !designData.inspirationLink) {
                     return;
                 }
+                  try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step3DesignVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
                 console.log("mise a jour", designData);
             }
@@ -259,6 +266,13 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if (webData.functionalities && webData.functionalities.length > 0) {
+                  try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step3WebVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
                 console.log("mise a jour", webData);
             }
@@ -395,6 +409,13 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if (mobileData.functionalities && mobileData.functionalities.length > 0) {
+                  try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step3MobileVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
                 console.log("mise a jour", mobileData);
             }
@@ -505,6 +526,13 @@ export default function Step_3({ data, setData, nextStep, previousStep }: StepsP
 
         const handleNext = () => {
             if (filmmakingData.haveScript !== undefined && filmmakingData.videoDuration) {
+                  try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step3filmmakingVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
                 nextStep();
                 console.log("mise a jour", filmmakingData);
             }

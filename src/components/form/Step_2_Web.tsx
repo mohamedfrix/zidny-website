@@ -1,5 +1,8 @@
+'use client';
 import React, { useState } from 'react';
 import { StepsProps, formDataWeb} from '@/pages_component/DevisPage';
+
+// Déclaration TypeScript pour fbq
 
 
 export default function Step_2({ data, setData, nextStep}: StepsProps) {
@@ -56,21 +59,26 @@ export default function Step_2({ data, setData, nextStep}: StepsProps) {
         const handleNext = () => {
             // Vérification corrigée : s'assurer que le tableau existe ET contient des éléments
             if (webData.websiteType && webData.websiteType.length > 0) {
-                console.log('Passing to next step with websiteType:', webData.websiteType); // Debug log
+                // Vérification plus robuste pour Facebook Pixel
+                try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'WebTypeSubmited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
+                
                 nextStep();
-            } else {
-                console.log('Cannot proceed: websiteType is empty or undefined', webData.websiteType); // Debug log
-            }
+            } 
         };
 
        return (
             <div className="w-full mt-10">
                 <div>
-                    <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Web Services</h1>
-                    <p className='text-[#C2C4C7] font-outfit'>Des informations sur ce que vous voulez ?</p>
+                    <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Créer avec Zidny</h1>
+                    <p className='text-[#C2C4C7] font-outfit'>Réserve ta consultation gratuite dès maintenant sur zidnyagency.com</p>
                 </div>
               
-
                 <div className="space-y-2 mt-8 flex flex-col items-start">
                     <label className="text-neutral-gray-2 text-[16px] font-outfit font-semibold mb-2">
                         Sélectionnez le(s) type(s) de sites web souhaité(s)
@@ -127,7 +135,6 @@ export default function Step_2({ data, setData, nextStep}: StepsProps) {
                         </div>
                     </div>
                 </div>
-
 
                 <button
                     onClick={handleNext}

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 
+
 export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
 
     async function handleSubmit(e: React.FormEvent) {
@@ -79,7 +80,16 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
                 ...specificData
             };
 
-            console.log('Données à envoyer:', finalData);
+          
+                try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'Step5-Submit');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
+                
+
 
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",

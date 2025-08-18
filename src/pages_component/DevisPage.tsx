@@ -14,6 +14,9 @@ import Step_4 from "@/components/form/Step_4"
 import Step_5 from "@/components/form/Step_5"
 import logo from "@/assets/images/logo.svg"
 
+
+
+
 export type ServiceType = '' |'design' | 'web' | 'mobile' | 'filmmaking';
 export type FormDataUnion = formDataDesign | formDataWeb | formDataMobile | formDataFilmmaking | formData;
 
@@ -151,6 +154,14 @@ function DevisPage() {
 
     
      const handleBackToHome = () => {
+         try {
+                    if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
+                        window.fbq('track', 'ThankYouPageVisited');
+                    } 
+                } catch (error) {
+                    console.error('Error tracking Facebook Pixel event:', error);
+                }
+
             router.push('/');
         };
 
