@@ -17,7 +17,6 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
                 name: data.clientName,
                 phone: data.clientPhone,
                 email: data.clientEmail,
-                experience: data.clientAgencyExperience,
                 Duration: data.estimationDuration,
                 Price: data.estimationPrice,
                 Description: data.projectDescription,
@@ -27,8 +26,9 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
 
             // Ajouter les données spécifiques selon le type de projet
             let specificData = {};
-            
-            switch (data.projectType) {
+            const projectType = data.projectType || 'web';
+
+            switch (projectType) {
                 case 'design':
                     const designData = data as formDataDesign;
                     specificData = {
@@ -154,7 +154,7 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
         return /^[0-9+\-\s()]{8,}$/.test(phone);
     };
 
-    const isFormValid = data.clientName && data.clientEmail && data.clientPhone && data.clientAgencyExperience &&
+    const isFormValid = data.clientName && data.clientEmail && data.clientPhone &&
                        isValidEmail(data.clientEmail) && isValidPhone(data.clientPhone);
 
     return (
@@ -248,90 +248,8 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
             </div>
 
             {/* Question sur l'expérience avec une agence digitale */}
-            <div className="space-y-2 flex flex-col items-start">
-                <label className="mb-2 text-neutral-gray-2 text-[16px] font-outfit font-semibold">
-                    Avez-vous déjà travaillé avec une agence digitale ?
-                </label>
-                
-                <div
-                    onClick={() => handleAgencyExperienceChange('good')}
-                    className={`cursor-pointer text-neutral-gray-2 font-outfit font-semibold w-full pl-5 pr-5 py-2 border-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-300 focus:border-transparent ${
-                        data.clientAgencyExperience === 'good'
-                            ? 'border-[#2AA4E7] bg-blue-50'
-                            : 'border-[#E8EBEF] hover:border-gray-300'
-                    }`}
-                >
-                    <div className="flex items-center">
-                        <div className={`w-5 h-5 border-2 rounded-full ${
-                            data.clientAgencyExperience === 'good'
-                                ? 'bg-[#2AA4E7] border-[#2AA4E7]'
-                                : 'border-gray-300'
-                        }`}>
-                            {data.clientAgencyExperience === 'good' && (
-                                <div className="w-full h-full flex items-center justify-center">
-                                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                            )}
-                        </div>
-                        <div className="ml-3">
-                            <h3 className="font-semibold">Oui , et c&apos;était une bonne expérience</h3>
-                        </div>
-                    </div>
-                </div>
 
-                <div
-                    onClick={() => handleAgencyExperienceChange('bad')}
-                    className={`cursor-pointer text-neutral-gray-2 font-outfit font-semibold w-full pl-5 pr-5 py-2 border-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-300 focus:border-transparent ${
-                        data.clientAgencyExperience === 'bad'
-                            ? 'border-[#2AA4E7] bg-blue-50'
-                            : 'border-[#E8EBEF] hover:border-gray-300'
-                    }`}
-                >
-                    <div className="flex items-center">
-                        <div className={`w-5 h-5 border-2 rounded-full ${
-                            data.clientAgencyExperience === 'bad'
-                                ? 'bg-[#2AA4E7] border-[#2AA4E7]'
-                                : 'border-gray-300'
-                        }`}>
-                            {data.clientAgencyExperience === 'bad' && (
-                                <div className="w-full h-full flex items-center justify-center">
-                                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                            )}
-                        </div>
-                        <div className="ml-3">
-                            <h3 className="font-semibold">Oui , mais ce n&apos;était pas aussi bon</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    onClick={() => handleAgencyExperienceChange('no')}
-                    className={`cursor-pointer text-neutral-gray-2 font-outfit font-semibold w-full pl-5 pr-5 py-2 border-2 rounded-3xl focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-300 focus:border-transparent ${
-                        data.clientAgencyExperience === 'no'
-                            ? 'border-[#2AA4E7] bg-blue-50'
-                            : 'border-[#E8EBEF] hover:border-gray-300'
-                    }`}
-                >
-                    <div className="flex items-center">
-                        <div className={`w-5 h-5 border-2 rounded-full ${
-                            data.clientAgencyExperience === 'no'
-                                ? 'bg-[#2AA4E7] border-[#2AA4E7]'
-                                : 'border-gray-300'
-                        }`}>
-                            {data.clientAgencyExperience === 'no' && (
-                                <div className="w-full h-full flex items-center justify-center">
-                                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                                </div>
-                            )}
-                        </div>
-                        <div className="ml-3">
-                            <h3 className="font-semibold">Non</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='mt-5'>
+            <div className='mt-5 sm:flex gap-2'>
                 <p className=' text-neutral-gray-2 text-sm flex items-center text-maingrey'><IoMdCheckmarkCircleOutline/>Réponse rapide</p>
                 <p className=' text-neutral-gray-2 text-sm flex items-center'><IoMdCheckmarkCircleOutline/>Devis totalement gratuit</p>
                 <p className=' text-neutral-gray-2 text-sm flex items-center'><IoMdCheckmarkCircleOutline/>100% confidentiel</p>

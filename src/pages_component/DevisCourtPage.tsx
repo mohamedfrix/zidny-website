@@ -8,6 +8,8 @@ import Image from "next/image";
 import { useState } from "react";
 import Progress from "@/components/form/Progress";
 import Step_1 from "@/components/form/Step_1"
+import Step_2 from "@/components/form/Step_2"
+import Step_2_Web from "@/components/form/Step_2_Web"
 import Step_4 from "@/components/form/Step_4"
 import Step_5 from "@/components/form/Step_5"
 import logo from "@/assets/images/logo.svg"
@@ -51,7 +53,7 @@ export const formInitialData: formData = {
 
 
 
-const steps = [Step_1, Step_4, Step_5];
+const steps = [ Step_2_Web ,Step_5];
 
 function DevisPage() {
     
@@ -105,7 +107,7 @@ function DevisPage() {
                             {/* Contenu du formulaire */}
                             <div className="flex-1 flex flex-col justify-center px-2 sm:px-6 md:px-8">
                                 <div className="space-y-8">
-                                    <Progress steps={["01", "02", "03"]} currentStep={currentStep} />
+                                    <Progress steps={["01", "02"]} currentStep={currentStep} />
                                     <CurrentStepComponent 
                                         data={formData} 
                                         nextStep={nextStep} 

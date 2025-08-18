@@ -12,6 +12,7 @@ import services_02 from "@/assets/images/services_02.svg";
 import services_04 from "@/assets/images/services_04.svg";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 
 const services : {id : number}[] = [
@@ -79,11 +80,21 @@ function ServicesSection () {
         };
     }, []);
 
+// ANIMATIONS PART !!!!! /////////////////////////////////////////////////////////////////////////é
+    const arrowVariables = 
+    {hidden :{pathLength : 0 , fill : 0 },
+     visible1 : {pathLength: 1, fill :" #2AA4E7" , transition : {duration : 4}},
+     visible2 : {pathLength: 1 , fill :" #2AA4E7", transition : {duration : 4}},
+     
+     }
+// ANIMATIONS PART !!!!! /////////////////////////////////////////////////////////////////////////é
+
     return (
         <>
                     
             <div className={`w-full flex justify-center`} style={{ backgroundImage: `url(${images[1]})` }}>
-                <div className={`w-full md:max-w-[700px] lg:max-w-[900px] grid grid-rows-[auto_auto_auto_auto] grid-cols-1 justify-items-center gap-y-3 py-12 px-4`}>
+                
+                    <div className={`w-full md:max-w-[700px] lg:max-w-[900px] grid grid-rows-[auto_auto_auto_auto] grid-cols-1 justify-items-center gap-y-3 py-12 px-4`}>
                     <p className={`text-primary-gradient row-start-1 font-bold text-[48px] md:text-[64px] lg:text-[72px] text-center`}>{t('services.title')}</p>
                     <p className={`text-[14px] row-start-2 md:text-[16px] lg:font-medium lg:text-[18px] text-tertiary text-center max-w-[95%]`}>{t('services.description')}</p>
                     
