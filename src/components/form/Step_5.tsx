@@ -115,13 +115,7 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
     const [email, setEmail] = useState(data.clientEmail || "");
     const [phoneNumber, setPhoneNumber] = useState(data.clientPhone || "");
 
-    const handleAgencyExperienceChange = (experience: string) => {
-        setData(prev => ({
-            ...prev,
-            clientAgencyExperience: experience
-        }));
-    };
-
+    
     const handleFullNameChange = (name: string) => {
         setFullName(name);
         setData(prev => ({

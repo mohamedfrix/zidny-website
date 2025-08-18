@@ -12,7 +12,7 @@ import services_02 from "@/assets/images/services_02.svg";
 import services_04 from "@/assets/images/services_04.svg";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 
 
 const services : {id : number}[] = [
@@ -81,12 +81,12 @@ function ServicesSection () {
     }, []);
 
 // ANIMATIONS PART !!!!! /////////////////////////////////////////////////////////////////////////é
-    const arrowVariables = 
-    {hidden :{pathLength : 0 , fill : 0 },
-     visible1 : {pathLength: 1, fill :" #2AA4E7" , transition : {duration : 4}},
-     visible2 : {pathLength: 1 , fill :" #2AA4E7", transition : {duration : 4}},
+   // const arrowVariables = 
+   // {hidden :{pathLength : 0 , fill : 0 },
+    // visible1 : {pathLength: 1, fill :" #2AA4E7" , transition : {duration : 4}},
+   //  visible2 : {pathLength: 1 , fill :" #2AA4E7", transition : {duration : 4}},
      
-     }
+     //}
 // ANIMATIONS PART !!!!! /////////////////////////////////////////////////////////////////////////é
 
     return (

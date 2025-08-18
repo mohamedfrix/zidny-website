@@ -7,10 +7,7 @@ import arrow from '@/assets/images/arrow.svg'
 import Image from "next/image";
 import { useState } from "react";
 import Progress from "@/components/form/Progress";
-import Step_1 from "@/components/form/Step_1"
-import Step_2 from "@/components/form/Step_2"
 import Step_2_Web from "@/components/form/Step_2_Web"
-import Step_4 from "@/components/form/Step_4"
 import Step_5 from "@/components/form/Step_5"
 import logo from "@/assets/images/logo.svg"
 
