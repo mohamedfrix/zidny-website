@@ -1,15 +1,16 @@
 {
   "aboutUs": {
     "title": "About Us",
-    "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. ",
+    "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse. ",
     "description1" : "Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse.",
     "description2" : "c’est ce qui se passe quand les bonnes idées rencontrent les bonnes personnes.",
     "description3" : "ne sont pas seulement esthétiques : ils racontent, ils provoquent, ils engagent. On allie stratégie et émotion pour créer du vrai impact.  ",
-    "description4" : "Nous osons penser autrement. Qu’il s’agisse de stratégie, de design ou de storytelling, nous repoussons les limites et relevons les défis."
+    "description4" : "Nous osons penser autrement. Qu’il s’agisse de stratégie, de design ou de storytelling, nous repoussons les limites et relevons les défis.",
+    "title2" : "Nos Projets"
   },
 
   "heroSection": {
-    "title1" : "Zidny, Une Signature Digitale",
+    "title1" : "Zidny, Une ",
     "title2" : "signature digitale",
     "description" : "On crée ce qu’on aurait rêvé voir exister Et on le fait bien.",
     "button" : " Commencez dès maintenant ! "

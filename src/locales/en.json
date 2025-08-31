@@ -1,7 +1,7 @@
 {
   "aboutUs": {
     "title": "About Us",
-    "description" : "Zidny is a creative agency powered by a new generation of talent trained in Algeria’s top schools." ,
+    "description" : "Zidny is a creative agency powered by a new generation of talent trained in Algeria’s top schools. We design digital services: design, development, and media — with a fast, consistent, and boldly innovative approach." ,
     "description1": "We design digital services: design, development, and media — with a fast, consistent, and boldly innovative approach.",  
     "description2": "This is what happens when the right ideas meet the right people.",  
     "description3": "They are not just aesthetic: they tell stories, they provoke, they engage. We combine strategy and emotion to create real impact.",  
@@ -10,7 +10,7 @@
 },
 
   "heroSection": {
-    "title1" : "ZIDNY, The Digital Signature",
+    "title1" : "ZIDNY, The",
     "title2" : "digital signature",
     "description" : "We bring to life what we once dreamed of and we make it unforgettable.",
     "button" : "Start your journey now ! "

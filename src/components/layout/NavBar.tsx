@@ -21,7 +21,7 @@ export default function NavBar() {
                 {/* <div className="absolute inset-0 bg-gray-200/80 backdrop-blur-sm supports-[backdrop-filter]:bg-gray-200/30 supports-[backdrop-filter]:backdrop-blur-lg"></div> */}
                 
                 {/* Contenu par-dessus */}
-                <div className="relative z-10 w-full flex justify-between items-center">
+                <div className="relative z-10 w-full flex justify-between items-center mb-10">
                                         <Image 
                     
                         src={logo} 

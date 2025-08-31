@@ -4,7 +4,7 @@ export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative w-full h-[93vh] overflow-hidden">
+    <div className="relative min-h-screen  w-full h-[93vh] overflow-hidden">
       {/* Animated background fallback */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#2AA4E7] via-[#07467D] to-[#0C224B] overflow-hidden">
         <div className="absolute top-[-60px] left-[-60px] w-[180px] h-[180px] bg-white/10 rounded-full blur-2xl animate-pulse" />
@@ -42,11 +42,11 @@ export default function HeroSection() {
         </video>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/15" />
+        <div className="absolute inset-0 bg-black/35" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex  justify-center sm:h-3/4  px-8 lg:px-12 xl:px-16">
+      <div className="relative z-10 flex  justify-center sm:h-3/4 pt-56  px-8 lg:px-12 xl:px-16  backdrop-blur-xs">
         <div className="flex flex-col justify-center text-center  sm:gap-y-0 max-w-[100%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[80%] mt-14 sm:mt-0">
           <p className="text-[#2AA4E7] md:text-white font-black font-outfit text-[42px] sm:text-[52px] lg:text-[80px]">
             {t("heroSection.title1")}
