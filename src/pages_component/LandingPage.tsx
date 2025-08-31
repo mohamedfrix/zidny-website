@@ -1,12 +1,6 @@
 "use client";
 
-import AboutUs from "@/components/landing_page/AboutUs";
-import ServicesSection from "@/components/landing_page/Services";
-import FeaturesSection from "@/components/landing_page/FeaturesSection";
-// import ReviewsSection from "@/components/landing_page/ReviewsSection";
-import FAndQ from "@/components/landing_page/FAndQ";
 
-import HeroSection from "@/components/landing_page/HeoSection";
 import NavBar from "@/components/layout/NavBar";
 import { useNavBar } from "@/hooks/useNavBar";
 import add_icon from "@/assets/images/add.svg";
@@ -23,7 +17,12 @@ import tiktok_icon from "@/assets/images/tiktok.svg";
 import Footer from "@/components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import ProjectsSection from "@/components/landing_page/ProjectsSection";
+import Scroll_Services from "@/components/services/Scroll_Services";
+import FeaturesSectionV2 from "@/components/landing_page/FeaturesSectionV2";
+import ProjectComponent from "@/components/landing_page/ProjectComponent";
+import AboutUsSectionV2 from "@/components/landing_page/AboutUsSectionV2";
+import HeroSectionV2 from "@/components/landing_page/HeroSectionV2";
+import ReviewsSection from "@/components/landing_page/ReviewsSection";
 
 
 function LandingPage() {
@@ -102,14 +101,14 @@ function LandingPage() {
                     <Image src={add_icon} alt="Add Icon" className={`w-[35px] h-[35px]`} />
                 </motion.div>
 
-                <div className={`row-start-1 col-start-1 self-center bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
-                    <HeroSection />
-                    <AboutUs />
-                    <ServicesSection />
-                    <ProjectsSection/>
-                    <FeaturesSection />
-                    {/* <ReviewsSection /> */}
-                    <FAndQ footerRef={footerRef} />
+                <div className={`row-start-1 col-start-1 self-center  bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
+                    <HeroSectionV2 />
+                    
+                    <AboutUsSectionV2/>
+                    <Scroll_Services/>
+                    <ProjectComponent/>
+                    <FeaturesSectionV2/>
+                    <ReviewsSection/>
                     <Footer ref={footerRef} />
 
                     

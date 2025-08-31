@@ -1,0 +1,187 @@
+import web_service from '../../assets/images/Services/Web/web_service.svg';
+import website_mockup from '../../assets/images/Services/Web/website_mockup.svg';
+import { motion, MotionValue, useInView, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRef } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
+
+interface FilmmakingServiceProps {
+  progress: MotionValue<number>;
+  i: number;
+  range: number[];
+  targetScale: number;
+}
+
+function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) {
+  
+    const scale = useTransform(progress, range, [1, targetScale]);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
+    const {t} = useLanguage()
+
+  return (
+    <motion.div 
+      className="flex items-center justify-center h-auto sticky top-10 overflow-hidden  "
+       style={{ 
+        scale,
+        transformOrigin: 'start start'
+      }}
+    >
+      {/* Conteneur principal responsive */}
+      <div className="relative w-full max-w-7xl mx-auto overflow-hidden ">
+        
+        {/* Layout pour desktop */}
+        <div className="hidden lg:block relative">
+          {/* Image de fond - référence principale */}
+          <Image 
+            src={web_service} 
+            alt="Web Service" 
+            className="h-auto w-full block" 
+          />
+
+          {/* Website mockup - positionné par rapport à l'image */}
+          <motion.div className="absolute top-[8%] -right-28 w-2/3 h-auto overflow-hidden"
+            ref={ref}
+            initial={{ opacity: 0, y: 100 }}         
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 100 }}         
+            transition={{ duration: 2.5 , ease : 'easeInOut'}} >
+            
+            <Image  src={website_mockup} alt="website_mockup" className="w-auto h-1/2 object-contain"  />
+          </motion.div>
+
+          {/* Contenu textuel - positionné par rapport à l'image */}
+          <motion.div className="absolute top-[12%] left-[5%] w-[40%]">
+            <h1 className='text-[clamp(2rem,5vw,4.5rem)] font-semibold font-outfit text-white leading-tight'>
+              &lt; Web Dev &gt;
+            </h1>
+            <p className='font-outfit mt-[1.5rem] text-[clamp(1rem,2vw,1.5rem)] font-normal text-white leading-relaxed'>
+                {t('Web.description')} 
+            </p>
+          </motion.div>
+
+          {/* Section bouton et icônes - positionnée par rapport à l'image */}
+          <div className='absolute bottom-[15%] left-[5%] flex items-center gap-8'>
+            <Link href="/Devis">
+              <motion.button 
+                className="flex items-center gap-3 bg-[#0A60AD] text-white rounded-4xl py-3 px-3 sm:px-8 text-[clamp(0.9rem,1.5vw,1.1rem)] cursor-pointer hover:bg-[#0C224B] transition-all duration-300"
+              >
+                {t("Portfolio.Button")} 
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.7 12.1064H3.75" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M20.3539 12.1002C20.3539 10.8442 13.9899 6.82919 13.2679 7.55119C12.5459 8.27319 12.4769 15.8582 13.2679 16.6492C14.0599 17.4402 20.3539 13.3552 20.3539 12.1002Z" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </motion.button>
+            </Link>
+
+            {/* Icônes des technologies web - positionnées relativement au bouton */}
+            <div className="flex items-center">
+              <svg width="218" height="24" viewBox="0 0 218 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-6">
+                <path d="M1.93902 13.0599C1.35366 12.4745 1.35366 11.5255 1.93902 10.9401L10.9401 1.93902C11.5255 1.35366 12.4745 1.35366 13.0599 1.93902L22.061 10.9401C22.6463 11.5255 22.6463 12.4745 22.061 13.0599L13.0599 22.061C12.4745 22.6463 11.5255 22.6463 10.9401 22.061L1.93902 13.0599Z" fill="#EE513B"/>
+                <path d="M9.1117 3.79688L8.2002 4.70838L10.5544 7.06256C10.4592 7.26688 10.406 7.49474 10.406 7.73502C10.406 8.41721 10.8346 8.9993 11.4372 9.22667V14.9856C10.8346 15.2129 10.406 15.795 10.406 16.4772C10.406 17.3574 11.1195 18.071 11.9997 18.071C12.8799 18.071 13.5935 17.3574 13.5935 16.4772C13.5935 15.8587 13.2412 15.3225 12.7263 15.0583V9.23448L14.9767 11.4849C14.8861 11.685 14.8357 11.9073 14.8357 12.1413C14.8357 13.0215 15.5492 13.735 16.4294 13.735C17.3096 13.735 18.0232 13.0215 18.0232 12.1413C18.0232 11.2611 17.3096 10.5475 16.4294 10.5475C16.2584 10.5475 16.0936 10.5745 15.9392 10.6243L13.5223 8.20746C13.5686 8.05818 13.5935 7.89951 13.5935 7.73502C13.5935 6.85482 12.8799 6.14127 11.9997 6.14127C11.8352 6.14127 11.6766 6.16619 11.5273 6.21246L9.1117 3.79688Z" fill="white"/>
+                <path d="M36.5 21L35 2.25H53L51.5 21L44 23.25L36.5 21Z" fill="#1172B8"/>
+                <path d="M51.5 3.75H44V22.125L50 20.25L51.5 3.75Z" fill="#33AADD"/>
+                <path d="M46.625 13.125H39.125L38.75 10.5L44.75 8.625H38.75L38.375 6.375H50L49.625 9L44.75 10.875H49.25L48.5 18L44 19.5L39.5 18L39.125 14.25H41.375L41.75 16.125L44 16.875L46.25 16.125L46.625 13.125Z" fill="white"/>
+                <path d="M68.5 21L67 2.25H85L83.5 21L76 23.25L68.5 21Z" fill="#E44D26"/>
+                <path d="M83.5 3.75H76V22.125L82 20.25L83.5 3.75Z" fill="#F16529"/>
+                <path d="M71.125 13.125L70.375 6H82L81.625 8.25H72.625L73 10.875H81.25L80.5 18L76 19.5L71.5 18L71.125 14.25H73.375L73.75 16.125L76 16.875L78.25 16.125L78.625 13.125H71.125Z" fill="white"/>
+                <rect x="97.5" y="1.5" width="21" height="21" fill="#FFCA28"/>
+                <path d="M110.25 18.9661L111.796 17.9431C111.917 18.3237 112.685 19.2278 113.654 19.2278C114.623 19.2278 115.073 18.6985 115.073 18.3475C115.073 17.3911 114.083 17.0539 113.608 16.892C113.531 16.8656 113.467 16.8438 113.423 16.8248C113.401 16.8151 113.367 16.8021 113.323 16.7855C112.795 16.5835 110.844 15.8383 110.844 13.6783C110.844 11.299 113.14 11.0254 113.66 11.0254C113.999 11.0254 115.633 11.067 116.446 12.5957L114.946 13.6426C114.617 12.9764 114.071 12.7563 113.735 12.7563C112.904 12.7563 112.731 13.3653 112.731 13.6426C112.731 14.4205 113.633 14.7691 114.396 15.0635C114.595 15.1406 114.785 15.2139 114.946 15.2902C115.777 15.6828 117 16.3252 117 18.3475C117 19.3605 116.15 21.0004 114.012 21.0004C111.138 21.0004 110.377 19.2754 110.25 18.9661Z" fill="#3E3E3E"/>
+                <path d="M102.75 19.1693L104.362 18.1467C104.488 18.5272 104.978 19.2287 105.69 19.2287C106.402 19.2287 106.767 18.4975 106.767 18.1467V11.2504H108.749V18.1467C108.781 19.098 108.253 21.0004 105.925 21.0004C103.784 21.0004 102.894 19.7281 102.75 19.1693Z" fill="#3E3E3E"/>
+                <path d="M143.752 2.33759C143.752 1.67837 143.014 1.67837 142.686 1.76077C143.145 1.3982 143.683 1.4861 143.875 1.59597L148.31 3.7706C148.732 3.97781 149 4.40895 149 4.88143V19.1873C149 19.6661 148.725 20.1019 148.294 20.3057L144.121 22.279C143.834 22.4026 143.21 22.7075 142.686 22.279C143.342 22.4026 143.697 21.9357 143.752 21.6198V2.33759Z" fill="url(#paint0_linear_1000_2572)"/>
+                <path d="M142.738 1.74819C143.087 1.67939 143.751 1.7113 143.751 2.33691V7.26117L130.305 17.4333C130.07 17.6111 129.739 17.5816 129.539 17.3649L128.153 15.8654C127.936 15.6305 127.951 15.2627 128.187 15.0467L142.685 1.76008L142.738 1.74819Z" fill="url(#paint1_linear_1000_2572)"/>
+                <path d="M143.751 16.7783L130.305 6.60625C130.07 6.42845 129.739 6.45795 129.539 6.67457L128.153 8.17412C127.936 8.40904 127.951 8.77676 128.187 8.99279L142.685 22.2794C143.341 22.403 143.697 21.9361 143.751 21.6202V16.7783Z" fill="url(#paint2_linear_1000_2572)"/>
+                <path d="M174.009 11.9819C174.009 10.9061 173.11 10.0339 172 10.0339C170.89 10.0339 169.991 10.9061 169.991 11.9819C169.991 13.0578 170.89 13.9301 172 13.9301C173.11 13.9301 174.009 13.0578 174.009 11.9819Z" fill="#53C1DE"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M178.525 8.36528C178.95 6.69359 179.483 3.59361 177.603 2.54262C175.731 1.49621 173.296 3.50132 172.01 4.70489C170.728 3.51331 168.225 1.51677 166.346 2.5711C164.476 3.62102 165.052 6.6696 165.486 8.35176C163.741 8.83231 160.75 9.86731 160.75 11.9819C160.75 14.0906 163.738 15.2166 165.473 15.6967C165.037 17.3882 164.489 20.3932 166.362 21.4407C168.248 22.4949 170.744 20.5459 172.042 19.3292C173.336 20.5398 175.747 22.5016 177.619 21.4511C179.497 20.3972 179.008 17.3388 178.574 15.6469C180.255 15.1657 183.25 14.0642 183.25 11.9819C183.25 9.8876 180.243 8.84421 178.525 8.36528ZM178.312 14.7502C178.027 13.8762 177.643 12.9467 177.173 11.9866C177.622 11.0491 177.991 10.1316 178.268 9.26316C179.527 9.61707 182.289 10.426 182.289 11.9819C182.289 13.5525 179.638 14.369 178.312 14.7502ZM177.137 20.6445C175.741 21.4282 173.667 19.5522 172.711 18.6607C173.345 17.9883 173.978 17.2067 174.597 16.3387C175.685 16.2452 176.712 16.0921 177.644 15.8833C177.949 17.0801 178.54 19.8572 177.137 20.6445ZM166.843 20.6333C165.446 19.8525 166.084 17.171 166.405 15.925C167.326 16.1226 168.346 16.2649 169.437 16.3506C170.059 17.1999 170.711 17.9806 171.368 18.6642C170.556 19.4256 168.246 21.4178 166.843 20.6333ZM161.711 11.9819C161.711 10.4055 164.457 9.60249 165.744 9.24945C166.026 10.1374 166.395 11.0658 166.841 12.0046C166.389 12.9574 166.015 13.9006 165.731 14.799C164.503 14.4582 161.711 13.5594 161.711 11.9819ZM166.828 3.37766C168.23 2.59062 170.406 4.50737 171.337 5.3701C170.683 6.05066 170.037 6.82545 169.42 7.66985C168.362 7.76495 167.349 7.91768 166.418 8.12227C166.068 6.76554 165.427 4.16384 166.828 3.37766ZM175.284 8.68282C176.002 8.77068 176.69 8.8875 177.336 9.03049C177.142 9.63304 176.9 10.2631 176.616 10.909C176.203 10.15 175.76 9.4062 175.284 8.68282ZM172.011 6.03608C172.454 6.50173 172.898 7.02173 173.335 7.58585C172.449 7.54526 171.561 7.54507 170.676 7.58527C171.113 7.02636 171.56 6.50713 172.011 6.03608ZM167.392 10.9083C167.112 10.2646 166.873 9.63178 166.677 9.02064C167.319 8.88132 168.004 8.76749 168.717 8.68108C168.24 9.40287 167.798 10.1464 167.392 10.9083ZM168.738 15.3493C168.001 15.2695 167.306 15.1615 166.664 15.0261C166.863 14.4041 167.108 13.7576 167.393 13.1001C167.805 13.87 168.253 14.6207 168.738 15.3493ZM172.037 17.9936C171.582 17.517 171.127 16.9898 170.684 16.4228C171.575 16.4568 172.467 16.4568 173.358 16.4183C172.92 16.9956 172.478 17.5235 172.037 17.9936ZM176.625 13.0666C176.926 13.7313 177.179 14.3743 177.381 14.9857C176.728 15.13 176.024 15.2463 175.282 15.3326C175.761 14.5955 176.211 13.8402 176.625 13.0666ZM174.06 15.4456C172.698 15.54 171.326 15.539 169.963 15.4533C169.188 14.3561 168.499 13.2022 167.903 12.0043C168.496 10.8089 169.18 9.65732 169.951 8.56185C171.316 8.46185 172.688 8.46161 174.053 8.56243C174.817 9.65784 175.501 10.8064 176.107 11.9911C175.508 13.1859 174.82 14.3398 174.06 15.4456ZM177.123 3.34995C178.525 4.1344 177.901 6.92045 177.595 8.13192C176.661 7.92309 175.648 7.76765 174.586 7.6711C173.968 6.81753 173.327 6.04139 172.684 5.36961C173.627 4.48831 175.734 2.57317 177.123 3.34995Z" fill="#53C1DE"/>
+                <path d="M198.25 19.7083C197.764 19.7083 197.351 19.5382 197.01 19.1979C196.67 18.8507 196.5 18.4375 196.5 17.9583C196.5 17.4653 196.67 17.0486 197.01 16.7083C197.351 16.3681 197.764 16.1979 198.25 16.1979C198.743 16.1979 199.156 16.3681 199.49 16.7083C199.83 17.0486 200 17.4653 200 17.9583C200 18.4375 199.83 18.8507 199.49 19.1979C199.156 19.5382 198.743 19.7083 198.25 19.7083Z" fill="white"/>
+                <path d="M204.583 19.7083C204.097 19.7083 203.684 19.5382 203.343 19.1979C203.003 18.8507 202.833 18.4375 202.833 17.9583C202.833 17.4653 203.003 17.0486 203.343 16.7083C203.684 16.3681 204.097 16.1979 204.583 16.1979C205.076 16.1979 205.489 16.3681 205.823 16.7083C206.163 17.0486 206.333 17.4653 206.333 17.9583C206.333 18.4375 206.163 18.8507 205.823 19.1979C205.489 19.5382 205.076 19.7083 204.583 19.7083Z" fill="white"/>
+                <path d="M210.917 19.7083C210.431 19.7083 210.018 19.5382 209.677 19.1979C209.337 18.8507 209.167 18.4375 209.167 17.9583C209.167 17.4653 209.337 17.0486 209.677 16.7083C210.018 16.3681 210.431 16.1979 210.917 16.1979C211.41 16.1979 211.823 16.3681 212.157 16.7083C212.497 17.0486 212.667 17.4653 212.667 17.9583C212.667 18.4375 212.497 18.8507 212.157 19.1979C211.823 19.5382 211.41 19.7083 210.917 19.7083Z" fill="white"/>
+                <defs>
+                  <linearGradient id="paint0_linear_1000_2572" x1="145.843" y1="1.5" x2="145.843" y2="22.5" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#32B5F1"/>
+                    <stop offset="1" stopColor="#2B9FED"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_1000_2572" x1="143.751" y1="4.14975" x2="128.766" y2="16.7281" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#0F6FB3"/>
+                    <stop offset="0.270551" stopColor="#1279B7"/>
+                    <stop offset="0.421376" stopColor="#1176B5"/>
+                    <stop offset="0.618197" stopColor="#0E69AC"/>
+                    <stop offset="0.855344" stopColor="#0F70AF"/>
+                    <stop offset="1" stopColor="#0F6DAD"/>
+                  </linearGradient>
+                  <linearGradient id="paint2_linear_1000_2572" x1="128.866" y1="7.48816" x2="143.809" y2="19.8609" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#1791D2"/>
+                    <stop offset="1" stopColor="#1173C5"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Layout pour tablettes et mobiles - carte plus longue avec image de fond étirée */}
+        <div className="block lg:hidden mb-8 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
+          {/* Image de fond qui couvre tout le div et est étirée en hauteur */}
+          <div className="absolute inset-0 w-full h-full">
+            <Image 
+              src={web_service} 
+              alt="Web Service" 
+              className="w-full h-full object-cover"
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: 'center'
+              }}
+            />
+          </div>
+
+          {/* Overlay pour améliorer la lisibilité du texte */}
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]"></div>
+
+          {/* Website mockup mobile - repositionné pour mobile avec effet de fondu */}
+          <motion.div            
+            className="absolute top-60 -right-24 z-5 h-auto "
+            initial={{ opacity: 0, y: 100 }}         
+            animate={isInView ? { opacity: 0, y: 100 } : { opacity: 1, y: 0 }}         
+            transition={{ duration: 2 }}
+            style={{
+              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)',
+              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)'
+            }}
+          >             
+            <Image src={website_mockup} alt="Website Mockup" className="w-auto h-full object-contain drop-shadow-lg" />         
+          </motion.div>
+
+          {/* Contenu textuel par-dessus l'image */}
+          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+            <div className="flex-1">
+              <h1 className='text-[clamp(2rem,12vw,4rem)] font-semibold font-outfit text-white leading-tight mb-4 drop-shadow-lg'>
+                &lt; Web Dev &gt;
+              </h1>
+              
+              <p className='font-outfit text-[clamp(1rem,5vw,1.55rem)] font-normal text-white mb-6 drop-shadow-lg'>
+                {t('Web.description')} 
+              </p>
+            </div>
+            
+            {/* Bouton fixé en bas */}
+            <div className="fixed bottom-12">
+              <Link href="/Devis">
+                <motion.button 
+                  className="flex items-center gap-3 bg-[#0A60AD] text-white rounded-4xl py-3 px-6 md:px-8 text-base md:text-lg cursor-pointer hover:bg-[#0C224B] transition-all duration-300 shadow-lg"
+                >
+                {t("Portfolio.Button")} 
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.7 12.1064H3.75" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M20.3539 12.1002C20.3539 10.8442 13.9899 6.82919 13.2679 7.55119C12.5459 8.27319 12.4769 15.8582 13.2679 16.6492C14.0599 17.4402 20.3539 13.3552 20.3539 12.1002Z" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </motion.button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export default Web_Service;

@@ -1,20 +1,24 @@
 {
   "aboutUs": {
-    "title": "A propos de nous",
-    "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse. Nos projets ne sont pas seulement esthétiques : ils racontent, ils provoquent, ils engagent. On allie stratégie et émotion pour créer du vrai impact. Zidny, c’est ce qui se passe quand les bonnes idées rencontrent les bonnes personnes."
+    "title": "About Us",
+    "description" : "Zidny est une agence créative portée par une nouvelle génération de talents formés dans les meilleures écoles d’Algérie. ",
+    "description1" : "Nous concevons des services digitaux: design, développement, média avec une approche rapide, cohérente et résolument audacieuse.",
+    "description2" : "c’est ce qui se passe quand les bonnes idées rencontrent les bonnes personnes.",
+    "description3" : "ne sont pas seulement esthétiques : ils racontent, ils provoquent, ils engagent. On allie stratégie et émotion pour créer du vrai impact.  ",
+    "description4" : "Nous osons penser autrement. Qu’il s’agisse de stratégie, de design ou de storytelling, nous repoussons les limites et relevons les défis."
   },
 
   "heroSection": {
-    "title1" : "ZIDNY, une",
+    "title1" : "Zidny, Une Signature Digitale",
     "title2" : "signature digitale",
-    "description" : "Ce que vous ressentez, c’est exactement ce qu’on voulait.",
-    "button" : " Commencez votre aventure dès maintenant ! "
+    "description" : "On crée ce qu’on aurait rêvé voir exister Et on le fait bien.",
+    "button" : " Commencez dès maintenant ! "
 
 
   },
 
   "services" : {
-    "title" : "Services",
+    "title" : "Nos Services",
     "description" : "Nos services couvrent l’ensemble du cycle de vie digital, de l’idée à l’expérience finale. Que vous ayez besoin d’un service précis ou d’un écosystème complet, on s’adapte avec précision.",
     "servicesList" : [
       {
@@ -58,7 +62,7 @@
       },
       {
         "title" : "Audace",
-        "description" : "Nous osons penser autrement. Que ce soit en stratégie, en design ou en storytelling, nous repoussons les limites et bousculons les normes pour livrer un travail qui se démarque et capte l’attention."
+        "description" : "Nous osons penser autrement. Que ce soit en stratégie, en design ou en storytelling, nous repoussons les limites..."
       },
       {
         "title" : "Chaque pixel, chaque mot, chaque décision est intentionnelle.",
@@ -80,8 +84,8 @@
   },
 
   "reviews" : {
-    "title" : "Reviews",
-    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
+    "title" : "Témoignages",
+    "description" : "Les mots de nos clients en disent plus que les nôtres. Leurs expériences témoignent la confiance et l’impact que nous cherchons à offrir dans chaque projet. Voici ce qu’ils disent de leur collaboration avec Zidny."
   },
 
   "faq": {
@@ -147,7 +151,7 @@
 
   "Design": {
     "title": "Notre approche du design",
-    "description": "Nous transformons vos idées en identités vivantes et mémorables. Que vous lanciez une startup ou que vous modernisiez une marque existante, nos designers façonnent des visuels percutants et cohérents. Du premier croquis au livrable final, chaque détail est pensé pour marquer les esprits et instaurer la confiance.",
+    "description": "Nous transformons vos idées en identités vivantes et mémorables. Que vous lanciez une startup ou que vous modernisiez une marque existante, nos designers façonnent des visuels percutants et cohérents.",
     "button": "Donnez vie à ma marque",
     "subservices": {
       "title": "Nos sous-services",
@@ -332,7 +336,18 @@
     {
       "description": "Nous avons créé une plateforme digitale pour l’incubateur d’Algérie Télécom, qui sert à la fois de portail de candidature et d’espace d’accompagnement virtuel.Elle permet aux étudiants et porteurs de projets de postuler facilement à des programmes d’incubation, des stages et des opportunités de PFE, tout en offrant à l’équipe un système structuré pour gérer, évaluer et accompagner les candidats.La plateforme agit comme une extension intelligente, rapide et toujours accessible de l’incubateur lui-même."
     }
-  ]
+  ],
+  
+
+  "Portfolio" : 
+   {
+    "Travail" : "Notre Travail",
+    "Button" : "Découvrir Plus",
+    "Voir" : "Voir le projet"
+
+    
+   } 
+  
 }
 
 

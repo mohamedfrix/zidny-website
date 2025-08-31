@@ -14,9 +14,8 @@ export default function NavBar() {
     return (
         <>
 
-            <div className="w-full min-h-[50px] px-4 py-4 sm:px-12 flex justify-between items-center  top-0 z-50">
+            <div className="w-full min-h-[50px] px-4 py-6 sm:px-12 flex justify-between items-center  top-0 z-50 fixed">
                 {/* Couche de fond avec blur - méthode 1 */}
-                <div className="absolute inset-0 bg-gray-200/50 backdrop-blur-md sm:backdrop-blur-lg"></div>
                 
                 {/* Alternative : Couche de fond avec blur - méthode 2 */}
                 {/* <div className="absolute inset-0 bg-gray-200/80 backdrop-blur-sm supports-[backdrop-filter]:bg-gray-200/30 supports-[backdrop-filter]:backdrop-blur-lg"></div> */}
@@ -27,7 +26,7 @@ export default function NavBar() {
                     
                         src={logo} 
                         alt="Logo" 
-                        className="w-[120px] sm:w-[160px] lg:w-[200px]" 
+                        className="w-[120px] sm:w-[160px] lg:w-[160px]" 
                     />
                     
                     <div className="flex items-center gap-x-6 sm:gap-x-12 lg:gap-x-20">

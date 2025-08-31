@@ -1,18 +1,24 @@
 {
   "aboutUs": {
     "title": "About Us",
-    "description" : "Zidny is a creative agency powered by a new generation of talent trained in Algeria’s top schools. We craft digital services: design, development, media, with a fast, coherent, and boldly original approach. Our projects don’t just look good, they speak, they move, they connect. We blend strategy with emotion to create real impact. Zidny is what happens when the right ideas meet the right people." },
+    "description" : "Zidny is a creative agency powered by a new generation of talent trained in Algeria’s top schools." ,
+    "description1": "We design digital services: design, development, and media — with a fast, consistent, and boldly innovative approach.",  
+    "description2": "This is what happens when the right ideas meet the right people.",  
+    "description3": "They are not just aesthetic: they tell stories, they provoke, they engage. We combine strategy and emotion to create real impact.",  
+    "description4": "We dare to think differently. Whether it’s strategy, design, or storytelling, we push boundaries and rise to challenges.",  
+    "title2": "Our Projects" 
+},
 
   "heroSection": {
-    "title1" : "ZIDNY, the",
+    "title1" : "ZIDNY, The Digital Signature",
     "title2" : "digital signature",
-    "description" : "What do you feel is exactly what we wanted.",
+    "description" : "We bring to life what we once dreamed of and we make it unforgettable.",
     "button" : "Start your journey now ! "
 
   },
 
   "services" : {
-    "title" : "Services",
+    "title" : "Our Services",
     "description" : "Our services cover the entire digital lifecycle, from the first idea to the final experience. Whether you need one specific service or a full ecosystem, we adapt with focus and purpose.",
     "servicesList" : [
       {
@@ -55,7 +61,7 @@
       },
       {
         "title" : "Boldness",
-        "description" : "We dare to think differently. Whether it’s strategy, design, or storytelling, we push boundaries and challenge norms to deliver work that stands out and commands attention."
+        "description" : "We dare to think differently. Whether it’s strategy, design, or storytelling, we push boundaries..."
       },
       {
         "title" : "Every pixel, word, and decision is intentional.",
@@ -78,7 +84,7 @@
 
   "reviews" : {
     "title" : "Reviews",
-    "description" : "Lectus commodo in blandit at urna ut ornare facilisis. Pharetra risus facilisis purus massa eget etiam egestas sed. Eu eget convallis augue"
+    "description" : "Our clients’ words speak louder than ours. Their experiences reflect the trust and impact we strive to deliver in every project. Here’s what they say about working with Zidny."
   },
 
   "faq": {
@@ -142,7 +148,7 @@
 
   "Design": {
     "title": "What we do in design",
-    "description": "We turn ideas into living identities. Whether you’re launching a startup or refreshing a legacy brand, our designers craft visuals that feel right and work hard. From the first sketch to the final asset, every pixel is shaped to spark recognition and earn trust.",
+    "description": "We turn ideas into living identities. Whether you’re launching a startup or refreshing a legacy brand, our designers craft visuals that feel right and work hard. ",
     "button" : "Shape my brand",
      "subservices" : {
         "title" : "Sub-Services",
@@ -330,8 +336,16 @@
     {
       "description": "We created a digital platform for Algérie Télécom's incubator that serves as both an application portal and a virtual support space. It allows students and project holders to easily apply for incubation, internships, and PFE opportunities, while offering the team a structured system to manage, evaluate, and guide applicants. The platform acts as an extension of the incubator itself smarter, faster, and always accessible."
     }
-  ]
+  ],
+
+  "Portfolio" : 
+   {
+    "Travail" : "Our Work",
+    "Button" : "Discover More",
+    "Voir" : "View Project"
+    
+   } 
+  
 
 
-
-}
+ }

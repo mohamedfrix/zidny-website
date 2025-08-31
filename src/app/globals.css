@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -104,6 +108,9 @@
   --color-card-2: var(--color-card-2);
   --color-card-3: var(--color-card-3);
   --color-card-4: var(--color-card-4);
+  --font-outfit: "Outfit", sans-serif;
+
+
 }
 
 @media (prefers-color-scheme: dark) {
