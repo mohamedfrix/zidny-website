@@ -22,7 +22,6 @@ import FeaturesSectionV2 from "@/components/landing_page/FeaturesSectionV2";
 import ProjectComponent from "@/components/landing_page/ProjectComponent";
 import AboutUsSectionV2 from "@/components/landing_page/AboutUsSectionV2";
 import HeroSectionV2 from "@/components/landing_page/HeroSectionV2";
-import ReviewsSection from "@/components/landing_page/ReviewsSection";
 
 
 function LandingPage() {
@@ -108,7 +107,6 @@ function LandingPage() {
                     <Scroll_Services/>
                     <ProjectComponent/>
                     <FeaturesSectionV2/>
-                    <ReviewsSection/>
                     <Footer ref={footerRef} />
 
                     
