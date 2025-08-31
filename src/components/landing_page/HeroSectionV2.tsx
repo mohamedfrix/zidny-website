@@ -3,35 +3,15 @@ import Image from "next/image";
 import bg2 from "@/assets/images/Hero/bg2.svg"
 import card1 from "@/assets/images/Hero/card1.svg"
 import card2 from "@/assets/images/Hero/card2.svg"
+import card3 from "@/assets/images/Hero/card3.svg"
 import card4 from "@/assets/images/Hero/card4.svg"
 import { motion } from "framer-motion"
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { useEffect, useState } from "react";
-
 
 function HeroSectionV2() {
 
     const {t} = useLanguage()
-     const [count, setCount] = useState(0);
-
-    // Fonction compteur animé
-    useEffect(() => {
-        let start = 0;
-        const target = 4647;
-        const increment = 100;
-
-        function update() {
-        start += increment;
-        if (start < target) {
-            setCount(Math.floor(start));
-            requestAnimationFrame(update);
-        } else {
-            setCount(target);
-        }
-        }
-        update();
-    }, []);
 
     return (
         <div className="min-h-screen w-full relative bg-[#07142C] overflow-hidden  " style={{ WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(239, 246, 255, 0.4) 100%)', mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(239, 246, 255, 0.4)  100%)'}}>
@@ -130,33 +110,10 @@ function HeroSectionV2() {
                     </div>
 
                     <div>
-                       <div className="relative bg-[#0A60AD] rounded-3xl h-[210px] w-[210px] text-white font-outfit p-2 overflow-hidden">
-                          {/* Contenu */}
-                        <p className="relative z-10">Followers On Social Media</p>
-
-                        {/* Effet de brillance */}
-                        <div className="absolute flex  justify-center items-center text-center inset-0 rounded-3xl overflow-hidden">
-                            <div className="shine absolute inset-0"></div>
-                            <div className="flex flex-col ">
-                            <p className="text-7xl font-outfit font-semibold text-white opacity-20 -mb-6" >4646</p>
-                            <p className="text-7xl font-outfit font-semibold">{count}</p>
-                            <p className="text-7xl font-outfit font-semibold text-white opacity-20 -mt-6">4648</p>
-                            </div>
+                        <div>
+                            <Image src={card3} alt="" className="mt-4 sm:mt-6 md:mt-8 lg:mt-10" />
 
                         </div>
-
-                        <style jsx>{`
-                            .shine {
-                            background: linear-gradient(
-                                120deg,
-                                transparent 0%,
-                                rgba(255, 255, 255, 0.4) 50%,
-                                transparent 100%
-                            );
-                         
-                        `}</style>
-                        </div>
-
                         <div>
                             <Image src={card4} alt="" className="mt-4 sm:mt-6 md:mt-8 lg:mt-10" />
                         </div>
