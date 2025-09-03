@@ -41,6 +41,8 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             src={mobile_service} 
             alt="Mobile Service" 
             className="h-auto w-full block" 
+            priority={false}    // false = lazy load automatique
+
           />
 
           {/* iPhone - positionné par rapport à l'image */}
@@ -51,7 +53,8 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}         
             transition={{ duration: 2 }} 
           >             
-            <Image src={iphone} alt="iPhone" className="w-full h-auto object-contain" />         
+            <Image src={iphone} alt="iPhone" className="w-full h-auto object-contain"  priority={false}    />          
+      
           </motion.div>
 
           {/* Notifications positionnées relativement à l'iPhone et à l'image */}
@@ -61,7 +64,7 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 1, x: 0 , scale : 1 , y: 0 } : { opacity: 0, x: -150 , scale: 0 , y: -150}}         
             transition={{ duration: 2 , delay:1.5}} 
           >
-            <Image  src={notification_1} alt="Notification 1" className="w-full h-auto object-contain"/>
+            <Image  src={notification_1} alt="Notification 1" className="w-full h-auto object-contain"  priority={false}    />       
           </motion.div>
           
           <motion.div 
@@ -70,7 +73,7 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 1, x: 0 , scale : 1 , y: 0 } : { opacity: 0, x: 200 , scale: 0 , y: -200}}         
             transition={{ duration: 2 , delay:2}} 
           >
-            <Image  src={notification_2}  alt="Notification 2"  className="w-full h-auto object-contain" />
+            <Image  src={notification_2}  alt="Notification 2"  className="w-full h-auto object-contain"  priority={false}    />        
           </motion.div>
           
           <motion.div 
@@ -79,7 +82,7 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 1, x: 0 , scale : 1 , y: 0 } : { opacity: 0, x: -100 , scale: 0 , y: 200}}         
             transition={{ duration: 2 , delay:2.5}} 
           >
-            <Image src={notification_3}  alt="Notification 3" className="w-full h-auto object-contain" />
+            <Image src={notification_3}  alt="Notification 3" className="w-full h-auto object-contain"  priority={false}   />     
           </motion.div>
 
           {/* Contenu textuel - positionné par rapport à l'image */}
@@ -118,6 +121,8 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
                 objectFit: 'cover',
                 objectPosition: 'center'
               }}
+                      priority={false}    // false = lazy load automatique
+
             />
           </div>
 
@@ -135,7 +140,8 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
               WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)'
             }}
           >             
-            <Image src={iphone} alt="iPhone" className="w-auto h-full object-contain drop-shadow-lg" />         
+            <Image src={iphone} alt="iPhone" className="w-auto h-full object-contain drop-shadow-lg"  priority={false}     />        
+        
           </motion.div>
 
           {/* Notifications repositionnées pour mobile */}
@@ -145,7 +151,7 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 0, x: 0 , scale : 0 , y: 0 } : { opacity: 1, x: -50 , scale: 1 , y: -50}}         
             transition={{ duration: 2 , delay: 1.5}} 
           >
-            <Image src={notification_1} alt="Notification 1" className="w-1/2 h-auto   object-contain "/>
+            <Image src={notification_1} alt="Notification 1" className="w-1/2 h-auto   object-contain "  priority={false}  />       
           </motion.div>
           
           <motion.div 
@@ -154,7 +160,8 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 0, x: 0 , scale : 0 , y: 0 } : { opacity: 1, x: 50 , scale: 1 , y: -50}}         
             transition={{ duration: 2 , delay: 2}} 
           >
-            <Image src={notification_2} alt="Notification 2" className="w-1/2 h-auto object-contain " />
+            <Image src={notification_2} alt="Notification 2" className="w-1/2 h-auto object-contain "  priority={false}   />         
+
           </motion.div>
           
           <motion.div 
@@ -163,7 +170,8 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
             animate={isInView ? { opacity: 0, x: 0 , scale : 0 , y: 0 } : { opacity: 1, x: -30 , scale: 1 , y: 50}}         
             transition={{ duration: 2 , delay: 2.5}} 
           >
-            <Image src={notification_3} alt="Notification 3" className="w-1/2 h-auto object-contain drop-shadow-lg" />
+            <Image src={notification_3} alt="Notification 3" className="w-1/2 h-auto object-contain drop-shadow-lg"  priority={false}   />         
+
           </motion.div>
 
           {/* Contenu textuel par-dessus l'image */}

@@ -1,5 +1,5 @@
 import filmmaking_service from '../../assets/images/Services/Filmmaking/Filming service.svg';
-import Ruban from '../../assets/images/Services/Filmmaking/Ruban.svg';
+import Ruban from '../../assets/images/Services/Filmmaking/Ruban.png';
 import { motion,MotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -36,18 +36,22 @@ function Filmmaking_Service({ progress,  range, targetScale }: FilmmakingService
             src={filmmaking_service} 
             alt="filmmaking Service" 
             className="h-auto w-full block"
+            priority={false}    // false = lazy load automatique
+
           />
 
           {/* Ruban - positionné par rapport à l'image avec animation */}
           <motion.div 
             ref={ref}
-            className="absolute bottom-0 right-0 w-auto h-full"
+            className="absolute bottom-0 right-0 w-1/2  h-auto"
            
           >
             <Image 
               src={Ruban} 
               alt="Ruban" 
               className="w-full h-auto object-contain" 
+                      priority={false}    // false = lazy load automatique
+
             />
           </motion.div>
 
@@ -111,6 +115,8 @@ function Filmmaking_Service({ progress,  range, targetScale }: FilmmakingService
       src={Ruban} 
       alt="Ruban" 
       className="w-full h-full object-contain drop-shadow-lg" 
+        priority={false}    // false = lazy load automatique
+
     />
   </motion.div>
 

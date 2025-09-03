@@ -37,7 +37,8 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
           <Image 
             src={web_service} 
             alt="Web Service" 
-            className="h-auto w-full block" 
+            className="h-auto w-full block"         priority={false}   
+
           />
 
           {/* Website mockup - positionné par rapport à l'image */}
@@ -47,7 +48,7 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 100 }}         
             transition={{ duration: 2.5 , ease : 'easeInOut'}} >
             
-            <Image  src={website_mockup} alt="website_mockup" className="w-auto h-1/2 object-contain"  />
+            <Image  src={website_mockup} alt="website_mockup" className="w-auto h-1/2 object-contain"      priority={false}  />       
           </motion.div>
 
           {/* Contenu textuel - positionné par rapport à l'image */}
@@ -131,6 +132,8 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
                 objectFit: 'cover',
                 objectPosition: 'center'
               }}
+                      priority={false}    // false = lazy load automatique
+
             />
           </div>
 
@@ -148,7 +151,7 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
               WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)'
             }}
           >             
-            <Image src={website_mockup} alt="Website Mockup" className="w-auto h-full object-contain drop-shadow-lg" />         
+            <Image src={website_mockup} alt="Website Mockup" className="w-auto h-full object-contain drop-shadow-lg"  priority={false}   />                 
           </motion.div>
 
           {/* Contenu textuel par-dessus l'image */}

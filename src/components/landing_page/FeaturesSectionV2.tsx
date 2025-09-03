@@ -94,13 +94,13 @@ function FeaturesSectionV2() {
                 {/*----------------Premiere Feature------------------------------*/}     
                     <div className="relative w-full h-[400px] lg:h-full overflow-hidden border-[2px] border-gray-400  bg-gray-500 rounded-2xl">
                         
-                        <div className="z-0 absolute inset-0"> <Image src={Feature1_Frame2} alt="Bg" fill className="object-cover"/></div>
+                        <div className="z-0 absolute inset-0"> <Image src={Feature1_Frame2} alt="Bg" fill className="object-cover" priority={false} /></div>
                             <motion.div className="z-10 absolute inset-0 justify-center" 
                                 style={{
                              mask: 'linear-gradient(to top, transparent 0%, transparent 20%, black 60%, black 100%)',
                              WebkitMask: 'linear-gradient(to top, transparent 0%, transparent 20%, black 60%, black 100%)' }} 
                               initial={{ opacity: 0, y: 100}} whileInView={{opacity: 1 , y: 0}} transition={{ duration: 3 , ease: "easeInOut"}}>
-                                <Image src={Feature1_Frame1} alt="feature1" />
+                                <Image src={Feature1_Frame1} alt="feature1" priority={false}/>
                             </motion.div>
 
                             <div className="z-20 absolute inset-0 px-4 pt-6 pb-3 flex flex-col justify-between text-white font-outfit">
@@ -181,8 +181,8 @@ function FeaturesSectionV2() {
                                 </svg>
                             </div>
                             <motion.div className="z-20 absolute inset-0 h-full top-1/4 md:top-1/5 left-18 w-auto" initial={{y: 250 }} whileInView={{y: 0}} transition={{duration: 2, type: 'spring'}} viewport={{once: true}}>
-                                <Image src={Feature4_Frame2} alt="Feature4_Frame2" className="w-full h-full  absolute " />
-                                <Image src={Feature4_Frame1} alt="Feature4_Frame1" className="w-full  h-full top-1 absolute " />
+                                <Image src={Feature4_Frame2} alt="Feature4_Frame2" className="w-full h-full  absolute " priority={false} />
+                                <Image src={Feature4_Frame1} alt="Feature4_Frame1" className="w-full  h-full top-1 absolute " priority={false}/>
                             </motion.div>
 
                             <div className="z-30 absolute inset-0 px-4 pt-6 pb-3 flex flex-col justify-between text-white font-outfit">
