@@ -1,185 +1,148 @@
-import bg1 from "@/assets/images/Hero/bg1.svg"
 import Image from "next/image";
 import bg2 from "@/assets/images/Hero/bg2.svg"
 import card1 from "@/assets/images/Hero/card1.svg"
 import card2 from "@/assets/images/Hero/card2.svg"
+import card3 from "@/assets/images/Hero/card3.svg"
 import card4 from "@/assets/images/Hero/card4.svg"
-import { motion } from "framer-motion"
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useState } from "react";
 
-
 function HeroSectionV2() {
-
     const {t} = useLanguage()
-     const [count, setCount] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
-    // Fonction compteur animé
+    // Détection mobile pour désactiver les animations lourdes
     useEffect(() => {
-        let start = 0;
-        const target = 4647;
-        const increment = 100;
-
-        function update() {
-        start += increment;
-        if (start < target) {
-            setCount(Math.floor(start));
-            requestAnimationFrame(update);
-        } else {
-            setCount(target);
-        }
-        }
-        update();
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     return (
-        <div className="min-h-screen w-full relative bg-[#07142C] overflow-hidden  " style={{ WebkitMask: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(239, 246, 255, 0.4) 100%)', mask: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(239, 246, 255, 0.4)  100%)'}}>
-
-            <Image src={bg2} alt="bg2" className="z-10 absolute inset-0 w-full h-full object-cover "  />            
-            <Image  src={bg1}  alt="Bg1" className="absolute text-blu right-0 inset-0 w-full h-full  z-20 object-cover " style={{ WebkitMask: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)', mask: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'}}  />
-           
-            <motion.svg 
-                className="hidden lg:block absolute right-1/3 z-30 object-cover h-full w-full inset-0" 
-                width="318" 
-                height="615" 
-                viewBox="0 0 318 615" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                initial="hidden"
-                animate="visible"
-            >
-                <motion.path 
-                    d="M1 819L1 501.914V400.609V222C1 208.745 11.7452 198 25 198H169.667H293.5C306.755 198 317.5 187.255 317.5 174V0.5" 
-                    stroke="url(#paint0_linear_952_989)"
-                    strokeDasharray="2000"
-                  
-                />
-                <defs>
-                    <linearGradient id="paint0_linear_952_989" x1="317" y1="9" x2="53" y2="687.5" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="white"/>
-                        <stop offset="0.485577" stopColor="white" stopOpacity="0"/>
-                        <stop offset="1" stopColor="white"/>
-                    </linearGradient>
-                </defs>
-            </motion.svg>
-
-
-
-            <motion.svg 
-                className="hidden lg:block absolute right-0 z-30 object-cover" 
-                width="179" 
-                height="339" 
-                viewBox="0 0 179 339" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                initial="hidden"
-                animate="visible"
-            >
-                <motion.path 
-                    d="M339 338H25C11.7452 338 1 327.255 1 314V-79C1 -92.2548 11.7452 -103 25 -103H85.5" 
-                    stroke="url(#paint0_linear_960_932)"
-                    strokeDasharray="1500"
+        <div className="w-full bg-[#07142C] relative overflow-hidden">
+            {/* Container principal avec hauteur fixe simple */}
+            <div className="w-full" style={{ minHeight: '100dvh' }}>
                 
-                />
-                <defs>
-                    <linearGradient id="paint0_linear_960_932" x1="170" y1="-103" x2="170" y2="338" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="white" stopOpacity="0"/>
-                        <stop offset="1" stopColor="white"/>
-                    </linearGradient>
-                </defs>
-            </motion.svg>
+                {/* Background simplifié - UN SEUL LAYER */}
+                <div className="absolute inset-0 z-0">
+                 
+                            <Image 
+                                src={bg2} 
+                                alt="" 
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#07142C]/40" />
+        
+                </div>
 
-            <motion.svg 
-                className="hidden lg:block absolute right-0 z-30 object-cover top-2/3"  
-                width="179" 
-                height="424" 
-                viewBox="0 0 179 424" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                initial="hidden"
-                animate="visible"
-            >
-                <motion.path 
-                    d="M339 1H25C11.7452 1 1 11.7452 1 25V418C1 431.255 11.7452 442 25 442H85.5" 
-                    stroke="url(#paint0_linear_960_934)"
-                    strokeDasharray="1800"
-               
-                />
-                <defs>
-                    <linearGradient id="paint0_linear_960_934" x1="170" y1="1" x2="29" y2="394" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="white"/>
-                        <stop offset="0.451923" stopColor="white" stopOpacity="0"/>
-                        <stop offset="1" stopColor="white"/>
-                    </linearGradient>
-                </defs>
-            </motion.svg>
-
-
-            <div className="absolute inset-1 z-40 h-screen grid grid-rows-2 xl:grid-cols-2 pt-4 sm:pt-6 md:pt-8 lg:pt-10 mt-20 md:mt-16 lg:mt-20">
-
-                {/* Images section - apparaît en premier sur mobile, en second sur desktop */}
-                <div className="order-1 lg:order-2 grid items-center justify-center grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-2 sm:px-4 md:px-6 lg:px-0 ">
-                    <div>
-                        <div className="w-full h-auto">
-                            <Image src={card1} alt="" className="" />
-                        </div>
-                        <div className="w-4/5 md:w-3/4 lg:w-2/3 ml-auto mt-4 sm:mt-6 md:mt-8 lg:mt-10">
-                            <Image src={card2} alt="" />
-                        </div>
+                {/* SVG seulement sur desktop */}
+                {!isMobile && (
+                    <div className="absolute inset-0 z-10 pointer-events-none">
+                        {/* Version statique des SVG - pas d'animation */}
+                        <svg 
+                            className="absolute right-1/3 h-full w-full opacity-30" 
+                            width="318" 
+                            height="615" 
+                            viewBox="0 0 318 615" 
+                            fill="none"
+                        >
+                            <path 
+                                d="M1 819L1 501.914V400.609V222C1 208.745 11.7452 198 25 198H169.667H293.5C306.755 198 317.5 187.255 317.5 174V0.5" 
+                                stroke="rgba(255,255,255,0.3)"
+                                strokeWidth="1"
+                            />
+                        </svg>
                     </div>
+                )}
+                
+                {/* Contenu principal */}
+                <div className="relative z-20 w-full h-full">
+                    <div className="max-w-7xl mx-auto px-4 h-full">
+                        <div className="h-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-20">
+                               {/* Section images - layout simplifié */}
+                            <div className="relative lg:order-2">
+                                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                                    <div className="space-y-4 lg:space-y-6">
+                                        <div className="w-full">
+                                            <Image 
+                                                src={card1} 
+                                                alt="Service 1" 
+                                                className="w-full h-auto rounded-lg"
+                                                loading={isMobile ? "lazy" : "eager"}
+                                            />
+                                        </div>
+                                        <div className="w-4/5 ml-auto">
+                                            <Image 
+                                                src={card2} 
+                                                alt="Service 2" 
+                                                className="w-full h-auto rounded-lg"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
 
-                    <div>
-                       <div className="relative bg-[#0A60AD] rounded-3xl h-[210px] w-[210px] text-white font-outfit p-2 overflow-hidden">
-                          {/* Contenu */}
-                        <p className="relative z-10">Followers On Social Media</p>
-
-                        {/* Effet de brillance */}
-                        <div className="absolute flex  justify-center items-center text-center inset-0 rounded-3xl overflow-hidden">
-                            <div className="shine absolute inset-0"></div>
-                            <div className="flex flex-col ">
-                            <p className="text-7xl font-outfit font-semibold text-white opacity-20 -mb-6" >4646</p>
-                            <p className="text-7xl font-outfit font-semibold">{count}</p>
-                            <p className="text-7xl font-outfit font-semibold text-white opacity-20 -mt-6">4648</p>
+                                    <div className="space-y-4 lg:space-y-6 pt-8">
+                                        <div className="w-full">
+                                            <Image 
+                                                src={card3} 
+                                                alt="Service 3" 
+                                                className="w-full h-auto rounded-lg"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                        <div className="w-full">
+                                            <Image 
+                                                src={card4} 
+                                                alt="Service 4" 
+                                                className="w-full h-auto rounded-lg"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                         
+                            {/* Section texte */}
+                            <div className="lg:order-1 text-white font-outfit space-y-6 lg:pr-8">
+                                <p className="text-sm md:text-base font-normal opacity-80">
+                                    On digitalise même ta grand-mère.
+                                </p>
+                                
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                                    {t("heroSection.title1") || "Solutions Digitales"}
+                                </h1>
+                                
+                                <p className="text-lg md:text-xl lg:text-2xl font-normal opacity-90 max-w-2xl">
+                                    {t("heroSection.description") || "Description"}.
+                                </p>
+                                
+                                <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                                    <Link href="/Devis" className="inline-block">
+                                        <div className="bg-[#0A60AD] hover:bg-[#0856A0] transition-colors px-6 py-3 rounded-3xl text-center cursor-pointer">
+                                            {t("heroSection.button") || "Commencer"}
+                                        </div>
+                                    </Link>
+                                    
+                                    <div className="flex items-center justify-center border border-white/30 hover:border-white/50 transition-colors rounded-3xl px-5 py-3 cursor-pointer">
+                                        <span className="mr-2">Explore</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path d="M11.894 12.7V3.75" stroke="currentColor" strokeWidth="1.5"/>
+                                            <path d="M11.8998 20.3539C13.1558 20.3539 17.1708 13.9899 16.4488 13.2679C15.7268 12.5459 8.14181 12.4769 7.35081 13.2679C6.55981 14.0599 10.6448 20.3539 11.8998 20.3539Z" stroke="currentColor" strokeWidth="1.5"/>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
 
-                        </div>
 
-                        <style jsx>{`
-                            .shine {
-                            background: linear-gradient(
-                                120deg,
-                                transparent 0%,
-                                rgba(255, 255, 255, 0.4) 50%,
-                                transparent 100%
-                            );
-                         
-                        `}</style>
-                        </div>
-
-                        <div>
-                            <Image src={card4} alt="" className="mt-4 sm:mt-6 md:mt-8 lg:mt-10" />
                         </div>
                     </div>
                 </div>
-
-                {/* Text section - apparaît en second sur mobile, en premier sur desktop */}
-                <div className="order-2 lg:order-1 text-white font-outfit flex flex-col lg:mt-30 sm:justify-center ml-4 sm:ml-6 md:ml-8 lg:ml-12 gap-3 sm:gap-4 md:gap-5 lg:gap-5">
-                    <p className="text-sm md:text-base lg:text-[16px] font-normal">On digitalise même ta grand-mère.</p>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">{t("heroSection.title1")}</h1>
-                    <p className="text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 md:w-4/5 lg:w-2/3">{t("heroSection.description")}.</p>
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 md:gap-5">
-                        <Link href="/Devis" ><p  className="cursor-pointer bg-[#0A60AD] px-4 sm:px-5 md:px-6 lg:px-6 py-2 rounded-3xl text-base">{t("heroSection.button")}</p></Link>
-                        <div className="flex border-[1px] border-white rounded-3xl px-3 sm:px-4 md:px-5 py-2 cursor-pointer">
-                            <p className="text-base">Explore</p>
-                            <svg width="20" height="20" className="sm:w-6 sm:h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.894 12.7V3.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M11.8998 20.3539C13.1558 20.3539 17.1708 13.9899 16.4488 13.2679C15.7268 12.5459 8.14181 12.4769 7.35081 13.2679C6.55981 14.0599 10.6448 20.3539 11.8998 20.3539Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     )

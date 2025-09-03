@@ -56,6 +56,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             src={design_service} 
             alt="Design Service" 
             className="h-auto w-full block" 
+            priority={false}    // false = lazy load automatique
+
           />
 
           {/* Éléments design flottants - positionnés par rapport à l'image */}
@@ -66,7 +68,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}         
             transition={{ duration: 2 }} 
           >
-            <Image src={assiete} alt="Assiette design" className="w-full h-auto object-contain" />
+            <Image src={assiete} alt="Assiette design" className="w-full h-auto object-contain"  priority={false}  />
+
           </motion.div>
           
           <motion.div 
@@ -75,7 +78,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}         
             transition={{ duration: 2, delay: 0.25}} 
           >
-            <Image src={pellicule} alt="Pellicule" className="w-full h-auto object-contain" />
+            <Image src={pellicule} alt="Pellicule" className="w-full h-auto object-contain"  priority={false}  />
+
           </motion.div>
 
           <motion.div 
@@ -84,7 +88,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}         
             transition={{ duration: 2, delay: 0.25 }} 
           >
-            <Image src={Ai} alt="Adobe Illustrator" className="w-full h-auto object-contain" />
+            <Image src={Ai} alt="Adobe Illustrator" className="w-full h-auto object-contain"  priority={false}  />
+
           </motion.div>
 
           <motion.div 
@@ -93,7 +98,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}         
             transition={{ duration: 2, delay: 0.25}} 
           >
-            <Image src={Figma} alt="Figma" className="w-full h-auto object-contain" />
+            <Image src={Figma} alt="Figma" className="w-full h-auto object-contain"  priority={false}   />
+
           </motion.div>
 
           <motion.div 
@@ -102,14 +108,15 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}         
             transition={{ duration: 2, delay: 0.25 }} 
           >
-            <Image src={Ps} alt="Adobe Photoshop" className="w-full h-auto object-contain" />
+            <Image src={Ps} alt="Adobe Photoshop" className="w-full h-auto object-contain"  priority={false}   />
+
           </motion.div>
 
           {/* Section titre avec design_name et SVG décoratifs */}
           <motion.div className="absolute top-[8%] left-[5%] w-[45%]">
             <div className='flex relative items-start'>
-              <Image src={design_name} alt="Design Service Name" className="w-auto h-auto max-w-full" />
-              
+              <Image src={design_name} alt="Design Service Name" className="w-auto h-auto max-w-full"  priority={false}  />
+
               {/* SVG du cadre de dessin */}
               <motion.svg 
                 width="411" 
@@ -191,7 +198,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
               src={design_service} 
               alt="Design Service" 
               className="w-full h-full object-cover"
-              
+             priority={false}    // false = lazy load automatique
+         
             />
           </div>
 
@@ -206,7 +214,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             transition={{ duration: 2 }}
             
           >             
-            <Image src={assiete} alt="Assiette design" className="w-full h-auto object-contain drop-shadow-lg" />         
+            <Image src={assiete} alt="Assiette design" className="w-full h-auto object-contain drop-shadow-lg"  priority={false}  />      
           </motion.div>
 
           {/* Outils de design repositionnés pour mobile */}
@@ -216,7 +224,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: -50, scale: 1, y: -50}}         
             transition={{ duration: 2, delay: 1.5}} 
           >
-            <Image src={Ai} alt="Adobe Illustrator" className="w-2/3 h-auto object-contain"/>
+            <Image src={Ai} alt="Adobe Illustrator" className="w-2/3 h-auto object-contain"  priority={false}  />      
+
           </motion.div>
           
           <motion.div 
@@ -225,8 +234,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: 50, scale: 1, y: -50}}         
             transition={{ duration: 2, delay: 2}} 
           >
-            <Image src={Figma} alt="Figma" className="w-2/3 h-auto object-contain" />
-          </motion.div>
+            <Image src={Figma} alt="Figma" className="w-2/3 h-auto object-contain" priority={false}   /> </motion.div>         
           
           <motion.div 
             className="absolute bottom-[18%] right-[0%] z-6"
@@ -234,7 +242,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: -30, scale: 1, y: 50}}         
             transition={{ duration: 2, delay: 2.5}} 
           >
-            <Image src={Ps} alt="Adobe Photoshop" className="w-2/3 h-auto object-contain drop-shadow-lg" />
+            <Image src={Ps} alt="Adobe Photoshop" className="w-2/3 h-auto object-contain drop-shadow-lg"  priority={false}  />       
       
           </motion.div>
             <motion.div 
@@ -243,7 +251,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             animate={isInView ? { opacity: 0, y: 0 } : { opacity: 1, y: -100 }}         
             transition={{ duration: 2, delay: 0.25}} 
           >
-            <Image src={pellicule} alt="Pellicule" className="w-full h-auto object-contain" />
+            <Image src={pellicule} alt="Pellicule" className="w-full h-auto object-contain"  priority={false}   />         
+
           </motion.div>
 
 
@@ -251,8 +260,8 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
           <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
             <div className="flex-1">
               <div className='flex relative items-start mb-4'>
-                <Image src={design_name} alt="Design Service Name" className="w-auto h-auto max-w-full drop-shadow-lg" />
-                
+                <Image src={design_name} alt="Design Service Name" className="w-auto h-auto max-w-full drop-shadow-lg"  priority={false}   />
+
                 {/* SVG du cadre de dessin simplifié pour mobile */}
                 <motion.svg 
                   width="200" 

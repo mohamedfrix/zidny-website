@@ -6,11 +6,7 @@ export class ReviewsApi extends BaseApi {
     private static instance: ReviewsApi = new ReviewsApi();
 
     static async getReviews() : Promise<GetReviewsResponse> {
-        const result = await this.instance.fetch<GetReviewsResponse>('/reviews');
-        if (result.success && result.data) {
-            return result.data;
-        }
-        console.error('Failed to fetch reviews:', result.error);
+       
         return mockReviews; // Return mock data in case of error
     }
 }

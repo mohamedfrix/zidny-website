@@ -22,7 +22,6 @@ import FeaturesSectionV2 from "@/components/landing_page/FeaturesSectionV2";
 import ProjectComponent from "@/components/landing_page/ProjectComponent";
 import AboutUsSectionV2 from "@/components/landing_page/AboutUsSectionV2";
 import HeroSectionV2 from "@/components/landing_page/HeroSectionV2";
-import ReviewsSection from "@/components/landing_page/ReviewsSection";
 
 
 function LandingPage() {
@@ -102,13 +101,11 @@ function LandingPage() {
                 </motion.div>
 
                 <div className={`row-start-1 col-start-1 self-center  bg-background z-10 transition-all duration-800 ease-[cubic-bezier(0.7, 0, 0.84, 0)] ${open ? 'overflow-hidden scale-[0.8] lg:scale-[0.7] lg:-translate-x-[30%] -translate-x-50' : 'overflow-y-auto scale-100'} w-full h-full`}>                    <NavBar />
-                    <HeroSectionV2 />
-                    
-                    <AboutUsSectionV2/>
-                    <Scroll_Services/>
-                    <ProjectComponent/>
-                    <FeaturesSectionV2/>
-                    <ReviewsSection/>
+                    <HeroSectionV2/>
+                    <AboutUsSectionV2/> {/*31Mo , 23Mo Transferes*/}
+                    <Scroll_Services/> {/*56Mo , 38Mo Transferes*/}
+                    <ProjectComponent/> {/*0Mo , 0Mo Transferes*/}
+                    <FeaturesSectionV2/> {/*8Mo , 5Mo Transferes*/}
                     <Footer ref={footerRef} />
 
                     

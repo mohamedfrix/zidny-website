@@ -1,6 +1,6 @@
  import Image from "next/image"
 import Titre_Component from "./Titre_Component"
-import iPhone from "@/assets/images/AboutUs/iPhone.svg"
+import iPhone from "@/assets/images/AboutUs/iPhone.png"
 import Flash from "@/assets/images/AboutUs/Flash.svg"
 import Flash2 from "@/assets/images/AboutUs/Flash2.svg"
 import LogoAT from "@/assets/images/AboutUs/LogoAT.svg"
