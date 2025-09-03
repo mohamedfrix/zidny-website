@@ -36,7 +36,7 @@ function HeroSectionV2() {
                                 alt="" 
                                 fill
                                 className="object-cover"
-                                priority
+                                priority 
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#07142C]/40" />
         
