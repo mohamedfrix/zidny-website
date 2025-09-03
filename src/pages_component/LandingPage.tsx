@@ -17,24 +17,11 @@ import tiktok_icon from "@/assets/images/tiktok.svg";
 import Footer from "@/components/layout/Footer";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-<<<<<<< HEAD
 import Scroll_Services from "@/components/services/Scroll_Services";
 import FeaturesSectionV2 from "@/components/landing_page/FeaturesSectionV2";
 import ProjectComponent from "@/components/landing_page/ProjectComponent";
 import AboutUsSectionV2 from "@/components/landing_page/AboutUsSectionV2";
 import HeroSectionV2 from "@/components/landing_page/HeroSectionV2";
-=======
-// import Scroll_Services from "@/components/services/Scroll_Services";
-// import FeaturesSectionV2 from "@/components/landing_page/FeaturesSectionV2";
-// import ProjectComponent from "@/components/landing_page/ProjectComponent";
-// import AboutUsSectionV2 from "@/components/landing_page/AboutUsSectionV2";
-// import HeroSectionV2 from "@/components/landing_page/HeroSectionV2";
-import HeroSection from "@/components/landing_page/HeoSection";
-import AboutUs from "@/components/landing_page/AboutUs";
-import ServicesSection from "@/components/landing_page/Services";
-import ProjectsSection from "@/components/landing_page/ProjectsSection";
-import FeaturesSection from "@/components/landing_page/FeaturesSection";
->>>>>>> a6dbd2fedcbbd64593714b70194ac44fa01e9dcf
 
 
 function LandingPage() {
