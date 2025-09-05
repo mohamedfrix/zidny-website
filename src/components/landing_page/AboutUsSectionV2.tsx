@@ -23,7 +23,7 @@ function AboutUsSectionV2() {
 
                     <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-[#050520] to-[#194393] h-[650px]">
 
-                       <Image src={iPhone} alt="iPhone"  className="absolute z-10 top-1/6 "/>
+                       <Image src={iPhone} alt="iPhone"  className="absolute z-10 top-1/6" priority={false}/>
                        <p className=" z-20  leading-tight pl-4 font-outfit text-lg mt-4 font-normal text-white">{t("aboutUs.description1")}</p> 
 
                     </div>
@@ -37,6 +37,7 @@ function AboutUsSectionV2() {
                                     alt="ZidnyPic" 
                                     fill
                                     className="object-cover"
+                                    priority={false}
                                 />
                            </div>
                             <div className="h-full flex flex-col justify-between ">
@@ -59,6 +60,7 @@ function AboutUsSectionV2() {
                             src={Greek} 
                             alt="greek" 
                             className="w-full h-full object-cover"
+                            priority={false}
                             />
                         </div>
                         <div className="absolute inset-0 z-20 flex flex-col justify-start p-4">
@@ -73,10 +75,10 @@ function AboutUsSectionV2() {
 
                             <div className="relative rounded-3xl  bg-[#050520] overflow-hidden h-[330px] lg:h-auto">
                               <p className=" z-20  leading-tight pl-4 font-outfit text-lg mt-4 font-normal text-white"> {t("aboutUs.description4")}</p> 
-                              <Image src={Flash} alt="Flash" className="absolute z-10" /> 
-                              <Image src={Flash2} alt="Flash" className="absolute z-10" /> 
+                              <Image src={Flash} alt="Flash" className="absolute z-10" priority={false} /> 
+                              <Image src={Flash2} alt="Flash" className="absolute z-10" priority={false} /> 
 
-                              <Image src={LogoAT} alt="Logo Algérie Telecom " className="absolute z-20 inset-1/2 -translate-x-1/2 -translate-y-1/2" />
+                              <Image src={LogoAT} alt="Logo Algérie Telecom " className="absolute z-20 inset-1/2 -translate-x-1/2 -translate-y-1/2" priority={false} />
 
                             </div>
 

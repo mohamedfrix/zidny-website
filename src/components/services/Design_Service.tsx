@@ -191,14 +191,13 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
         </div>
 
         {/* Layout pour tablettes et mobiles - carte plus longue avec image de fond étirée */}
-        <div className="block lg:hidden mb-8 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
+        <div className="block lg:hidden mt-16 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
           {/* Image de fond qui couvre tout le div et est étirée en hauteur */}
           <div className="absolute inset-0 w-full h-full">
             <Image 
               src={design_service} 
               alt="Design Service" 
               className="w-full h-full object-cover"
-             priority={false}    // false = lazy load automatique
          
             />
           </div>
@@ -208,7 +207,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
 
           {/* Éléments design repositionnés pour mobile avec effet de fondu */}
           <motion.div            
-            className="absolute bottom-0 right-[-20%] z-5 h-auto "
+            className="absolute bottom-[-1%] right-[0%] z-5 h-auto "
             initial={{ opacity: 0, y: 100 }}         
             animate={isInView ? { opacity: 0, y: 100 } : { opacity: 1, y: 0 }}         
             transition={{ duration: 2 }}
@@ -219,25 +218,25 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
 
           {/* Outils de design repositionnés pour mobile */}
           <motion.div  
-            className="absolute bottom-[0%] right-[-55%] z-6" 
+            className="absolute bottom-[-3%] left-[50%] z-6" 
             initial={{ opacity: 0, x: -50, scale: 0, y: -50 }}         
             animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: -50, scale: 1, y: -50}}         
             transition={{ duration: 2, delay: 1.5}} 
           >
-            <Image src={Ai} alt="Adobe Illustrator" className="w-2/3 h-auto object-contain"  priority={false}  />      
+            <Image src={Ai} alt="Adobe Illustrator" className="w-full h-auto object-contain"  priority={false}  />      
 
           </motion.div>
           
           <motion.div 
-            className="absolute bottom-[0%] right-[-20%] z-6" 
+            className="absolute bottom-[-3%] left-[45%]  z-6" 
             initial={{ opacity: 0, x: 50, scale: 0, y: -50 }}         
             animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: 50, scale: 1, y: -50}}         
             transition={{ duration: 2, delay: 2}} 
           >
-            <Image src={Figma} alt="Figma" className="w-2/3 h-auto object-contain" priority={false}   /> </motion.div>         
+            <Image src={Figma} alt="Figma" className="w-full h-auto object-contain" priority={false}   /> </motion.div>         
           
           <motion.div 
-            className="absolute bottom-[18%] right-[0%] z-6"
+            className="absolute bottom-[10%] right-[0%] z-6"
             initial={{ opacity: 0, x: -30, scale: 0, y: 50 }}         
             animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: -30, scale: 1, y: 50}}         
             transition={{ duration: 2, delay: 2.5}} 
@@ -246,7 +245,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
       
           </motion.div>
             <motion.div 
-            className="absolute bottom-[0%] right-[45%]  z-5" 
+            className="absolute bottom-[-8%] right-[50%]  z-5" 
             initial={{ opacity: 0, y: -100 }}         
             animate={isInView ? { opacity: 0, y: 0 } : { opacity: 1, y: -100 }}         
             transition={{ duration: 2, delay: 0.25}} 
@@ -257,7 +256,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
 
 
           {/* Contenu textuel par-dessus l'image */}
-          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+          <div className="relative z-10 p-6 md:p-8 min-h-[700px] flex flex-col ">
             <div className="flex-1">
               <div className='flex relative items-start mb-4'>
                 <Image src={design_name} alt="Design Service Name" className="w-auto h-auto max-w-full drop-shadow-lg"  priority={false}   />
@@ -269,7 +268,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
                   viewBox="0 0 411 186"  
                   fill="none"  
                   xmlns="http://www.w3.org/2000/svg" 
-                  className='absolute -top-[1rem] -left-[1rem] w-full max-w-[15rem] h-auto opacity-90'
+                  className='absolute top-[0.5rem] -left-[1rem] w-full  max-w-[15rem] h-auto opacity-90'
                 > 
                   <motion.rect 
                     x="9.2864" 
@@ -322,19 +321,7 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
             </div>
             
             {/* Bouton fixé en bas */}
-            <div className="fixed bottom-12">
-              <Link href="/Devis">
-                <motion.button 
-                  className="flex items-center gap-3 bg-[#0A60AD] text-white rounded-4xl py-3 px-6 md:px-8 text-base md:text-lg cursor-pointer hover:bg-[#0C224B] transition-all duration-300 shadow-lg"
-                >
-                {t("Portfolio.Button")} 
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.7 12.1064H3.75" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path fillRule="evenodd" clipRule="evenodd" d="M20.3539 12.1002C20.3539 10.8442 13.9899 6.82919 13.2679 7.55119C12.5459 8.27319 12.4769 15.8582 13.2679 16.6492C14.0599 17.4402 20.3539 13.3552 20.3539 12.1002Z" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.button>
-              </Link>
-            </div>
+         
           </div>
         </div>
       </div>

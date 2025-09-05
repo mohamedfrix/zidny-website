@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { StepsProps, formDataWeb} from '@/pages_component/DevisPage';
 
-// Déclaration TypeScript pour fbq
 
 
 export default function Step_2({ data, setData, nextStep}: StepsProps) {

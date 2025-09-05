@@ -1,9 +1,8 @@
 import web_service from '../../assets/images/Services/Web/web_service.svg';
 import website_mockup from '../../assets/images/Services/Web/website_mockup.svg';
-import { motion, MotionValue, useInView, useTransform } from 'framer-motion';
+import { motion, MotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface FilmmakingServiceProps {
@@ -13,23 +12,21 @@ interface FilmmakingServiceProps {
   targetScale: number;
 }
 
-function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) {
+function Web_Service({ progress, range, targetScale }: FilmmakingServiceProps) {
   
     const scale = useTransform(progress, range, [1, targetScale]);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
     const {t} = useLanguage()
 
   return (
     <motion.div 
-      className="flex items-center justify-center h-auto sticky top-10 overflow-hidden  "
+      className="flex items-center justify-center h-auto sticky px-4 top-10 overflow-hidden"
        style={{ 
         scale,
         transformOrigin: 'start start'
       }}
     >
       {/* Conteneur principal responsive */}
-      <div className="relative w-full max-w-7xl mx-auto overflow-hidden ">
+      <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
         
         {/* Layout pour desktop */}
         <div className="hidden lg:block relative">
@@ -37,18 +34,21 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
           <Image 
             src={web_service} 
             alt="Web Service" 
-            className="h-auto w-full block"         priority={false}   
-
+            className="h-auto w-full block"
+            priority={false}
           />
 
           {/* Website mockup - positionné par rapport à l'image */}
-          <motion.div className="absolute top-[8%] -right-28 w-2/3 h-auto overflow-hidden"
-            ref={ref}
-            initial={{ opacity: 0, y: 100 }}         
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 100 }}         
-            transition={{ duration: 2.5 , ease : 'easeInOut'}} >
-            
-            <Image  src={website_mockup} alt="website_mockup" className="w-auto h-1/2 object-contain"      priority={false}  />       
+          <motion.div 
+            className="absolute top-[8%] -right-28 w-2/3 h-auto overflow-hidden"
+           
+          >
+            <Image 
+              src={website_mockup} 
+              alt="website_mockup" 
+              className="w-auto h-1/2 object-contain"
+              priority={false}
+            />       
           </motion.div>
 
           {/* Contenu textuel - positionné par rapport à l'image */}
@@ -75,7 +75,7 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
               </motion.button>
             </Link>
 
-            {/* Icônes des technologies web - positionnées relativement au bouton */}
+            {/* Icônes des technologies web */}
             <div className="flex items-center">
               <svg width="218" height="24" viewBox="0 0 218 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-6">
                 <path d="M1.93902 13.0599C1.35366 12.4745 1.35366 11.5255 1.93902 10.9401L10.9401 1.93902C11.5255 1.35366 12.4745 1.35366 13.0599 1.93902L22.061 10.9401C22.6463 11.5255 22.6463 12.4745 22.061 13.0599L13.0599 22.061C12.4745 22.6463 11.5255 22.6463 10.9401 22.061L1.93902 13.0599Z" fill="#EE513B"/>
@@ -120,9 +120,9 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
           </div>
         </div>
 
-        {/* Layout pour tablettes et mobiles - carte plus longue avec image de fond étirée */}
-        <div className="block lg:hidden mb-8 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
-          {/* Image de fond qui couvre tout le div et est étirée en hauteur */}
+        {/* Layout pour tablettes et mobiles */}
+        <div className="block lg:hidden mt-16 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
+          {/* Image de fond */}
           <div className="absolute inset-0 w-full h-full">
             <Image 
               src={web_service} 
@@ -132,30 +132,32 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
                 objectFit: 'cover',
                 objectPosition: 'center'
               }}
-                      priority={false}    // false = lazy load automatique
-
+              priority={false}
             />
           </div>
 
-          {/* Overlay pour améliorer la lisibilité du texte */}
+          {/* Overlay pour améliorer la lisibilité */}
           <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]"></div>
 
-          {/* Website mockup mobile - repositionné pour mobile avec effet de fondu */}
+          {/* Website mockup mobile - ANIMATION CORRIGÉE */}
           <motion.div            
-            className="absolute top-60 -right-24 z-5 h-auto "
-            initial={{ opacity: 0, y: 100 }}         
-            animate={isInView ? { opacity: 0, y: 100 } : { opacity: 1, y: 0 }}         
-            transition={{ duration: 2 }}
+            className="absolute top-1/2 -right-24 z-5 h-auto  w-64 max-w-[70vw]"
+
             style={{
               maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)',
               WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)'
             }}
           >             
-            <Image src={website_mockup} alt="Website Mockup" className="w-auto h-full object-contain drop-shadow-lg"  priority={false}   />                 
+            <Image 
+              src={website_mockup} 
+              alt="Website Mockup" 
+              className="w-full h-auto object-contain drop-shadow-lg"
+              priority={false}
+            />                 
           </motion.div>
 
-          {/* Contenu textuel par-dessus l'image */}
-          <div className="relative z-10 p-6 md:p-8 h-full flex flex-col justify-between">
+          {/* Contenu textuel */}
+          <div className="relative z-10 p-6 md:p-8 min-h-[700px] flex flex-col">
             <div className="flex-1">
               <h1 className='text-[clamp(2rem,12vw,4rem)] font-semibold font-outfit text-white leading-tight mb-4 drop-shadow-lg'>
                 &lt; Web Dev &gt;
@@ -166,20 +168,8 @@ function Web_Service({ progress,  range, targetScale }: FilmmakingServiceProps) 
               </p>
             </div>
             
-            {/* Bouton fixé en bas */}
-            <div className="fixed bottom-12">
-              <Link href="/Devis">
-                <motion.button 
-                  className="flex items-center gap-3 bg-[#0A60AD] text-white rounded-4xl py-3 px-6 md:px-8 text-base md:text-lg cursor-pointer hover:bg-[#0C224B] transition-all duration-300 shadow-lg"
-                >
-                {t("Portfolio.Button")} 
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.7 12.1064H3.75" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path fillRule="evenodd" clipRule="evenodd" d="M20.3539 12.1002C20.3539 10.8442 13.9899 6.82919 13.2679 7.55119C12.5459 8.27319 12.4769 15.8582 13.2679 16.6492C14.0599 17.4402 20.3539 13.3552 20.3539 12.1002Z" stroke="#E9FCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.button>
-              </Link>
-            </div>
+            {/* Bouton en bas */}
+              
           </div>
         </div>
       </div>

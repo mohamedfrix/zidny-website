@@ -25,7 +25,7 @@ function Scroll_Services() {
    
 
     return (
-        <div ref={container} className='relative mt-20  mx-4 '>
+        <div ref={container} className='relative mt-20  mx-4'>
             <Titre_Component title={t('services.title')} subtitle={t('services.description')}/>
             {Services.map((service, index) => {
                 const ServiceComponent = service.component;
@@ -35,7 +35,7 @@ function Scroll_Services() {
                 return (
                     <motion.div 
                         key={index}
-                        className="sticky mt-16"
+                        className="sticky "
                         style={{ 
                             top: `${10 + index * 30}px`,
                             }}
