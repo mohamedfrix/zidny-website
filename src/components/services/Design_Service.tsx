@@ -1,4 +1,5 @@
 import design_service from '../../assets/images/Services/Design/design_service.svg';
+import design_service_mobile from '../../assets/images/Services/Design/design_service_mobile.png';
 import design_name from '../../assets/images/Services/Design/design_name.svg';
 import Ai from '../../assets/images/Services/Design/Ai.svg';
 import assiete from '../../assets/images/Services/Design/assiete.svg';
@@ -193,129 +194,22 @@ function Design_Service({ progress,  range, targetScale }: FilmmakingServiceProp
         {/* Layout pour tablettes et mobiles - carte plus longue avec image de fond étirée */}
         <div className="block lg:hidden mt-16 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
           {/* Image de fond qui couvre tout le div et est étirée en hauteur */}
-          <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 w-full h-full object-cover object-center overflow-hidden">
             <Image 
-              src={design_service} 
+              src={design_service_mobile} 
               alt="Design Service" 
-              className="w-full h-full object-cover"
-         
-            />
+              className="w-full h-full object-cover"  />
           </div>
 
-          {/* Overlay pour améliorer la lisibilité du texte */}
-          <div className="absolute inset-0 bg-black/10 backdrop-blur-[0.5px]"></div>
 
-          {/* Éléments design repositionnés pour mobile avec effet de fondu */}
-          <motion.div            
-            className="absolute bottom-[-1%] right-[0%] z-5 h-auto "
-            initial={{ opacity: 0, y: 100 }}         
-            animate={isInView ? { opacity: 0, y: 100 } : { opacity: 1, y: 0 }}         
-            transition={{ duration: 2 }}
-            
-          >             
-            <Image src={assiete} alt="Assiette design" className="w-full h-auto object-contain drop-shadow-lg"  priority={false}  />      
-          </motion.div>
-
-          {/* Outils de design repositionnés pour mobile */}
-          <motion.div  
-            className="absolute bottom-[-3%] left-[50%] z-6" 
-            initial={{ opacity: 0, x: -50, scale: 0, y: -50 }}         
-            animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: -50, scale: 1, y: -50}}         
-            transition={{ duration: 2, delay: 1.5}} 
-          >
-            <Image src={Ai} alt="Adobe Illustrator" className="w-full h-auto object-contain"  priority={false}  />      
-
-          </motion.div>
-          
-          <motion.div 
-            className="absolute bottom-[-3%] left-[45%]  z-6" 
-            initial={{ opacity: 0, x: 50, scale: 0, y: -50 }}         
-            animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: 50, scale: 1, y: -50}}         
-            transition={{ duration: 2, delay: 2}} 
-          >
-            <Image src={Figma} alt="Figma" className="w-full h-auto object-contain" priority={false}   /> </motion.div>         
-          
-          <motion.div 
-            className="absolute bottom-[10%] right-[0%] z-6"
-            initial={{ opacity: 0, x: -30, scale: 0, y: 50 }}         
-            animate={isInView ? { opacity: 0, x: 0, scale: 0, y: 0 } : { opacity: 1, x: -30, scale: 1, y: 50}}         
-            transition={{ duration: 2, delay: 2.5}} 
-          >
-            <Image src={Ps} alt="Adobe Photoshop" className="w-2/3 h-auto object-contain drop-shadow-lg"  priority={false}  />       
-      
-          </motion.div>
-            <motion.div 
-            className="absolute bottom-[-8%] right-[50%]  z-5" 
-            initial={{ opacity: 0, y: -100 }}         
-            animate={isInView ? { opacity: 0, y: 0 } : { opacity: 1, y: -100 }}         
-            transition={{ duration: 2, delay: 0.25}} 
-          >
-            <Image src={pellicule} alt="Pellicule" className="w-full h-auto object-contain"  priority={false}   />         
-
-          </motion.div>
-
-
-          {/* Contenu textuel par-dessus l'image */}
           <div className="relative z-10 p-6 md:p-8 min-h-[700px] flex flex-col ">
             <div className="flex-1">
               <div className='flex relative items-start mb-4'>
-                <Image src={design_name} alt="Design Service Name" className="w-auto h-auto max-w-full drop-shadow-lg"  priority={false}   />
 
-                {/* SVG du cadre de dessin simplifié pour mobile */}
-                <motion.svg 
-                  width="200" 
-                  height="100" 
-                  viewBox="0 0 411 186"  
-                  fill="none"  
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className='absolute top-[0.5rem] -left-[1rem] w-full  max-w-[15rem] h-auto opacity-90'
-                > 
-                  <motion.rect 
-                    x="9.2864" 
-                    y="36.9838" 
-                    width="383.158" 
-                    height="140.351" 
-                    transform="rotate(-4.18638 9.2864 36.9838)" 
-                    stroke="#2AA4E7" 
-                    strokeWidth="2.80702" 
-                    fill='none' 
-                    initial={"hidden"}   
-                    animate={isInView ? "visible" : "hidden"}      
-                  />
-                  
-                  {/* Coins du rectangle */}
-                  {rectPath.slice(0, 4).map((corner, i) => (
-                    <motion.rect
-                      key={i}
-                      x={corner.x}
-                      y={corner.y}
-                      width="11.2281"
-                      height="11.2281"
-                      transform={`rotate(-4.18638 ${corner.x} ${corner.y})`}
-                      fill="white"
-                      stroke="#2AA4E7"
-                      strokeWidth="2.80702"
-                      custom={i}
-                      initial="hidden"
-                      animate={isInView ? "visible" : "hidden"}
-                    />
-                  ))}
-                  
-                  {/* SVG du curseur */}
-                  <motion.g
-                    animate={isInView ? "moving" : { x: parseFloat(rectPath[5].x), y: parseFloat(rectPath[5].y) }}
-                    initial={{ x: parseFloat(rectPath[5].x), y: parseFloat(rectPath[5].y) }}
-                  >
-                    <path 
-                      d="M17.5495 22.3426L0.461914 0.138672L27.4999 5L15.402 8.93034L17.5495 22.3426Z" 
-                      fill="#2AA4E7"
-                      transform="scale(0.8)"
-                    />
-                  </motion.g>
-                </motion.svg>
+                             
               </div>
               
-              <p className='font-outfit text-[clamp(1rem,5vw,1.55rem)] font-normal text-white mb-6 drop-shadow-lg'>
+              <p className='font-outfit text-[clamp(1rem,5vw,1.55rem)] font-normal text-[#0C224B] mb-6 mt-28 drop-shadow-lg'>
                 {t('Design.description')} 
               </p>
             </div>

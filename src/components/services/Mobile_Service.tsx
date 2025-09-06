@@ -1,4 +1,5 @@
 import mobile_service from '../../assets/images/Services/Mobile/mobile_service.svg';
+import mobile_service_mobile from '../../assets/images/Services/Mobile/mobile_service_mobile.png';
 import iphone from         '../../assets/images/Services/Mobile/iphone.svg';
 import notification_1 from '../../assets/images/Services/Mobile/Notification_1.svg';
 import notification_2 from '../../assets/images/Services/Mobile/Notification_2.svg';
@@ -109,50 +110,14 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
         {/* Layout pour tablettes et mobiles - carte plus longue avec image de fond étirée */}
         <div className="block lg:hidden mt-16 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
           {/* Image de fond qui couvre tout le div et est étirée en hauteur */}
-          <div className="absolute inset-0 w-full h-full ">
+          <div className="absolute inset-0 w-full h-full object-cover object-center overflow-hidden">
             <Image 
-              src={mobile_service} 
+              src={mobile_service_mobile} 
               alt="Mobile Service" 
-              className="w-full h-full object-cover"
-              style={{ 
-                objectFit: 'cover',
-                objectPosition: 'center'
-              }}
+              className="w-full scale-110 h-full object-cover"
+             
             />
           </div>
-
-          {/* Overlay pour améliorer la lisibilité du texte */}
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]"></div>
-
-          {/* iPhone mobile - repositionné pour mobile avec effet de fondu */}
-          <motion.div            
-            className="absolute  top-[20%]  z-5  h-auto "
-          >    
-            <Image src={iphone} alt="iPhone" className="w-auto h-full object-contain drop-shadow-lg" />         
-          </motion.div>
-
-          {/* Notifications repositionnées pour mobile */}
-          <motion.div  
-            className="absolute bottom-[20%] left-[15%]  z-20" 
-            
-          >
-            <Image src={notification_1} alt="Notification 1" className="w-1/2 h-auto   object-contain "/>
-          </motion.div>
-          
-          <motion.div 
-            className="absolute bottom-[15%] left-[65%]  z-6" 
-           
-          >
-            <Image src={notification_2} alt="Notification 2" className="w-full h-auto object-contain " />
-          </motion.div>
-          
-          <motion.div 
-            className="absolute bottom-[30%] left-[50%]   z-6"
-          
-          >
-            <Image src={notification_3} alt="Notification 3" className=" h-auto object-contain drop-shadow-lg" />
-          </motion.div>
-
           {/* Contenu textuel par-dessus l'image */}
           <div className="relative z-10 p-6 md:p-8 min-h-[700px] flex flex-col ">
             <div className="flex-1">
@@ -165,7 +130,6 @@ function Mobile_Service({ progress, range, targetScale }: FilmmakingServiceProps
               </p>
             </div>
             
-            {/* Bouton fixé en bas */}
           
           </div>
         </div>

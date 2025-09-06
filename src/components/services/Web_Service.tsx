@@ -1,4 +1,5 @@
 import web_service from '../../assets/images/Services/Web/web_service.svg';
+import web_service_mobile from '../../assets/images/Services/Web/web_service_mobile.png';
 import website_mockup from '../../assets/images/Services/Web/website_mockup.svg';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
@@ -123,39 +124,17 @@ function Web_Service({ progress, range, targetScale }: FilmmakingServiceProps) {
         {/* Layout pour tablettes et mobiles */}
         <div className="block lg:hidden mt-16 relative overflow-hidden min-h-[680px] md:min-h-[700px] rounded-2xl shadow-lg">
           {/* Image de fond */}
-          <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 w-full h-full object-cover object-center overflow-hidden">
             <Image 
-              src={web_service} 
+              src={web_service_mobile} 
               alt="Web Service" 
-              className="w-full h-full object-cover"
-              style={{ 
-                objectFit: 'cover',
-                objectPosition: 'center'
-              }}
-              priority={false}
-            />
+              className="w-full scale-110 h-full object-cover" />
           </div>
 
           {/* Overlay pour améliorer la lisibilité */}
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]"></div>
 
           {/* Website mockup mobile - ANIMATION CORRIGÉE */}
-          <motion.div            
-            className="absolute top-1/2 -right-24 z-5 h-auto  w-64 max-w-[70vw]"
-
-            style={{
-              maskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%)'
-            }}
-          >             
-            <Image 
-              src={website_mockup} 
-              alt="Website Mockup" 
-              className="w-full h-auto object-contain drop-shadow-lg"
-              priority={false}
-            />                 
-          </motion.div>
-
+         
           {/* Contenu textuel */}
           <div className="relative z-10 p-6 md:p-8 min-h-[700px] flex flex-col">
             <div className="flex-1">
