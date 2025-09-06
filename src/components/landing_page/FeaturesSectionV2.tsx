@@ -99,7 +99,7 @@ function FeaturesSectionV2() {
                                 style={{
                              mask: 'linear-gradient(to top, transparent 0%, transparent 20%, black 60%, black 100%)',
                              WebkitMask: 'linear-gradient(to top, transparent 0%, transparent 20%, black 60%, black 100%)' }} 
-                              initial={{ opacity: 0, y: 100}} whileInView={{opacity: 1 , y: 0}} transition={{ duration: 3 , ease: "easeInOut"}}>
+                              initial={{ opacity: 0, y: 100}} whileInView={{opacity: 1 , y: 0}} transition={{ duration: 3 , ease: "easeInOut"}} viewport={{once: true}}>
                                 <Image src={Feature1_Frame1} alt="feature1" priority={false}/>
                             </motion.div>
 
