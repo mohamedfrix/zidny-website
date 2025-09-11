@@ -54,6 +54,7 @@ export interface formDataWeb extends formData {
     websiteType : string[];
     designExpectation : string;
     functionalities : string[];
+    selectedOffer : string;
 }
 
 export interface formDataMobile extends formData {

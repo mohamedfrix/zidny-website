@@ -1,17 +1,18 @@
 'use client'
 
-
 import { useRouter } from "next/navigation";
 import form_bg from '@/assets/images/form_bg.svg'
+import basique_bg from '@/assets/images/Form/Offre1.jpg' // Ajoutez votre image pour l'offre basique
+import business_bg from '@/assets/images/Form/Offre2.jpg' // Ajoutez votre image pour l'offre business
+import premium_bg from '@/assets/images/Form/Offre3.jpg' // Ajoutez votre image pour l'offre premium
 import arrow from '@/assets/images/arrow.svg'
 import Image from "next/image";
 import { useState } from "react";
 import Progress from "@/components/form/Progress";
 import Step_2_Web from "@/components/form/Step_2_Web"
 import Step_5 from "@/components/form/Step_5"
+import Step_Offers from "@/components/form/Step_Offers";
 import logo from "@/assets/images/logo.svg"
-
-
 
 export type ServiceType = '' |'design' | 'web' | 'mobile' | 'filmmaking';
 export type FormDataUnion = formData;
@@ -21,7 +22,7 @@ export interface StepsProps {
     setData: (data: FormDataUnion | ((prev: FormDataUnion) => FormDataUnion)) => void;
     nextStep: () => void;
     previousStep?: () => void;
-    showThankYou?: () => void; // Nouvelle prop pour afficher le remerciement
+    showThankYou?: () => void;
 }
 
 export interface formData {
@@ -33,9 +34,9 @@ export interface formData {
     projectDescription : string;
     clientAgencyExperience : string ; 
     estimationPrice : string ;
-    estimationDuration : string ; 
+    estimationDuration : string ;
+    selectedOffer?: string; // Ajout de la propriété selectedOffer
 }
-
 
 // Base form initial data
 export const formInitialData: formData = {
@@ -47,20 +48,37 @@ export const formInitialData: formData = {
   projectDescription: '',
   clientAgencyExperience: '',
   estimationPrice: '',
-  estimationDuration: ''
+  estimationDuration: '',
+  selectedOffer: '' // Initialisation de selectedOffer
 };
 
-
-
-const steps = [ Step_2_Web ,Step_5];
+const steps = [ Step_2_Web, Step_Offers ,Step_5];
 
 function DevisPage() {
     
-     const router = useRouter(); // Une seule déclaration de useRouter
+     const router = useRouter();
      const [currentStep, setCurrentStep] = useState(1);
      const [formData, setFormData] = useState<FormDataUnion>(formInitialData);
-     const [showThankYou, setShowThankYou] = useState(false); // État pour afficher le remerciement
+     const [showThankYou, setShowThankYou] = useState(false);
      const CurrentStepComponent = steps[currentStep - 1];
+
+     // Fonction pour obtenir le background selon l'offre sélectionnée
+     const getBackgroundImage = () => {
+        // Si nous sommes à l'étape Step_Offers (étape 2) et qu'une offre est sélectionnée
+        if (currentStep === 2 && formData.selectedOffer) {
+            switch (formData.selectedOffer) {
+                case 'starter':
+                    return basique_bg;
+                case 'business':
+                    return business_bg;
+                case 'premium':
+                    return premium_bg;
+                default:
+                    return form_bg;
+            }
+        }
+        return form_bg;
+     };
 
      const nextStep = () => {
         if(currentStep < steps.length) {
@@ -78,8 +96,6 @@ function DevisPage() {
         setShowThankYou(true);
      };
 
-
-    
      const handleBackToHome = () => {
          try {
                     if (typeof window !== 'undefined' && window.fbq && typeof window.fbq === 'function') {
@@ -113,43 +129,35 @@ function DevisPage() {
                             {/* Contenu du formulaire */}
                             <div className="flex-1 flex flex-col justify-center px-2 sm:px-6 md:px-8">
                                 <div className="space-y-8">
-                                    <Progress steps={["01", "02"]} currentStep={currentStep} />
+                                    <Progress steps={["01", "02" , "3"]} currentStep={currentStep} />
                                     <CurrentStepComponent 
                                         data={formData} 
                                         nextStep={nextStep} 
                                         previousStep={previousStep} 
                                         setData={setFormData}
-                                        showThankYou={handleShowThankYou} // Passer la fonction showThankYou
+                                        showThankYou={handleShowThankYou}
                                     />
                                 </div>
                             </div>
                         </div>
 
-                        {/* Section image de fond avec logo */}
-                        <div className="relative h-64 sm:h-80 md:h-full w-full order-1 md:order-2">
-                            {/* Image de fond */}
-                            <Image
-                                src={form_bg}
-                                alt="Form Background"
-                                fill
-                                className="object-cover"
-                            />
+                        {/* Section image de fond avec logo - Background dynamique */}
+           <div className="relative h-80 sm:h-80 md:h-full w-full order-1 md:order-2 overflow-hidden @container">
+    <Image
+        key={formData.selectedOffer || 'default'}
+        src={getBackgroundImage()}
+        alt="Form Background"
+        fill
+        className={`@sm:object-contain @md:object-cover transition-opacity duration-500 ease-in-out  sm:object-cover md:object-cover  ${getBackgroundImage() === form_bg
+        ? 'object-cover ' 
+        : ''}
+    `}
+    />
+    
                             
                             {/* Overlay pour améliorer le contraste */}
-                            <div className="absolute inset-0  bg-opacity-20"></div>
                             
-                            {/* Logo Z positionné sur le background */}
-                           <div className="absolute sm:mt-8 inset-0 flex items-center justify-center sm:justify-start sm:items-start">
-                                <div className="relative w-48 h-48 md:w-full md:h-[50px] opacity-90 transition-opacity duration-300">
-                                    <Image 
-                                    src={logo} 
-                                    alt="Zidny Agency Logo" 
-                                    fill  
-                                    className="object-contain"
-                                    />
-                                </div>
-                                </div>
-
+                           
                         </div>
                     </div>
                 </div>
@@ -158,9 +166,6 @@ function DevisPage() {
             {/* Composant de remerciement */}
             {showThankYou && (
                     <div className="fixed inset-0 bg-[#0C224B] bg-opacity-50 flex items-center justify-center z-50 p-4">
-                    {/* Overlay avec image de fond */}
-                   
-                    
                     {/* Contenu modal */}
                     <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl relative z-10">
                         {/* Logo */}

@@ -46,7 +46,9 @@ export default function Step_5({ data, setData,  showThankYou }: StepsProps) {
                     specificData = {
                         websiteType: webData.websiteType?.join(', ') || '',
                         designExpectation: webData.designExpectation || '',
-                        functionalities: webData.functionalities?.join(', ') || ''
+                        functionalities: webData.functionalities?.join(', ') || '',
+                        OffreChoisie : webData.selectedOffer || ""
+
                     };
                     break;
                     
