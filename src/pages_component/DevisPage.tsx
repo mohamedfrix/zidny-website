@@ -54,7 +54,7 @@ export interface formDataWeb extends formData {
     websiteType : string[];
     designExpectation : string;
     functionalities : string[];
-    selectedOffer : string;
+    selectedOffer? : string;
 }
 
 export interface formDataMobile extends formData {
@@ -103,7 +103,8 @@ export const formInitialDataWeb: formDataWeb = {
   projectType: 'web',
   websiteType: [],
   designExpectation: '',
-  functionalities: []
+  functionalities: [] , 
+  selectedOffer : ''
 };
 
 // Mobile form initial data
