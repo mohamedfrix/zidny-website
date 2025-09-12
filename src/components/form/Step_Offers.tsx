@@ -52,13 +52,13 @@ export default function Step_Offers({ data, setData, nextStep}: StepsProps) {
         };
 
        return (
-            <div className="w-full mt-10">
+            <div className="w-full -mt-4 md:mt-10">
                 <div>
-                    <h1 className='text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Choisissez Votre Offre</h1>
+                    <h1 className='text-[30px] md:text-[36px] text-[#2AA4E7] font-outfit font-semibold'>Choisissez Votre Offre</h1>
                     <p className='text-[#C2C4C7] font-outfit'>Consultes l&apos;offre qui te convient le mieux et faites-le nous savoir !</p>
                 </div>
               
-                <div className="space-y-4 mt-8 flex flex-col items-start">
+                <div className="space-y-4 mt-3 md:mt-8 flex flex-col items-start">
                     <label className="text-neutral-gray-2 text-[16px] font-outfit font-semibold mb-2">
                         Choisissez votre offre
                     </label>
